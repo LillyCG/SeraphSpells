@@ -1,0 +1,133 @@
+variables:
+     healthvar_upvalue:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000
+          default: 150
+     human_rank:
+          type: player
+          min: 0
+          max: 100
+          default: 0
+     human_rank_exp:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000000000
+          default: 0
+     human_rank_exp_max:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000000000
+          default: 10
+#~#
+human_rank_resist:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - join
+        - respawn
+        - magicspellsloaded
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    modifiers:
+        - collection race_human required
+    spells:
+        - human_vampirebite_resist
+        - humanranking
+human_vampirebite_resist:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    modifiers:
+        - variable kijuu_enhance:1 power 0.95
+        - variable kijuu_active:1 power 0.65
+        - variable kijuu_demon_type:1 power 0.80
+        - variable kijuu_demon_type:2 power 0.75
+        - variable kijuu_demon_type:3 power 0.70
+        - variable kijuu_gimmepower_stage:1 power 0.80
+        - variable kijuu_gimmepower_stage:2 power 0.75
+        - variable kijuu_gimmepower_stage:3 power 0.70
+        - variable namanari_mode:1 power 0.85
+        - variable namanari_mode:2 power 0.80
+        - variable namanari_mode:3 power 0.75
+        - variable namanari_mode:4 power 0.70
+        - variable namanari_mode:5 power 0.65
+    spell-damage-types:
+        - VAMPIRE_BITE
+    multiplier: 555.5
+#~#
+humanranking:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - humanrankingpt
+        - DELAY 03
+        - humanranking
+#~~~~~~~~~~~~~~~~~~~~#
+humanrankingpt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable human_rank_exp:human_rank_exp_max castinstead humanrankingpt_up
+        - variable human_rank_exp>human_rank_exp_max castinstead humanrankingpt_up
+humanrankingpt_up:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast humanrankingpt_up_zvanie
+    effects:
+        1:
+          position: caster
+          effect: title
+          title: ""
+          subtitle: "&fВаше звание было повышено"
+          fade-in: 25
+          stay: 60
+          fade-out: 85
+    variable-mods-cast:
+        - human_rank_exp =0
+        - human_rank_exp_max *2
+        - human_rank +1
+        - healthvar_max +healthvar_upvalue
+        - healthvar_upvalue +150
+humanrankingpt_up_zvanie:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - DELAY 03
+        - humanrankingpt_up_zvaniept
+humanrankingpt_up_zvaniept:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable human_rank:1 castinstead humanrankingpt_up_zvaniept_pt1
+        - variable human_rank:2 castinstead humanrankingpt_up_zvaniept_pt2
+        - variable human_rank:3 castinstead humanrankingpt_up_zvaniept_pt3
+        - variable human_rank:4 castinstead humanrankingpt_up_zvaniept_pt4
+        - variable human_rank:5 castinstead humanrankingpt_up_zvaniept_pt5
+        - variable human_rank:6 castinstead humanrankingpt_up_zvaniept_pt6
+        - variable human_rank:7 castinstead humanrankingpt_up_zvaniept_pt7
+        - variable human_rank:8 castinstead humanrankingpt_up_zvaniept_pt8
+        - variable human_rank:9 castinstead humanrankingpt_up_zvaniept_pt9
+        - variable human_rank:10 castinstead humanrankingpt_up_zvaniept_pt10
+        - variable human_rank:11 castinstead humanrankingpt_up_zvaniept_pt11
+        - variable human_rank:12 castinstead humanrankingpt_up_zvaniept_pt12
+        - variable human_rank:13 castinstead humanrankingpt_up_zvaniept_pt13
+        - variable human_rank:14 castinstead humanrankingpt_up_zvaniept_pt14
+        - variable human_rank:15 castinstead humanrankingpt_up_zvaniept_pt15
+        - variable human_rank:16 castinstead humanrankingpt_up_zvaniept_pt16
+        - variable human_rank:17 castinstead humanrankingpt_up_zvaniept_pt17
+        - variable human_rank:18 castinstead humanrankingpt_up_zvaniept_pt18
+        - variable human_rank:19 castinstead humanrankingpt_up_zvaniept_pt19
+        - variable human_rank:20 castinstead humanrankingpt_up_zvaniept_pt20
