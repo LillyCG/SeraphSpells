@@ -1,0 +1,871 @@
+asuramaru_darkwhirlwind:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - asuramaru_darkwhirlwind_stun
+        - asuramaru_darkwhirlwind_windf
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 02
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_windj
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windb
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windb
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windf1
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_windj1
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windf2
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_windj2
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windb
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windb
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweep
+        - asuramaru_darkwhirlwind_winda
+        - asuramaru_darkwhirlwind_windsweep
+asuramaru_darkwhirlwind_windf: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1_1:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 2.5sin(0.05t) + 0.5
+            yEquation: 1
+            zEquation: 2.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_2:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 2.8sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: 2.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_3:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 2.8sin(0.05t) + 0.5
+            yEquation: 2.4
+            zEquation: 2.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_4:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 2.8sin(0.05t) + 0.5
+            yEquation: 3.3
+            zEquation: 2.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+asuramaru_darkwhirlwind_windf1: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1_1:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 2.7sin(0.05t) + 0.5
+            yEquation: 1
+            zEquation: 2.7cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_2:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 3sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: 3cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_3:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 3.5sin(0.05t) + 0.5
+            yEquation: 2.4
+            zEquation: 3.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_4:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 3.5sin(0.05t) + 0.5
+            yEquation: 3.3
+            zEquation: 3.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+asuramaru_darkwhirlwind_windf2: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1_1:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 4.2sin(0.05t) + 0.5
+            yEquation: 1
+            zEquation: 4.2cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_2:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 4.6sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: 4.6cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_3:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: 5sin(0.05t) + 0.5
+            yEquation: 2.4
+            zEquation: 5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+asuramaru_darkwhirlwind_windb: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+        eff1:
+            position: caster
+            effect: particles
+            particle-name: large_smoke
+            color: 000000
+            horiz-spread: 0.9
+            vert-spread: 0.9
+            size: 100
+            count: 55
+            speed: 0.25
+            height-offset: 1
+            forward-offset: 0
+            z-offset: 0
+asuramaru_darkwhirlwind_winda: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+        eff1:
+            position: caster
+            effect: particles
+            particle-name: smoke
+            color: 000000
+            horiz-spread: 0.9
+            vert-spread: 0.9
+            size: 100
+            count: 45
+            speed: 0.1
+            height-offset: 1
+            forward-offset: 0
+            z-offset: 0
+        eff2:
+            position: caster
+            effect: particles
+            particle-name: smoke
+            color: 000000
+            horiz-spread: 1.9
+            vert-spread: 1.9
+            count: 15
+            speed: 0.1
+            height-offset: 1
+            forward-offset: 0
+            z-offset: 0
+        eff3:
+            position: caster
+            effect: particles
+            particle-name: smoke
+            color: 000000
+            horiz-spread: 1.0
+            vert-spread: 1.9
+            count: 35
+            speed: 0.25
+            height-offset: 1
+            forward-offset: 0
+            z-offset: 0
+        eff4:
+            position: caster
+            effect: particles
+            particle-name: squid_ink
+            color: 000000
+            horiz-spread: 1.0
+            vert-spread: 1.9
+            count: 7
+            speed: 0.25
+            height-offset: 1
+            forward-offset: 0
+            z-offset: 0
+asuramaru_darkwhirlwind_windj: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1_1:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -2.5sin(0.05t) + 0.5
+            yEquation: 1.6
+            zEquation: -2.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_2:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -2.8sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: -2.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_3:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -2.8sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: -2.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_4:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -2.9sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: -2.9cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_5:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -2.9sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: -2.9cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_6:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -3.2sin(0.05t) + 0.5
+            yEquation: 2
+            zEquation: -3.2cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_7:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -3.5sin(0.05t) + 0.5
+            yEquation: 2.5
+            zEquation: -3.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_8:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -3.8sin(0.05t) + 0.5
+            yEquation: 3
+            zEquation: -3.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+asuramaru_darkwhirlwind_windj1: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1_1:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -3sin(0.05t) + 0.5
+            yEquation: 1.6
+            zEquation: -3cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_3:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -3.3sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: -3.3cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_6:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -3.7sin(0.05t) + 0.5
+            yEquation: 2
+            zEquation: -3.7cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_7:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -4sin(0.05t) + 0.5
+            yEquation: 2.5
+            zEquation: -4cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+asuramaru_darkwhirlwind_windj2: 
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1_1:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -4.5sin(0.05t) + 0.5
+            yEquation: 1.6
+            zEquation: -4.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_3:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -4.8sin(0.05t) + 0.5
+            yEquation: 1.8
+            zEquation: -4.8cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_6:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -5.3sin(0.05t) + 0.5
+            yEquation: 2
+            zEquation: -5.3cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+      1_7:
+        effect: effectlib
+        position: caster
+        effectlib:
+            class: Equation
+            particle: dust
+            relativeOffset: 0,0,0
+            offset: 0,0,0
+            color: 424242
+            particle_size: 1.5
+            speed: 0
+            duration: 150
+            xEquation: -5.5sin(0.05t) + 0.5
+            yEquation: 2.5
+            zEquation: -5.5cos(0.05t) 
+            particles: 22
+            x2Equation: 0.2t2
+            y2Equation: 0
+            z2Equation: 0
+            particles2: 2
+            iterations: 0
+            orient_pitch: false
+asuramaru_darkwhirlwind_windsweep:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 7.5
+    vertical-radius: 7.5
+    point-blank: true
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - asuramaru_darkwhirlwind_windsweepmsp
+asuramaru_darkwhirlwind_windsweepmsp:
+    spell-class: ".TargetedMultiSpell"
+    helper-spell: true
+    can-target: self
+    spells:
+        - cursedgear_cursedmark
+        - DELAY 01
+        - asuramaru_darkwhirlwind_windsweepmsptoss
+asuramaru_darkwhirlwind_windsweepmsptoss:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 15.5
+    horizontal-force: 5.5
+    vertical-force: 5.8
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: CURSED_GEAR_ATTACKS
+    beneficial: false
+asuramaru_darkwhirlwind_stun:
+    spell-class: ".targeted.StunSpell"
+    helper-spell: true
+    duration: 60
+    target-self: true
