@@ -1,0 +1,142 @@
+variables:
+     hunger_full:
+          type: player
+          min: 0
+          max: 25
+          default: 25
+modifiers:
+    hunger:
+        checks:
+            - variable meta_food_level<hunger_full continue
+            - variable meta_food_level>hunger_full continue
+        pass-condition: XOR
+#~~~~~~~~~~~~~~~~~~#
+basicsystem_hunger:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - join
+        - respawn
+        - magicspellsloaded
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    spells:
+        - hungersystem_msp
+#~~~~~~~~~~~~~~~~~~#
+hungersystem_humanpass:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - ticks 2000
+    cast-without-target: true
+    helper-spell: true
+    chance: 45
+    cooldown: 0
+    cancel-default-action: true
+    modifiers:
+        - variable hunger_full>0 required
+        - collection race_human required
+    spells:
+        - hungersystem_minus
+hungersystem_vampirepass_1:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - ticks 600
+    cast-without-target: true
+    helper-spell: true
+    chance: 45
+    cooldown: 0
+    cancel-default-action: true
+    modifiers:
+        - variable hunger_full>15 required
+        - variable race:2 required
+    spells:
+        - hungersystem_minus
+hungersystem_vampirepass_2:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - ticks 300
+    cast-without-target: true
+    helper-spell: true
+    chance: 60
+    cooldown: 0
+    cancel-default-action: true
+    modifiers:
+        - variable hunger_full>16 denied
+        - variable hunger_full>9 required
+        - variable race:2 required
+    spells:
+        - hungersystem_minus
+hungersystem_vampirepass_3:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - ticks 150
+    cast-without-target: true
+    helper-spell: true
+    chance: 80
+    cooldown: 0
+    cancel-default-action: true
+    modifiers:
+        - variable hunger_full<6 denied
+        - variable hunger_full>10 denied
+        - variable race:2 required
+    spells:
+        - hungersystem_minus
+hungersystem_vampirepass_4:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - ticks 20
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    cancel-default-action: true
+    modifiers:
+        - variable hunger_full>6 denied
+        - variable race:2 required
+    spells:
+        - hungersystem_minus
+hungersystem_minusblood:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable race:2 required
+    variable-mods-cast:
+        - hunger_full -1
+        - vampire_blood -0.5
+hungersystem_minus:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable hunger_full:0 cast hungersystem_minusblood
+    variable-mods-cast:
+        - hunger_full -1
+#~~~~~~~~~~~~~~~~~~#
+hungersystem_msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+          - DELAY 01
+          - hungersystem_msp
+          - DELAY 02
+          - hungersystem_dummy
+hungersystem_dummy:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+          - DELAY 02
+          - hungersystem_dummy1
+hungersystem_dummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - collection hunger required
+    variable-mods-cast:
+        - meta_food_level =hunger_full
+#~~~~~~~~~~~~~~#

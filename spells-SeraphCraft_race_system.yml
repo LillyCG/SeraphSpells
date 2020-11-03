@@ -1,0 +1,12 @@
+variables:
+     race:
+          type: player
+          min: 0
+          max: 5
+          default: 0
+modifiers:
+    race_human:
+        checks:
+            - variable race:0 continue
+            - variable race:1 continue
+        pass-condition: XOR
