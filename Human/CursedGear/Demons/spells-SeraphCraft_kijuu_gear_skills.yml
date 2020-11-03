@@ -1,0 +1,397 @@
+kijuu_deactivated_slash:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_cursedgear_ver:0 castinstead kijuu_deactivated_slash_melee
+        - variable kijuu_cursedgear_ver:1 castinstead kijuu_deactivated_slash_middle
+        - variable kijuu_cursedgear_ver:2 castinstead kijuu_deactivated_shoot
+        - variable kijuu_cursedgear_ver:3 castinstead kijuu_deactivated_none
+kijuu_deactivated_dash:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_cursedgear_ver:0 castinstead kijuu_deactivated_dash_melee
+        - variable kijuu_cursedgear_ver:1 castinstead kijuu_deactivated_dash_middle
+        - variable kijuu_cursedgear_ver:2 castinstead kijuu_deactivated_dash_range
+        - variable kijuu_cursedgear_ver:3 castinstead kijuu_deactivated_none
+kijuu_deactivated_powerfullstrike:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_cursedgear_ver:0 castinstead kijuu_deactivated_powerfullstrike_melee
+        - variable kijuu_cursedgear_ver:1 castinstead kijuu_deactivated_powerfullstrike_middle
+        - variable kijuu_cursedgear_ver:2 castinstead kijuu_deactivated_powerfullstrike_range
+        - variable kijuu_cursedgear_ver:3 castinstead kijuu_deactivated_none
+kijuu_deactivated_ability:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_cursedgear_ver:0 castinstead kijuu_deactivated_ability_melee
+        - variable kijuu_cursedgear_ver:1 castinstead kijuu_deactivated_ability_middle
+        - variable kijuu_cursedgear_ver:2 castinstead kijuu_deactivated_ability_range
+        - variable kijuu_cursedgear_ver:3 castinstead kijuu_deactivated_none
+#~~~~~~#
+kijuu_deactivated_none:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+#~ ~#
+kijuu_deactivated_slash_melee:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_dash_melee:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_powerfullstrike_melee:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_ability_melee:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+#~ ~#
+kijuu_deactivated_slash_middle:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast SeraphCraft_Cursedgear_scythe_slash_combomsp1
+kijuu_deactivated_dash_middle:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_powerfullstrike_middle:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_ability_range:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+#~ ~#
+kijuu_deactivated_shoot:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_dash_range:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_powerfullstrike_range:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+kijuu_deactivated_ability_melee:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_testdemon_ability0
+#~~~~~~#
+kijuu_demon_ability0pt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_active:1 cast kijuu_demon_ability0
+kijuu_demon_ability1pt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_active:1 cast kijuu_demon_ability1
+kijuu_demon_ability0:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000003 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000004 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000005 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000006 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000007 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000008 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000009 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000010 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000011 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000012 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000013 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000014 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000015 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000016 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000017 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000018 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000019 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000020 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000021 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000022 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000023 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000024 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000025 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000026 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000027 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000028 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000029 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000030 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000031 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000032 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000033 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000034 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000035 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000036 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000037 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000038 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000039 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000040 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000041 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000042 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000043 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000044 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000045 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000046 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000047 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000048 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000049 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000050 castinstead kijuu_testdemon_ability0
+kijuu_demon_ability1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000003 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000004 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000005 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000006 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000007 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000008 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000009 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000010 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000011 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000012 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000013 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000014 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000015 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000016 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000017 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000018 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000019 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000020 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000021 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000022 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000023 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000024 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000025 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000026 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000027 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000028 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000029 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000030 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000031 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000032 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000033 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000034 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000035 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000036 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000037 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000038 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000039 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000040 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000041 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000042 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000043 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000044 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000045 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000046 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000047 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000048 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000049 castinstead kijuu_testdemon_ability1
+        - variable kijuu_demon:1000050 castinstead kijuu_testdemon_ability1
+# ~ #
+kijuu_demon_ability2pt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_active:1 cast kijuu_demon_ability2
+kijuu_demon_ability3pt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_active:1 cast kijuu_demon_ability3
+kijuu_demon_ability2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000003 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000004 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000005 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000006 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000007 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000008 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000009 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000010 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000011 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000012 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000013 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000014 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000015 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000016 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000017 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000018 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000019 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000020 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000021 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000022 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000023 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000024 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000025 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000026 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000027 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000028 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000029 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000030 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000031 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000032 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000033 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000034 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000035 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000036 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000037 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000038 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000039 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000040 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000041 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000042 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000043 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000044 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000045 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000046 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000047 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000048 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000049 castinstead kijuu_testdemon_ability2
+        - variable kijuu_demon:1000050 castinstead kijuu_testdemon_ability2
+kijuu_demon_ability3:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000003 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000004 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000005 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000006 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000007 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000008 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000009 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000010 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000011 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000012 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000013 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000014 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000015 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000016 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000017 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000018 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000019 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000020 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000021 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000022 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000023 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000024 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000025 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000026 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000027 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000028 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000029 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000030 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000031 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000032 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000033 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000034 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000035 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000036 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000037 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000038 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000039 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000040 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000041 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000042 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000043 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000044 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000045 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000046 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000047 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000048 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000049 castinstead kijuu_testdemon_ability3
+        - variable kijuu_demon:1000050 castinstead kijuu_testdemon_ability3
+#~~~~~~~~~~~~~#
+kijuu_demon_vfx:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000003 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000004 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000005 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000006 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000007 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000008 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000009 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000010 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000011 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000012 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000013 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000014 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000015 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000016 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000017 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000018 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000019 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000020 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000021 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000022 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000023 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000024 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000025 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000026 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000027 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000028 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000029 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000030 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000031 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000032 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000033 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000034 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000035 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000036 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000037 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000038 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000039 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000040 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000041 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000042 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000043 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000044 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000045 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000046 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000047 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000048 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000049 castinstead kijuu_testdemon_ability0
+        - variable kijuu_demon:1000050 castinstead kijuu_testdemon_ability0
