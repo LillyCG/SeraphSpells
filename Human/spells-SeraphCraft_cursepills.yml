@@ -1,0 +1,302 @@
+variables:
+     pills_active:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     pills_amount:
+          type: player
+          min: 0
+          max: 8
+          default: 0
+curse_pillspass:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - respawn
+        - magicspellsloaded
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    spells:
+        - curse_pills_death_mspcleanse
+curse_pills:
+    spell-class: ".MultiSpell"
+    modifiers:
+        - buffactive curse_pillsbuff castinstead curse_pillspt
+        - variable pills_amount:4 denied
+    spells:
+        - curse_pills_ptt
+curse_pills_ptt:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    variable-mods-cast:
+        - pills_amount +1
+    modifiers:
+        - buffactive curse_pillsbuff denied
+    spells:
+        - curse_pillsbuff
+        - DELAY 03
+        - curse_pillsbuffmsp
+curse_pillsbuffmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - DELAY 01
+        - curse_pillsbuffmsppt
+curse_pillsbuffmsppt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - buffactive curse_pillsbuff castinstead curse_pillsbuffmsp
+    variable-mods-cast:
+        - pills_amount =0
+        - pills_active =0
+curse_pillspt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable pills_amount:1 cast curse_pills_death_2pills
+        - variable pills_amount:2 cast curse_pills_death_3pills
+        - variable pills_amount:3 cast curse_pills_death_4pills
+        - variable pills_amount:4 cast curse_pills_death_5pills
+        - variable pills_amount:5 cast curse_pills_death_6pills
+        - variable pills_amount:6 cast curse_pills_death_7pills
+        - variable pills_amount:7 cast curse_pills_death_8pills
+    variable-mods-cast:
+        - pills_amount +1
+curse_pills_death_2pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 25 cast curse_pills_death_msp
+curse_pills_death_3pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 80 cast curse_pills_death_msp
+curse_pills_death_4pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_death_msp
+        - chance 80 cast curse_pills_namarnari_dummy_1
+curse_pills_death_5pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_death_msp
+        - chance 100 cast curse_pills_namarnari_dummy_1
+curse_pills_death_6pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_death_msp
+        - chance 100 cast curse_pills_namarnari_dummy_2
+curse_pills_death_7pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_death_msp
+        - chance 100 cast curse_pills_namarnari_dummy_2
+curse_pills_death_8pills:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_death_msp
+        - chance 100 cast curse_pills_namarnari_dummy_3
+curse_pills_namarnari_dummy_3:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable namanari_stage>0 cast curse_pills_namarnari_dummypt0_2
+curse_pills_namarnari_dummypt0_2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_namarnari_dummypt1
+        - chance 75 cast curse_pills_namarnari_dummypt2
+curse_pills_namarnari_dummy_2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable namanari_stage>0 cast curse_pills_namarnari_dummypt0_1
+curse_pills_namarnari_dummypt0_1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast curse_pills_namarnari_dummypt1
+        - chance 38 cast curse_pills_namarnari_dummypt2
+curse_pills_namarnari_dummy_1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable namanari_stage>0 cast curse_pills_namarnari_dummypt0_0
+curse_pills_namarnari_dummypt0_0:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 75 cast curse_pills_namarnari_dummypt1
+        - chance 15 cast curse_pills_namarnari_dummypt2
+curse_pills_namarnari_dummypt1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - namanari_timer_max +5
+curse_pills_namarnari_dummypt2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - namanari_stage +1
+curse_pillsbuff:
+    spell-class: ".buff.DamageEmpowerSpell"
+    damage-multiplier: 1.5
+    duration: 300
+    variable-mods-cast:
+        - pills_active =1
+    modifiers:
+        - variable pills_amount>1 power 1.25
+        - variable pills_amount>2 power 1.15
+        - variable pills_amount>3 power 1.12
+        - variable pills_amount>4 power 1.12
+        - variable pills_amount>5 power 1.115
+        - variable pills_amount>6 power 1.115
+        - variable pills_amount>7 power 1.112
+    cancel-on-death: true
+#~~~~~~~~~~~~#
+curse_pills_death_msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - curse_pills_death_mspdummypotion1
+        - curse_pills_death_mspdummypotion2
+        - curse_pills_death_mspdummystun
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - DELAY 01
+        - curse_pills_death_mspdummy1
+        - curse_pills_death_mspcleanse1
+        - DELAY 01
+        - curse_pills_death_mspcleanse2
+        - DELAY 01
+        - curse_pills_death_mspdummy2
+        - DELAY 01
+        - curse_pills_death_mspdummypain
+curse_pills_death_mspdummystun:
+    spell-class: ".targeted.StunSpell"
+    helper-spell: true
+    duration: 10
+    target-self: true
+curse_pills_death_mspdummypotion1:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: slowness
+    duration: 540
+    strength: 255
+    targeted: false
+    ambient: false
+    hidden: true
+curse_pills_death_mspdummypotion2:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: blindness
+    duration: 540
+    strength: 255
+    targeted: false
+    ambient: false
+    hidden: true
+curse_pills_death_mspcleanse1:
+    spell-class: ".targeted.CleanseSpell"
+    helper-spell: true
+    remove:
+      - blindness
+      - slowness
+    target-self: true
+curse_pills_death_mspcleanse2:
+    spell-class: ".targeted.CleanseSpell"
+    helper-spell: true
+    modifiers:
+        - variable namanari_stage>0 denied
+    variable-mods-cast:
+        - pills_amount =0
+        - pills_active =0
+    remove:
+      - buff:curse_pillsbuff
+    target-self: true
+curse_pills_death_mspdummypain:
+    spell-class: ".targeted.PainSpell"
+    helper-spell: true
+    damage: 99999999999999999999.5
+    ignore-armor: false
+    can-target: players,nonplayers
+    target-self: true
+    modifiers:
+        - variable namanari_stage>0 denied
+    check-plugins: true
+    spell-damage-type: DEMONIC_CURSE
+curse_pills_death_mspdummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.0
+        color: 840011
+        size: 1.5
+        count: 5
+        height-offset: 1.15
+        forward-offset: 0.2
+      0:
+        position: caster
+        effect: particles
+        particle-name: block
+        material: redstone_block
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.2
+        count: 5
+        height-offset: 1.5
+        forward-offset: 0.2
+curse_pills_death_mspdummy2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0.0
+        color: 840011
+        size: 1.5
+        count: 135
+        height-offset: 1.15
+        forward-offset: 0.2
+      0:
+        position: caster
+        effect: particles
+        particle-name: block
+        material: redstone_block
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0.2
+        count: 175
+        height-offset: 1.5
+        forward-offset: 0.2
