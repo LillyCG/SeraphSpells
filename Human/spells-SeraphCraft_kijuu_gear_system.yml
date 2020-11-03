@@ -1,0 +1,580 @@
+variables:
+     kijuu_enhance:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     kijuu_active:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     kijuu_demon_rank:
+          type: player
+          min: 0
+          max: 10
+          default: 0
+     kijuu_demon_type:
+          type: player
+          min: 0
+          max: 3
+          default: 0
+     kijuu_cursedgear_ver:
+          type: player
+          min: 0
+          max: 3
+          default: 0
+     kijuu_contract:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     kijuu_demon:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000
+          default: 0
+     kijuu_gimmepower_atm:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     kijuu_gimmepower_stage:
+          type: player
+          min: 0
+          max: 3
+          default: 0
+     kijuu_gimmepower_count:
+          type: player
+          min: 0
+          max: 10
+          default: 0
+#````````````````````````````````````#
+    # основные положения системы :
+    # 
+         
+        # ПЕРЕМЕННЫЕ:
+            # kijuu_enhance - усиление зачарованного оружия
+                # 0 - деактивировано
+                # 1 - активировано
+            # kijuu_active - активировано ли оружие
+                # 0 - нет
+                # 1 - да
+            # kijuu_demon_rank - ранг демона
+                # 0 - зачарованное оружие. демона не имеет.
+                # 1 - Myo-o (Мий-о / низшие видья-раджа. )
+                # 2 - Yaksha (Якшаса / Якши )
+                # 3 - Wisdom Kings (Король Мудрости / высшие видья-раджа )
+                # 4 - Fiends ( Черти / Демоны  низшего класса )
+                # 5 - Dakini (Дакини)
+                # 6 - Rakshasa ( Ракшаса )
+                # 7 - Bodhisattva ( Бодхиссатва )
+                # 8 - Asura ( Асюры )
+                # 9 - Black Demon (Темная Серия. Сильнейшие темные демоны) 
+            # kijuu_cursedgear_ver - вид оружия
+                # 0 - Оружие ближнего боя (катаны, кинжалы)
+                # 1 - Оружие среднего боя (косы, топоры)
+                # 2 - Оружие дальнего боя (луки, винтовки)
+                # 3 - Оружие не боевой категории (курительная трубка)
+            # kijuu_demon_type - тип демона
+                # 0 - никакого типа
+                # 1 - Посессия. Овладевание. пропускает силу демона через себя. ближний-средний бой.
+                # 2 - Манифестация. Призыв. приказывает демону использовать навыки и взывает в наш мир. средний-дальний бой.
+                # 3 - Смежное
+            # kijuu_demon - вариация демона.
+                #
+                # 1000000 - 9000000 обычные демоны. номера от 9000000 - уникальные демоны
+                #
+                # СПИСОК ДЕМОНОВ:
+                    # 0 - никакого демона
+                    # ОБЫЧНЫЕ:
+                        # 1000000 - ТЕСТОВЫЙ ДЕМОН
+                        # 1000001 - Хонне-Онна (Honne-Onna) | Специализация : Удержание
+                        # 1000002 - Юки-Онна (Yuki-Onna) | Специализация : Иллюзии
+                        # 1000003 - Онихитокучи (Onihitokuchi) | Специализация : Урон
+                    # УНИКАЛЬНЫЕ:
+                        # 9000000 - Ашурамару (Asuramaru) | Специализация : Урон 
+            # kijuu_gimmepower_atm - "дай мне силы, демон"
+                # 0 - игрок не просил дополнительной силы демона
+                # 1 - игрок в данный момент под влиянием демона
+            # kijuu_gimmepower_stage - влияние демона на игркоа в просьбе о силе
+                # 0 - игрок не просил дополнительной силы демона
+                # 1 - игрок находился или находится под влиянием демона
+                # 2 - игрок находится на краю одержимости
+                # 3 - игрок одержим
+#        
+        # ОРУЖИЕ
+            # ЗАЧАРОВАННОЕ
+                    # ЛКМ (БЕЗ ШИФТА) - Слеши
+                    # ЛКМ (С ШИФТОМ ) - ДЕШ-АТАКА
+                    # ПКМ (БЕЗ ШИФТА ) - Усиленная атака
+                    # ПКМ (С ШИФТОМ ) - Блок
+                    # F (БЕЗ ШИФТА ) - АКТИВАЦИЯ МАГИЧЕСКОЙ ПЕЧАТИ
+                    # F (С ШИФТОМ ) - Усиленный прыжок
+            # ПРОКЛЯТОЕ
+                # НЕ АКТИВИРОВАННОЕ
+                    # ЛКМ (БЕЗ ШИФТА) - Слеши
+                    # ЛКМ (С ШИФТОМ ) - ДЕШ-АТАКА
+                    # ПКМ (БЕЗ ШИФТА ) - Усиленная атака
+                    # ПКМ (С ШИФТОМ ) - Специальная атака
+                    # F (БЕЗ ШИФТА ) - АКТИВАЦИЯ ПРОКЛЯТИЯ
+                    # F (С ШИФТОМ ) - МЕНЮ ДЕМОНА.
+                        # СОСТОЯНИЕ ДЕМОНА : Раздражен, Агрессивен, Нейтрален
+                        # СОСТОЯНИЕ ПРОКЛЯТИЯ : Удовлетворительное, Неудовлетворительное, Одержимость
+                        # ПРОГРЕСС ОРУЖИЯ
+                        # ДИАЛОГ С ДЕМОНОМ
+                        # ПРОКАЧКА НАВЫКОВ
+                # АКТИВИРОВАННОЕ.
+                    # ЛКМ (БЕЗ ШИФТА) - БАЗОВАЯ СПЕЦИАЛЬНАЯ АТАКА
+                    # ( Посессия - слеши ) | [ Манифестация - выстрел или вызов демона ]
+                    #
+                    # ЛКМ (С ШИФТОМ ) - ПЕРВОЕ СПЕЦИАЛЬНОЕ УМЕНИЕ
+                    # ПКМ (БЕЗ ШИФТА ) - ВТОРОЕ СПЕЦИАЛЬНОЕ УМЕНИЕ
+                    # ПКМ (С ШИФТОМ ) - ТРЕТЬЕ СПЕЦИАЛЬНОЕ УМЕНИЕ
+                    # F (БЕЗ ШИФТА ) - "ДАЙ МНЕ СИЛЫ, ДЕМОН"
+                    # F (С ШИФТОМ ) - ДЕАКТИВАЦИЯ ПРОКЛЯТЬЯ
+#````````````````````````````````````#
+
+
+# ~~~ [ kijuu system ] ~~~ #
+
+
+kijuu_rightmouse:
+    spell-class: ".MultiSpell"
+    right-click-cast-item: ghast_tear
+    modifiers:
+        - variable kijuu_active:0 castinstead kijuu_rightmouse_deactive
+        - variable kijuu_active:1 castinstead kijuu_rightmouse_active
+    spells:
+        - DELAY 01
+kijuu_leftmouse:
+    spell-class: ".MultiSpell"
+    cast-item: ghast_tear
+    modifiers:
+        - variable kijuu_active:0 castinstead kijuu_leftmouse_deactive
+        - variable kijuu_active:1 castinstead kijuu_leftmouse_active
+    spells:
+        - DELAY 01
+kijuu_F_nonsneak:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - offhandswap #offhandswap
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    cancel-default-action: true
+    modifiers:
+        - collection race_human required
+        - holding ghast_tear required
+        - sneaking denied
+    spells:
+        - kijuu_F_nonsneak_dummy
+kijuu_F_sneaking:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - offhandswap #offhandswap
+    cast-without-target: true
+    helper-spell: true
+    cancel-default-action: true
+    chance: 100
+    cooldown: 0
+    modifiers:
+        - collection race_human required
+        - holding ghast_tear required
+        - sneaking required
+    spells:
+        - kijuu_F_sneaking_dummy
+
+#~ KIJUU SYSTEM PARTS ~#
+
+kijuu_leftmouse_deactive:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sneaking castinstead kijuu_leftmouse_deactive_sneaking
+    spells:
+        - DELAY 01
+        - kijuu_leftmouse_deactive_dummy
+kijuu_leftmouse_active:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sneaking castinstead kijuu_leftmouse_active_sneaking
+    spells:
+        - DELAY 01
+        - kijuu_leftmouse_active_dummy
+kijuu_leftmouse_deactive_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_leftmouse
+        - variable kijuu_demon>0 castinstead cursedgear_leftmouse
+kijuu_leftmouse_deactive_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_leftmouse_sneaking
+        - variable kijuu_demon>0 castinstead cursedgear_leftmouse_sneaking
+kijuu_leftmouse_active_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_leftmouse
+        - variable kijuu_demon>0 castinstead cursedgear_leftmouse
+kijuu_leftmouse_active_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_leftmouse_sneaking
+        - variable kijuu_demon>0 castinstead cursedgear_leftmouse_sneaking
+#~#
+kijuu_rightmouse_deactive:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sneaking castinstead kijuu_rightmouse_deactive_sneaking
+    spells:
+        - DELAY 01
+        - kijuu_rightmouse_deactive_dummy
+kijuu_rightmouse_active:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sneaking castinstead kijuu_rightmouse_active_sneaking
+    spells:
+        - DELAY 01
+        - kijuu_rightmouse_active_dummy
+kijuu_rightmouse_deactive_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_rightmouse
+        - variable kijuu_demon>0 castinstead cursedgear_rightmouse
+kijuu_rightmouse_deactive_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_rightmouse_sneaking
+        - variable kijuu_demon>0 castinstead cursedgear_rightmouse_sneaking
+kijuu_rightmouse_active_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_rightmouse
+        - variable kijuu_demon>0 castinstead cursedgear_rightmouse
+kijuu_rightmouse_active_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_rightmouse_sneaking
+        - variable kijuu_demon>0 castinstead cursedgear_rightmouse_sneaking
+#~#
+kijuu_F_nonsneak_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_F_nonsneak
+        - variable kijuu_demon>0 castinstead cursedgear_F_nonsneak
+kijuu_F_sneaking_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon:0 castinstead enchanted_gear_F_sneaking
+        - variable kijuu_demon>0 castinstead cursedgear_F_sneaking
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# [ enchanted gear system ] #
+
+#~ left click ~#
+enchantedgear_leftmouse:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast enchantedgear_slashes
+enchantedgear_leftmouse_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast enchantedgear_dash
+#~ right click ~#
+enchantedgear_rightmouse:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast enchantedgear_powerfullattack
+enchantedgear_rightmouse_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast enchantedgear_block
+#~ F ~#
+enchanted_gear_F_nonsneak:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast enchantedgear_jump
+enchanted_gear_F_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast enchantedgear_power
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# [ cursed gear system ] # 
+
+#~ left click ~#
+cursedgear_leftmouse:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_contract:1 required
+    modifiers:
+        - chance 100 cast kijuu_demon_ability0pt
+        - chance 100 cast kijuu_deactivated_slash
+cursedgear_leftmouse_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_contract:1 required
+    modifiers:
+        - chance 100 cast kijuu_demon_ability1pt
+        - chance 100 cast kijuu_deactivated_dash
+#~ right click ~#
+cursedgear_rightmouse:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    cast-item: ghast_tear
+    modifiers:
+        - variable kijuu_contract:1 required
+    modifiers:
+        - chance 100 cast kijuu_demon_ability2pt
+        - chance 100 cast kijuu_deactivated_powerfullstrike
+cursedgear_rightmouse_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_contract:1 required
+    modifiers:
+        - chance 100 cast kijuu_demon_ability3pt
+        - chance 100 cast kijuu_deactivated_ability
+#~ F ~#
+cursedgear_F_nonsneak:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_contract:1 required
+    modifiers:
+        - variable kijuu_active:0 castinstead cursedgear_curse_activation
+        - variable kijuu_active:1 castinstead gimmepowerdemon_dummy
+cursedgear_F_sneaking:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_contract:1 required
+    modifiers:
+        - variable kijuu_active:0 castinstead cursedgear_curse_menu
+        - variable kijuu_active:1 castinstead cursedgear_curse_deactivation
+
+#~~~~~~~~#
+kijuu_activation_vfx_enchanted:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - kijuu_activation_vfx_enchanteddummy1
+        - DELAY 02
+        - kijuu_activation_vfx_enchanteddummy1
+        - DELAY 01
+        - kijuu_activation_vfx_enchanteddummy2
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.3
+        count: 1
+        height-offset: 1.0
+        forward-offset: 0.0
+kijuu_activation_vfx_cursed:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast kijuu_demon_vfx
+    spells:
+        - kijuu_activation_vfx_curseddummy1
+        - DELAY 02
+        - kijuu_activation_vfx_curseddummy1
+        - DELAY 01
+        - kijuu_activation_vfx_curseddummy2
+        - DELAY 01
+        - kijuu_activation_vfx_curseddummy3
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.3
+        count: 1
+        height-offset: 1.0
+        forward-offset: 0.0
+#~#
+testparticles:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      0:
+        position: caster
+        effect: particles
+        particle-name: warped_spore
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.1
+        count: 250
+        height-offset: 1.0
+        forward-offset: 0.0
+kijuu_activation_vfx_enchanteddummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      0:
+        position: caster
+        effect: particles
+        particle-name: white_ash
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.1
+        count: 25
+        height-offset: 1.0
+        forward-offset: 0.0
+kijuu_activation_vfx_enchanteddummy2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: poof
+        horiz-spread: 0.25
+        vert-spread: 0.25
+        speed: 0.3
+        count: 10
+        height-offset: 1.0
+        forward-offset: 0.0
+      0:
+        position: caster
+        effect: particles
+        particle-name: instant_effect
+        horiz-spread: 0.25
+        vert-spread: 0.25
+        speed: 0.3
+        count: 10
+        height-offset: 1.0
+        forward-offset: 0.0
+kijuu_activation_vfx_curseddummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.3
+        count: 1
+        height-offset: 1.0
+        forward-offset: 0.0
+      0:
+        position: caster
+        effect: particles
+        particle-name: flame
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.1
+        count: 5
+        height-offset: 1.0
+        forward-offset: 0.0
+      1:
+        position: caster
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.0
+        count: 2
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.2
+        count: 40
+        height-offset: 1.0
+        forward-offset: 0.0
+kijuu_activation_vfx_curseddummy2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: entity_effect
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.0
+        count: 15
+        height-offset: 1.0
+        forward-offset: 0.0
+      0:
+        position: caster
+        effect: particles
+        particle-name: flame
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0.05
+        count: 5
+        height-offset: 1.0
+        forward-offset: 0.0
+      1:
+        position: caster
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0.0
+        count: 5
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.2
+        count: 10
+        height-offset: 1.0
+        forward-offset: 0.0
+kijuu_activation_vfx_curseddummy3:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      0:
+        position: caster
+        effect: particles
+        particle-name: flame
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.25
+        count: 15
+        height-offset: 1.0
+        forward-offset: 0.0
