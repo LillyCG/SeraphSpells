@@ -1,0 +1,1851 @@
+variables:
+     demonmenu_demonobsess:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     demon_uncontrol:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     demon_menu:
+          type: player
+          min: 0
+          max: 100000000
+          default: 0
+     demonic_resistance:
+          type: player
+          min: 5
+          max: 20500
+          default: 5
+#~~~~~~#
+demon_menu_resistdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - demon_uncontrol =1
+        - namanari_timer =628
+    modifiers:
+        - chance 100 cast demon_menu_resistmsp
+#~~~~~~#
+demon_menu_resistmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - demon_menu_resistmsppt
+        - DELAY 02
+        - demon_menu_resistmsp
+demon_menu_resistmsppt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demon_uncontrol:1 castinstead demon_menu_resist
+demon_menu_resist:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "    &0 Вы одержимы демоном"
+    options:
+        neutral:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&f&l Сопротивляться"
+              lore:
+                - "&f     Нажмите что бы"
+                - "&f сопротивляться силе демона"
+            spell: demon_menu_resistpt
+            stay-open: true
+demon_menu_resistpt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon_rank:1 castinstead demon_menu_resistptdummy_myo
+        - variable kijuu_demon_rank:2 castinstead demon_menu_resistptdummy_yaksha
+        - variable kijuu_demon_rank:3 castinstead demon_menu_resistptdummy_w_king
+        - variable kijuu_demon_rank:4 castinstead demon_menu_resistptdummy_fiends
+        - variable kijuu_demon_rank:5 castinstead demon_menu_resistptdummy_dakini
+        - variable kijuu_demon_rank:6 castinstead demon_menu_resistptdummy_rakshasa
+        - variable kijuu_demon_rank:7 castinstead demon_menu_resistptdummy_bodhisattva
+        - variable kijuu_demon_rank:8 castinstead demon_menu_resistptdummy_asura
+        - variable kijuu_demon_rank:9 castinstead demon_menu_resistptdummy_blackdemons
+demon_menu_resistptdummy_myo:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>80 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<80 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_yaksha:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>160 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<160 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_w_king:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>320 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<320 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_fiends:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>640 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<640 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_dakini:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>1280 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<1280 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_rakshasa:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>2560 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<2560 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_bodhisattva:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>5120 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<5120 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_asura:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>10240 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<10240 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_resistptdummy_blackdemons:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonic_resistance>20480 castinstead demon_menu_mspppp_msp
+        - variable demonic_resistance<20480 castinstead demon_menu_mspppp_mspfailpptpt
+demon_menu_mspppp_mspfail:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - DELAY 02
+        - demon_menu_mspppp_mspfailppt
+demon_menu_mspppp_mspfailppt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demonmenu_demonobsess:1 required
+    variable-mods-cast:
+        - demonic_resistance -1
+demon_menu_mspppp_msp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 35 cast demon_menu_mspppp_mspsucc
+        - chance 100 cast demon_menu_mspppp_mspfail
+demon_menu_mspppp_mspsucc:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - buffactive demon_menu_failbuff1 required
+    spells:
+        - demon_menu_mspppp_mspcleanse
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+        - DELAY 01
+        - demon_menu_mspppp_mspdummyclose
+demon_menu_mspppp_mspcleanse:
+    spell-class: ".targeted.CleanseSpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast namanari_ragedummy2
+    remove:
+      - buff:demon_menu_failbuff2
+      - buff:demon_menu_failbuff1
+    target-self: true
+    variable-mods-cast:
+        - demon_uncontrol =0
+        - demonmenu_demonobsess =0
+demon_menu_mspppp_mspdummyclose:
+    spell-class: ".targeted.CloseInventorySpell"
+    target-self: true
+    delay: 1
+    helper-spell: true
+#~~~~~~#
+demon_menu:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    variable-mods-cast:
+        - demon_menu =1
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8      - Ну и зачем Ты"
+                - " &8        потревожил меня? "
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 13
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Ты и есть демон, да?"
+                - "&f Мне нужна Твоя сила"
+            spell: demon_menu1msp
+            stay-open: true
+# ветка 1_1
+demon_menu1_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =2
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - "&8&l         - Ты не достоин моей силы. "
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Я докажу что достоин!"
+            spell: demon_menu1_1_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&fЗакрой свой рот, демон!"
+            spell: demon_menu1_1_2msp
+            stay-open: true
+demon_menu1_1_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =3
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Хо.. Думаю, будет ли  "
+                - " &8           Твое сердце вкусным? "
+                - " &8          Ведь сейчас я его вырву."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Что?!"
+            spell: demon_menu_fail
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Да я тебя уничтожу!"
+            spell: demon_menu_fail
+            stay-open: true
+demon_menu1_1_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =4
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ты? Докажешь? "
+                - " &8          Ха-ха-ха." 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Да, докажу!"
+                - "&f Дай мне свою силу,"
+                - "&f   и Ты увидишь,"
+                - "&f  что я достоин!"
+            spell: demon_menu1_1_1msp
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&fЧего смешного?!"
+            spell: demon_menu1_1_1_2msp
+            stay-open: true
+demon_menu1_1_1_2_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =5
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Моя сила не для"
+                - " &8                 таких жалких"
+                - " &8           и грязных людишек," 
+                - " &8                   вроде Тебя" 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Может быть, но если Ты дашь мне шанс"
+                - "&f То я докажу, что не настолько жалок."
+            spell: demon_menu1_1_1_2_1_1msp
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&fДа как Ты смеешь, грязный демон!"
+                - "&fЗакрой свой гребанный рот"
+                - "&f и отдай мне свою чертову"
+                - "&f       силу"
+            spell: demon_menu1_1_1_2_1_2
+            stay-open: true
+demon_menu1_1_1_2_1_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =6
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ладно, убедил..."
+                - " &8        Я отдам Тебе свою силу."
+                - " &8              Однако, если Ты ошибешься."
+                - " &8                  Если Твое сердце"
+                - " &8               будет колебаться," 
+                - " &8                  то я поглощу Тебя." 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Я знаю это, демон."
+                - "&f  и мое сердце"
+                - "&f  не поколебимо"
+            spell: demon_menu_true
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Такому существу как Ты"
+                - "&f   не поглотить меня."
+            spell: demon_menu1_1_1_2_1_2
+            stay-open: true
+demon_menu1_1_1_2_1_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =7
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ты пожалеешь за это,"
+                - " &8              человечишка."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Пожалею?..."
+            spell: demon_menu_fail
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Жалеть за слова в сторону"
+                - "&f     чертового отродья?"
+            spell: demon_menu_fail
+            stay-open: true
+
+# ветка 1_2
+demon_menu1_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =8
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Моя сила?!..."
+                - " &8            Такому жалкому существу"
+                - " &8              не видать моей силы."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Верно, я жалок..."
+                - "&f Но я не отступлю"
+            spell: demon_menu1_2_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&fЭэй, мразь, да как ты смеешь?!"
+            spell: demon_menu1_1_2
+            stay-open: true
+demon_menu1_2_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =9
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Даже если я вырву " 
+                - " &8        и проглочу Твое сердце?" 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Даже так..."
+                - "&f Мне нет пути назад!"
+            spell: demon_menu1_2_1_1msp
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&fМое сердце?!"
+                - "&f Такой падали как Ты"
+                - "&f  его даже не тронуть."
+                - "&f кончай мозга ебать,"
+                - "&f  и отдавай мне свою силу!"
+            spell: demon_menu1_2_1_2mmmsp
+            stay-open: true
+demon_menu1_2_1_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =10
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ах, вот как..."
+                - " &8         Это будет забавно."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Это будет забавно?.."
+            spell: demon_menu1_2_1_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Что в этом будет забавного?"
+                - "&f то, как я буду распоряжаться"
+                - "&f  твоей чертовой силой?"
+            spell: demon_menu1_2_1_2mmsp
+            stay-open: true
+demon_menu1_2_1_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =11
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ладно, я дам Тебе свою силу."
+                - " &8              Но будь осторожен - "
+                - " &8                будешь неуверен в себе," 
+                - " &8                 и твое тело станет моим." 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f П-правда?!"
+            spell: demon_menu_true
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Осторожен?"
+                - "&f Мне нечего боятся."
+            spell: demon_menu1_2_1_1_2
+            stay-open: true
+demon_menu1_2_1_1_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =12
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Столько гордыни"
+                - " &8            в  одном человечишке..."
+                - " &8              Она тебя когда-нибудь погубит."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Возможно, когда-нибудь."
+                - "&f  Но сейчас,"
+                - "&f   мне нужна твоя сила."
+            spell: demon_menu1_3
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Моя гордыня?"
+                - "&f Как какой-то чертов демон"
+                - "&f смеет говорить о моей"
+                - "&f        гордыне?"
+            spell: demon_menu1_2_1_1_2_2
+            stay-open: true
+demon_menu1_2_1_1_2_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =13
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ты больно дерзок для "
+                - " &8          ничтожного человека."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Если Ты отдашь мне свою силу,"
+                - "&f  то я Тебя более не потревожу"
+            spell: demon_menu1_1_1_2_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Тогда кончай мозга ебать,"
+                - "&f и отдавай уже мне свою"
+                - "&f       чертову силу!"
+            spell: demon_menu1_2_1_1_2_2_2
+            stay-open: true
+demon_menu1_2_1_1_2_2_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =14
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ах... Ну тогда, для начала"
+                - " &8            я вырву Твое сердце из груди"
+                - " &8              полностью проглочу его,"
+                - " &8              а после убью"
+                - " &8                      Твоих друзей."
+                - " &8                      Одного за другим."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Ч-что?"
+            spell: demon_menu_fail
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Мы еще посмотрим,"
+                - "&f  чье сердце будет вырвано"
+                - "&f          из груди."
+            spell: demon_menu_fail
+            stay-open: true
+# ветка 1_3
+demon_menu1_3:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =15
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Интересно..."
+                - " &8        Для чего же моя сила"
+                - " &8            такому, как Ты"
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Я хочу защитить дорогих мне людей!"
+                - "&f Мне нужна Твоя сила"
+            spell: demon_menu1_1_1_2_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Я собираюсь отомстить"
+                - "&f КАЖДОМУ    ЧЕРТОВОМУ"
+                - "&f       ВАМПИРУ"
+            spell: demon_menu1_3_2
+            stay-open: true
+demon_menu1_3_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =16
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Ахх.. Месть...."
+                - " &8              Мне уже это нравится..."
+                - " &8               Верно..."
+                - " &8            Отдайся желаниям."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Отдаться желаниям?"
+                - "&f Тебе не очернить мое сердце, демон."
+            spell: demon_menu1_3_2_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Я хочу перебить каждого вампира,"
+                - "&f  хочу заставить их страдать,"
+                - "&f  хочу что бы каждый кровосос"
+                - "&f    молил меня о пощаде!"
+            spell: demon_menu1_3_2_2
+            stay-open: true
+demon_menu1_3_2_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =17
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Не очернить?"
+                - " &8              Твое сердце и так"
+                - " &8            чернее любой тьмы..."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Ты лжешь, демон!"
+            spell: demon_menu1_3_2_1_2_2
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Закрой свою пасть!"
+                - "&f Ты нихера обо мне не знаешь!"
+            spell: demon_menu1_3_2_1_2
+            stay-open: true
+demon_menu1_3_2_1_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =18
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Я знаю Тебя лучше других..."
+                - " &8             Ты впустил меня в свое"
+                - " &8                  темное сердце..."
+                - " &8               отпер двери к своим воспоминаниям"
+                - " &8                      и грязнейшим мыслям..."
+                - " &8                Твое сердце прогнившее," 
+                - " &8               источающее лишь тьму и корысть..." 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Нет! Это не так!"
+            spell: demon_menu1_3_2_1_2_1
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Закрой. Свою. Чертову."
+                - "&f    ПАСТЬ!!!"
+            spell: demon_menu1_3_2_1_2_2
+            stay-open: true
+demon_menu1_3_2_1_2_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =19
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Довольно... "
+                - " &8             С меня хватит этого театра."
+                - " &8             Я забираю Твое тело."
+                - " &8             Такому ничтожеству как ты"
+                - " &8                 иметь тело - роскошь."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f А?!"
+            spell: demon_menu_fail
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Э-э?!"
+            spell: demon_menu_fail
+            stay-open: true
+demon_menu1_3_2_1_2_1:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =20
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Не лги себе..."
+                - " &8             Ты маниакален..."
+                - " &8          Ты легко предашь друзей..."
+                - " &8               И поэтому.."
+                - " &8                я забираю Твое тело." 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Нет!"
+            spell: demon_menu_fail
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Мразь! Не смей говорить мне такое!"
+            spell: demon_menu_fail
+            stay-open: true
+demon_menu1_3_2_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =21
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Да... Больше.."
+                - " &8        Больше алности и корысти..."
+                - " &8         Больше темных желаний..."
+                - " &8                 Расскажи мне..."
+                - " &8               Отдайся тьме внутри себя." 
+                - " &8                Прими её полностью..."
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Довольно!"
+                - "&f Если ты отдашь мне свою силу,"
+                - "&f то я отдам тебе столько своей алчности,"
+                - "&f  сколько Ты только пожелаешь."
+            spell: demon_menu_true
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Я хочу что бы каждый кровосос,"
+                - "&f каждый грязный вампир,"
+                - "&f каждая тварь и каждый мерзавец"
+                - "&f  пожалели о своем рождении."
+            spell: demon_menu1_3_2_2_2
+            stay-open: true
+demon_menu1_3_2_2_2:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 2
+    helper-spell: true
+    title: "        &0 Ваше Сердце"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =22
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Как же мне нравится..."
+                - " &8             Такой грязный человек... Да..."
+                - " &8              Ты славно подпитал меня"
+                - " &8                         своей алчностью."
+                - " &8               Думаю, твой сосуд как раз"
+                - " &8                     подойдет для меня."
+                - " &8                    Я забираю ТВОЕ тело." 
+            spell: demonsaydummy
+            stay-open: true
+        neutral:
+            slot: 11
+            item: 
+              type: dirt
+              name: "&f&l Нейтральный ответ"
+              lore:
+                - "&f Что?!"
+            spell: demon_menu_fail
+            stay-open: true
+        aggressive:
+            slot: 15
+            item:
+              type: dirt
+              name: "&f&l Агрессивный ответ"
+              lore:
+                - "&f Тебе меня не одалеть! "
+                - "&f  Я еще должен убить "
+                - "&f   каждую мразь на этой земле! "
+            spell: demon_menu_fail
+            stay-open: true
+#~#
+demonsaydummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+#~#
+demon_menu_true:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 1
+    helper-spell: true
+    title: "&0 КОНТРАКТ ЗАКЛЮЧЕН"
+    variable-mods-cast:
+        - demon_menu =23
+    modifiers:
+        - variable demon_menu:0 denied
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Хорошо... контракт заключен..."
+                - " &8              Теперь я твой демон."
+                - " &8      Пользуйся мной, давай волю своим желаниям..."
+                - " &8      Но помни, настанет моей черед пользоваться"
+                - " &8                    тобой."
+            spell: demon_menu_truemsp
+            stay-open: false
+        neutral:
+            slot: 13
+            item: 
+              type: dirt
+              name: "&f&l ПРОДОЛЖИТЬ"
+              lore:
+                - "&f     Вы удачно"
+                - "&f  подписали контракт"
+                - "&f     с демоном"
+            spell: demon_menu_truemsp
+            stay-open: false
+demon_menu_fail:
+    spell-class: ".MenuSpell"
+    min-rows: true
+    delay: 1
+    helper-spell: true
+    title: "&0 ДЕМОН ПОГЛОТИЛ ВАШЕ СЕРДЦЕ"
+    modifiers:
+        - variable demon_menu:0 denied
+    variable-mods-cast:
+        - demon_menu =24
+    options:
+        demon_say:
+            slot: 4
+            item: 
+              type: dirt
+              name: "&8&l ДЕМОН"
+              lore:
+                - " &8        - Я сожру Твое сердце."
+                - " &8        Такому ничтожеству как Ты"
+                - " &8        нет необходимости ни в теле,"
+                - " &8                ни в сердце."
+                - " &8        Теперь это тело навсегда мое."
+                - " &8         Теперь Ты будешь наблюдать,"
+                - " &8           Как я расчленю и съем"
+                - " &8             всех Твоих друзей"
+            spell: demon_menu_failmsp
+            stay-open: false
+        neutral:
+            slot: 13
+            item: 
+              type: dirt
+              name: "&f&l ПРОДОЛЖИТЬ"
+              lore:
+                - "&f   Вы чувствуете как"
+                - "&f  рука демона пронзает"
+                - "&f      ваше сердце"
+            spell: demon_menu_failmsp
+            stay-open: false
+#~#
+demon_menu_truemsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    variable-mods-cast:
+        - demon_menu =0
+    spells:
+        - demon_menu_close
+        - DELAY 01
+        - demon_menu_truemsppt1
+        - demon_menu_close
+demon_menu_truemsppt1:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    variable-mods-cast:
+        - demon_menu =0
+    spells:
+        - demon_menu_close
+        - DELAY 15
+        - demon_menu_truemspdummy1
+        - demon_menu_close
+        - DELAY 01
+        - demon_menu_truemspdummy2
+        - demon_menu_close
+        - DELAY 01
+        - demon_menu_truemspdummy3
+        - DELAY 02
+        - demon_menu_truemspdummy3
+        - DELAY 02
+        - demon_menu_truemspdummy3
+        - DELAY 02
+        - demon_menu_truemspdummy3
+        - DELAY 02
+        - demon_menu_truemspdummy3
+demon_menu_failmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    variable-mods-cast:
+        - demon_menu =0
+    spells:
+        - demon_menu_close
+        - DELAY 01
+        - demon_menu_failmsppt1
+        - demon_menu_close
+demon_menu_failmsppt1:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    variable-mods-cast:
+        - demon_menu =0
+    spells:
+        - demon_menu_close
+        - DELAY 15
+        - demon_menu_failmspdummy0
+        - demon_menu_close
+        - DELAY 02
+        - demon_menu_failmspdummy1
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - demon_menu_failmspdummy1
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy2
+        - DELAY 01
+        - demon_menu_failmspdummy3
+        - DELAY 01
+        - demon_menu_failmspdummy3
+        - DELAY 01
+        - demon_menu_failmspdummy3
+        - DELAY 01
+        - demon_menu_failmspdummy4
+        - DELAY 01
+        - namanari_ragedummy2
+        - demon_menu_failbuff1
+        - demon_menu_failbuff2
+        - demon_menu_failbuffmspppt
+        - DELAY 01
+        - demon_menu_resistdummy
+demon_menu_failbuff1:
+    spell-class: ".buff.DummySpell"
+    duration: 30
+    cancel-on-death: false
+    helper-spell: true
+    cancel-on-logout: false
+demon_menu_failbuff2:
+    spell-class: ".buff.DummySpell"
+    duration: 630
+    cancel-on-death: false
+    helper-spell: true
+    cancel-on-logout: false
+demon_menu_failbuffmspppt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast demon_menu_failbuffmsppptmsp
+demon_menu_failbuffmsppptmsppass:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - fataldamage
+        - death
+    cast-without-target: true
+    helper-spell: true
+    cancel-default-action: false
+    chance: 100
+    cooldown: 0
+    modifiers:
+        - variable demonmenu_demonobsess:1 required
+    spells:
+        - demon_menu_failbuffmsppptmspdummyspawn
+demon_menu_failbuffmsppptmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - buffactive demon_menu_failbuff2 denied
+        - variable demonmenu_demonobsess:1 required
+    spells:
+        - demon_menu_failbuffmsppptmspdummy
+        - DELAY 02
+        - demon_menu_failbuffmsppptmspdummy
+        - DELAY 02
+        - demon_menu_failbuffmsppptmspdummy
+        - DELAY 02
+        - demon_menu_failbuffmsppptmspdummy
+        - demon_menu_failbuffmsppptmspdummyspawn
+        - DELAY 01
+        - demon_menu_failbuffmsppptmspdeath
+demon_menu_failbuffmsppptmspdummyspawn:
+    spell-class: ".ExternalCommandSpell"
+    helper-spell: true
+    enabled: true
+    tags:
+        - allowed_at_silence
+    can-cast-by-command: true
+    can-cast-with-item: true
+    helper-spell: true
+    block-chat-output: true
+    command-to-execute: 
+        - "mm m s demon_lowranked"
+    command-to-execute-later: []
+    command-delay: 0
+    temporary-permissions: 
+        - "mythicmobs.admin"
+    require-player-target: false
+    do-variable-replacement: true
+    execute-as-target-instead: false
+    execute-on-console-instead: false
+    modifiers:
+        - chance 100 cast namanari_ragedummy2
+    variable-mods-cast:
+        - demonmenu_demonobsess =0
+    obey-los: false
+    range: 10
+demon_menu_failbuffmsppptmspdeath:
+    spell-class: ".targeted.PainSpell"
+    helper-spell: true
+    damage: 99999999999999999999.5
+    ignore-armor: false
+    can-target: players,nonplayers
+    target-self: true
+    check-plugins: true
+    spell-damage-type: DEMONIC_CURSE
+demon_menu_failbuffmsppptmspdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: squid_ink
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.25
+        count: 5
+        height-offset: 1.15
+        forward-offset: 0.2
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.15
+        color: 840011
+        size: 1.5
+        count: 63
+        height-offset: 1.15
+        forward-offset: 0.2
+      1:
+        position: caster
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.0
+        color: 840011
+        size: 1.5
+        count: 3
+        height-offset: 1.15
+        forward-offset: 0.2
+      0:
+        position: caster
+        effect: particles
+        particle-name: block
+        material: redstone_block
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.2
+        count: 3
+        height-offset: 1.5
+        forward-offset: 0.2
+#~#
+demon_menu_close:
+    spell-class: ".targeted.CloseInventorySpell"
+    target-self: true
+    delay: 1
+    helper-spell: true
+demon_menu_failmspdummy4:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - namanari_obsession =1
+demon_menu_failmspdummy0:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.15
+        count: 5
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.9
+        vert-spread: 0.9
+        speed: 0.3
+        count: 15
+        height-offset: 1.0
+        forward-offset: 0.
+demon_menu_mspppp1:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - demon_menu_msppppdummy
+        - demon_menu_mspppppotion1
+        - DELAY 11
+        - demon_menu_mspppp1
+demon_menu_mspppp2:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - demon_menu_mspppppt
+        - demon_menu_mspppppotion2
+        - DELAY 03
+        - demon_menu_mspppp2
+demon_menu_mspppppt:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - variable demon_menu>0 required
+        - variable demon_menu:0 castinstead demon_menu_mspppp1
+        - variable demon_menu:0 castinstead demon_menu_mspppp2
+    spells:
+        - demon_menu_dummy
+demon_menu_mspppppotion2:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: slowness
+    duration: 10
+    strength: 255
+    modifiers:
+        - variable demon_menu>0 required
+    targeted: false
+    ambient: false
+    hidden: true
+demon_menu_mspppppotion1:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: blindness
+    duration: 40
+    strength: 255
+    modifiers:
+        - variable demon_menu>0 required
+    targeted: false
+    ambient: false
+    hidden: true
+demon_menu_pass:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - join
+        - respawn
+        - magicspellsloaded
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    spells:
+        - demon_menu_mspppp2
+        - demon_menu_mspppp1
+demon_menu_msppppdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable demon_menu:1 castinstead demon_menu
+        - variable demon_menu:2 castinstead demon_menu1_1
+        - variable demon_menu:3 castinstead demon_menu1_1_2
+        - variable demon_menu:4 castinstead demon_menu1_1_1
+        - variable demon_menu:5 castinstead demon_menu1_1_1_2_1
+        - variable demon_menu:6 castinstead demon_menu1_1_1_2_1_1
+        - variable demon_menu:7 castinstead demon_menu1_1_1_2_1_2
+        - variable demon_menu:8 castinstead demon_menu1_2
+        - variable demon_menu:9 castinstead demon_menu1_2_1
+        - variable demon_menu:10 castinstead demon_menu1_2_1_2
+        - variable demon_menu:11 castinstead demon_menu1_2_1_1
+        - variable demon_menu:12 castinstead demon_menu1_2_1_1_2
+        - variable demon_menu:13 castinstead demon_menu1_2_1_1_2_2
+        - variable demon_menu:14 castinstead demon_menu1_2_1_1_2_2_2
+        - variable demon_menu:15 castinstead demon_menu1_3
+        - variable demon_menu:16 castinstead demon_menu1_3_2
+        - variable demon_menu:17 castinstead demon_menu1_3_2_1
+        - variable demon_menu:18 castinstead demon_menu1_3_2_1_2
+        - variable demon_menu:19 castinstead demon_menu1_3_2_1_2_2
+        - variable demon_menu:20 castinstead demon_menu1_3_2_1_2_1
+        - variable demon_menu:21 castinstead demon_menu1_3_2_2
+        - variable demon_menu:22 castinstead demon_menu1_3_2_2_2
+        - variable demon_menu:23 castinstead demon_menu_true
+        - variable demon_menu:24 castinstead demon_menu_fail
+demon_menu_dummy:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    modifiers:
+        - variable demon_menu>0 required
+    spells:
+        - demon_menu_dummy1
+        - demon_menu_dummy1
+        - demon_menu_dummy1
+        - demon_menu_dummy2
+demon_menu_dummy2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particlespersonal
+        particle-name: entity_effect
+        horiz-spread: 3.5
+        vert-spread: 1.5
+        speed: 0.0
+        count: 575
+        height-offset: 0.8
+        forward-offset: 0.0
+      0:
+        position: caster
+        effect: particlespersonal
+        particle-name: explosion
+        horiz-spread: 3.5
+        vert-spread: 0.1
+        speed: 0.5
+        count: 15
+        height-offset: 0.2
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particlespersonal
+        particle-name: large_smoke
+        horiz-spread: 0.8
+        vert-spread: 0.8
+        speed: 0.3
+        count: 135
+        height-offset: 1.0
+        forward-offset: 0.0
+demon_menu_dummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particlespersonal
+        particle-name: entity_effect
+        horiz-spread: 3.5
+        vert-spread: 1.5
+        speed: 0.0
+        count: 75
+        height-offset: 0.8
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particlespersonal
+        particle-name: smoke
+        horiz-spread: 0.8
+        vert-spread: 0.8
+        speed: 0.3
+        count: 155
+        height-offset: 1.0
+        forward-offset: 0.0
+demon_menu_failmspdummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      4:
+        position: caster
+        effect: particles
+        particle-name: poof
+        horiz-spread: 1.5
+        vert-spread: 0.8
+        speed: 0.4
+        count: 25
+        height-offset: 0.4
+        forward-offset: 0.0
+      0:
+        delay: 02
+        position: caster
+        effect: particles
+        particle-name: explosion
+        horiz-spread: 1.5
+        vert-spread: 0.8
+        speed: 0.5
+        count: 15
+        height-offset: 0.4
+        forward-offset: 0.0
+      1:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.7
+        vert-spread: 0.7
+        speed: 0.15
+        count: 215
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.9
+        vert-spread: 0.9
+        speed: 0.15
+        count: 125
+        height-offset: 1.0
+        forward-offset: 0.0
+demon_menu_failmspdummy2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: ash
+        horiz-spread: 0.9
+        vert-spread: 0.9
+        speed: 0.3
+        count: 125
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.9
+        vert-spread: 0.9
+        speed: 0.3
+        count: 5
+        height-offset: 1.0
+        forward-offset: 0.0
+demon_menu_failmspdummy3:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.15
+        count: 1
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.15
+        count: 15
+        height-offset: 1.0
+        forward-offset: 0.0
+      3:
+        position: caster
+        effect: particles
+        particle-name: large_smoke
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.15
+        count: 15
+        height-offset: 1.0
+        forward-offset: 0.0
+demon_menu_truemspdummy2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - kijuu_contract =1
+demon_menu_truemspdummy3:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: ash
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.3
+        count: 10
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.7
+        vert-spread: 0.7
+        speed: 0.3
+        count: 5
+        height-offset: 1.0
+        forward-offset: 0.0
+demon_menu_truemspdummy1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.15
+        count: 2
+        height-offset: 1.0
+        forward-offset: 0.0
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.2
+        count: 10
+        height-offset: 1.0
+        forward-offset: 0.0
+#~#
+demon_menu1_1_1_2_1_1msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_1_1_2_1_1
+        - demon_menu1_1_1_2_1_1
+        - demon_menu1_3
+        - demon_menu1_3
+        - demon_menu1_2_1_1_2_2
+        - demon_menu1_2
+demon_menu1_1_1msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_2_1_1
+        - demon_menu1_1_1_2_1
+        - demon_menu1_2_1_1_2
+        - demon_menu1_2_1_2
+demon_menu1_1_2msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu_fail
+        - demon_menu_fail
+        - demon_menu1_1_2
+        - demon_menu1_1_2
+        - demon_menu1_1_2
+        - demon_menu1_2_1_1_2_2
+demon_menu1_1_1_2msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_2
+        - demon_menu1_1_1_2_1
+demon_menu1_2_1_2mmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_2
+        - demon_menu1_2_1_1_2
+        - demon_menu1_2_1_1_2
+        - demon_menu1_2_1_1_2_2
+demon_menu1_2_1_2mmmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_2_1_1_2_2_2
+        - demon_menu1_2_1_1_2_2_2
+        - demon_menu1_2_1_2
+demon_menu1_2_1_1msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_2_1_1
+        - demon_menu1_2_1_1_2_2
+        - demon_menu1_1_1_2_1_2
+demon_menu1msp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    cast-random-spell-instead: true
+    spells:
+        - demon_menu1_1
+        - demon_menu1_1
+        - demon_menu1_1
+        - demon_menu1_2
+        - demon_menu1_2
+        - demon_menu1_3

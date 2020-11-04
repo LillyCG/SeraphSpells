@@ -1,0 +1,120 @@
+vampire_demontransform:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - buffactive vampire_bloodsickdummy denied
+    spells:
+        - vampire_demontransformpt
+vampire_demontransformpt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast vampire_demontransform_lowdemon
+        - chance 100 cast vampire_demontransform_highdemon
+vampire_demontransform_highdemon:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable vampire_bloodsick:1 required
+        - buffactive vampire_bloodsickdummy denied
+vampire_demontransform_lowdemon:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    variable-mods-cast:
+        - vampire_bloodsick =0
+    modifiers:
+        - variable vampire_bloodsick:1 required
+        - buffactive vampire_bloodsickdummy denied
+    spells:
+        - vampire_demontransform_lowdemondummy
+        - DELAY 02
+        - vampire_demontransform_lowdemondummy
+        - DELAY 02
+        - vampire_demontransform_lowdemondummy
+        - DELAY 02
+        - vampire_demontransform_lowdemondummy
+        - vampire_demontransform_lowdemonptspawn
+        - DELAY 01
+        - vampire_demontransform_lowdemondeath
+vampire_demontransform_lowdemonptspawn:
+    spell-class: ".ExternalCommandSpell"
+    helper-spell: true
+    enabled: true
+    tags:
+        - allowed_at_silence
+    can-cast-by-command: true
+    can-cast-with-item: true
+    helper-spell: true
+    block-chat-output: true
+    command-to-execute: 
+        - "mm m s demon_lowranked"
+    command-to-execute-later: []
+    command-delay: 0
+    temporary-permissions: 
+        - "mythicmobs.admin"
+    require-player-target: false
+    do-variable-replacement: true
+    execute-as-target-instead: false
+    execute-on-console-instead: false
+    obey-los: false
+    range: 10
+vampire_demontransform_lowdemondeath:
+    spell-class: ".targeted.PainSpell"
+    helper-spell: true
+    damage: 99999999999999999999.5
+    ignore-armor: false
+    can-target: players,nonplayers
+    target-self: true
+    check-plugins: true
+    variable-mods-cast:
+        - vampire_blood =150
+    spell-damage-type: DEMONIC_CURSE
+vampire_demontransform_lowdemondummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: squid_ink
+        horiz-spread: 0.5
+        vert-spread: 0.5
+        speed: 0.25
+        count: 5
+        height-offset: 1.15
+        forward-offset: 0.2
+      2:
+        position: caster
+        effect: particles
+        particle-name: smoke
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.15
+        color: 840011
+        size: 1.5
+        count: 63
+        height-offset: 1.15
+        forward-offset: 0.2
+      1:
+        position: caster
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.0
+        color: 840011
+        size: 1.5
+        count: 3
+        height-offset: 1.15
+        forward-offset: 0.2
+      0:
+        position: caster
+        effect: particles
+        particle-name: block
+        material: redstone_block
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.2
+        count: 3
+        height-offset: 1.5
+        forward-offset: 0.2

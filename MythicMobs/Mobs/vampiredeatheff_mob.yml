@@ -1,0 +1,18 @@
+vampire_deatheff:
+  Type: armor_stand
+  Display: "&0&l "
+  Health: 1000
+  Damage: 0.1
+  Angry: false
+  RemoveAI: true
+  Despawn: true
+  Options:
+    Invisible: true
+    MovementSpeed: 0.001
+    Small: true
+    PreventSunburn: true
+    Interactable: true
+    Silent: true
+  Skills:
+  - skill{s=vampire_deatheffskill} ~onSpawn
+  - CancelEvent ~onDamaged

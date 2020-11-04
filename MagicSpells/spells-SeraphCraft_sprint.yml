@@ -1,0 +1,191 @@
+seraph_jumpsystem:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - jump
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    modifiers:
+        - sprinting required
+    spells:
+        - seraph_jumpsystemdummy
+seraph_sprintsystem:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - startsprint
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    spells:
+        - seraph_sprintsystemmsp
+#
+seraph_sprintsystemmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - DELAY 02
+        - seraph_sprintsystemmspdummy
+seraph_sprintsystemmspdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - collection race_human castinstead seraph_sprintsystemmsppt_human
+        - variable race:2 castinstead seraph_sprintsystemmsppt_vampire
+        - variable race:3 castinstead seraph_sprintsystemmsppt_demon
+        - variable race:4 castinstead seraph_sprintsystemmsppt_cursedvampire
+        - variable race:5 castinstead seraph_sprintsystemmsppt_cursedhuman
+
+seraph_jumpsystemdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - collection race_human castinstead seraph_jumpsystemdummy_human
+        - variable race:2 castinstead seraph_jumpsystemdummy_vampire
+        - variable race:3 castinstead seraph_jumpsystemdummy_demon
+        - variable race:4 castinstead seraph_jumpsystemdummy_cursedvampire
+        - variable race:5 castinstead seraph_jumpsystemdummy_cursedhuman
+#~~~~~~~~~~#
+seraph_jumpsystemdummy_human:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 37.5
+    upward-velocity: 5.5
+    cancel-damage: true
+seraph_jumpsystemdummy_vampire:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 67.5
+    upward-velocity: 20.5
+    cancel-damage: true
+seraph_jumpsystemdummy_demon:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 80.5
+    upward-velocity: 39.5
+    cancel-damage: true
+#~~~~~~~~~~#
+seraph_sprintsystemmsppt_human:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sprinting required
+    spells:
+        - seraph_sprintsystemmsppt_buff_human
+        - DELAY 01
+        - seraph_sprintsystemmsppt_human
+seraph_sprintsystemmsppt_vampire:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sprinting required
+    spells:
+        - seraph_sprintsystemmsppt_buff_vampire
+        - DELAY 01
+        - seraph_sprintsystemmsppt_vampire
+seraph_sprintsystemmsppt_demon:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sprinting required
+    spells:
+        - seraph_sprintsystemmsppt_buff_demon
+        - DELAY 01
+        - seraph_sprintsystemmsppt_demon
+seraph_sprintsystemmsppt_cursedhuman:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sprinting required
+    spells:
+        - seraph_sprintsystemmsppt_buff_cursedhuman
+        - DELAY 01
+        - seraph_sprintsystemmsppt_cursedhuman
+seraph_sprintsystemmsppt_cursedvampire:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    modifiers:
+        - sprinting required
+    spells:
+        - seraph_sprintsystemmsppt_buff_cursedvampire
+        - DELAY 01
+        - seraph_sprintsystemmsppt_cursedvampire
+#~~~~~~~~~~#
+seraph_sprintsystemmsppt_buff_human:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: speed
+    duration: 2
+    strength: 5.5
+    targeted: false
+    ambient: false
+    modifiers:
+        - variable kijuu_enhance:1 addpower 1.5
+        - variable kijuu_active:1 addpower 3.5
+        - variable kijuu_demon_type:1 power 2.55
+        - variable kijuu_demon_type:2 power 1.85
+        - variable kijuu_demon_type:3 power 2.25
+        - variable kijuu_gimmepower_stage:1 addpower 1.25
+        - variable kijuu_gimmepower_stage:2 addpower 1.75
+        - variable kijuu_gimmepower_stage:3 addpower 2.55
+        - variable namanari_mode:1 addpower 1.35
+        - variable namanari_mode:2 addpower 1.65
+        - variable namanari_mode:3 addpower 1.80
+        - variable namanari_mode:4 addpower 2.35
+        - variable namanari_mode:5 addpower 2.55
+        - variable pills_amount>0 power 1.5
+        - variable pills_amount>1 power 1.15
+        - variable pills_amount>2 power 1.25
+        - variable pills_amount>3 power 1.35
+        - variable pills_amount>4 power 1.25
+        - variable pills_amount>5 power 1.2
+        - variable pills_amount>6 power 1.15
+        - variable pills_amount>7 power 1.12
+    hidden: true
+seraph_sprintsystemmsppt_buff_vampire:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: speed
+    duration: 2
+    strength: 10
+    targeted: false
+    ambient: false
+    modifiers:
+        - variable vampire_gear_active:1 power 1.5
+        - variable vampire_gear_blooddrink:1 power 2.15
+        - variable vampire_gear_blooddrink_howmuch>0 power 1.25
+        - variable vampire_gear_blooddrink_howmuch>1 power 1.35
+        - variable vampire_gear_blooddrink_howmuch>2 power 1.65
+        - variable vampire_gear_blooddrink_howmuch>3 power 1.85
+        - variable vampire_gear_blooddrink_howmuch>4 power 2.15
+    hidden: true
+seraph_sprintsystemmsppt_buff_demon:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: speed
+    duration: 2
+    strength: 25
+    targeted: false
+    ambient: false
+    hidden: true
+seraph_sprintsystemmsppt_buff_cursedhuman:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: speed
+    duration: 2
+    strength: 19
+    targeted: false
+    ambient: false
+    hidden: true
+seraph_sprintsystemmsppt_buff_cursedvampire:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: speed
+    duration: 2
+    strength: 25
+    targeted: false
+    ambient: false
+    hidden: true

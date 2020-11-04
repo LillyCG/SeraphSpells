@@ -1,0 +1,246 @@
+variables:
+     vampire_bloodsick:
+          type: player
+          min: 0
+          max: 1
+          default: 0
+     vampire_blood:
+          type: player
+          min: 0
+          max: 1000000000000000000000
+          default: 50
+     vampire_blood_max:
+          type: player
+          min: 0
+          max: 1000000000000000000000
+          default: 500
+#~~~~~~~~~~~~~~~#
+vampire_stats:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - join
+        - respawn
+        - magicspellsloaded
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    modifiers:
+        - variable race:2 required
+    spells:
+        - vampire_statsmsp
+        - vampire_regenmsp
+        - vampire_bloodmsp1
+        - vampire_bloodmsp2
+        - vampire_bloodmsp3
+        - vampire_statsfallresist
+vampire_statsfallresist:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    normal-damage-types:
+        - FALL
+    multiplier: 0.15
+vampire_bloodmsp1:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_bloodmspdummy
+        - DELAY 02
+        - vampire_bloodmsp1
+vampire_bloodmsp2:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_bloodmsp2dummy
+        - DELAY 02
+        - vampire_bloodmsp2
+vampire_bloodmsp3:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_bloodmsp3dummy
+        - DELAY 02
+        - vampire_bloodmsp3
+vampire_bloodmsp3dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable vampire_blood:0 cast vampire_bloodmsp3dummypt
+vampire_bloodmsp3dummypt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast vampire_bloodsickdummy
+        - variable vampire_bloodsick:1 cast vampire_demontransform
+vampire_bloodsickdummy:
+    spell-class: ".buff.DummySpell"
+    variable-mods-cast:
+        - vampire_bloodsick =1
+    duration: 10
+    cancel-on-death: false
+    helper-spell: true
+    cancel-on-logout: false
+    modifiers:
+        - buffactive vampire_bloodsickdummy denied
+vampire_bloodmspdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      1:
+        position: caster
+        effect: actionbartext
+        message: "&4&l{ Запас крови &c| &4%var:vampire_blood:0%&c/&4%var:vampire_blood_max:0% &4&l}"
+        broadcast: false
+vampire_bloodmsp2dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable vampire_blood>vampire_blood_max castinstead vampire_bloodmsp2dummypt
+        - variable vampire_blood:vampire_blood_max castinstead vampire_bloodmsp2dummypt
+vampire_bloodmsp2dummypt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - vampire_blood =vampire_blood_max
+#~#
+vampire_regenmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_regenmsppt
+        - DELAY 20
+        - vampire_regenmsp
+vampire_regenmsppt:
+    spell-class: ".targeted.HealSpell"
+    helper-spell: true
+    heal-amount: 5.5
+    cancel-if-full: true
+    target-self: true
+    str-cast-self: ""
+    str-cast-target: ""
+    str-no-target: ""
+    str-max-health: ""
+vampire_statsmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_statsmspresist1
+        - vampire_statsmspresist2
+        - vampire_statsmspresist3
+        - vampire_statsmspresist4
+        - vampire_statsmspresist5
+        - vampire_statsmspresist6
+        - DELAY 05
+        - vampire_statsmspbuffs
+vampire_statsmspbuffs:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_statsmspbuffsmsp
+        - DELAY 05
+        - vampire_statsmspbuffs
+vampire_statsmspresist6:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    spell-damage-types:
+        - VAMPIRE_BITE
+    multiplier: 255.5
+    modifiers:
+        - variable vampire_blood<50 power 5.5
+vampire_statsmspresist5:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    spell-damage-types:
+        - VAMPIRE_ATTACKS
+    multiplier: 0.95
+    modifiers:
+        - variable vampire_blood<50 power 12.5
+vampire_statsmspresist4:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    spell-damage-types:
+        - DEMON_ATTACKS
+    multiplier: 1.65
+    modifiers:
+        - variable vampire_blood<50 power 12.5
+vampire_statsmspresist3:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    spell-damage-types:
+        - CURSED_GEAR_ATTACKS
+    multiplier: 0.85
+    modifiers:
+        - variable vampire_blood<50 power 12.5
+vampire_statsmspresist1:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    normal-damage-types:
+        - ENTITY_ATTACK
+    multiplier: 0.05
+    modifiers:
+        - variable vampire_blood<50 power 12.5
+vampire_statsmspresist2:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    spell-damage-types:
+        - ENCHANTED_GEAR_ATTACKS
+    multiplier: 0.25
+    modifiers:
+        - variable vampire_blood<50 power 12.5
+vampire_statsmspbuffsmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - vampire_statsmspbuffsmspbuff1
+        - vampire_statsmspbuffsmspbuff2
+vampire_statsmspbuffsmspbuff1:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: strength
+    duration: 20
+    strength: 9
+    targeted: false
+    ambient: false
+    hidden: true
+    modifiers:
+        - variable vampire_blood<50 power 0.5
+vampire_statsmspbuffsmspbuff2:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: jump_boost
+    duration: 20
+    strength: 4
+    targeted: false
+    ambient: false
+    hidden: true
+    modifiers:
+        - variable vampire_blood<50 power 0.5

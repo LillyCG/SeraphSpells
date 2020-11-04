@@ -1,0 +1,5 @@
+vampire_deatheffskill:
+  Skills:
+  - command{c="c forcecast <caster.uuid> vampire_deatheffmspeff";} @self
+  - delay 15
+  - remove @self

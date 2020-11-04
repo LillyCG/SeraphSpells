@@ -1,0 +1,64 @@
+variables:
+     healthvar_upvalue_vampage:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000
+          default: 50
+     vampire_age:
+          type: player
+          min: 1
+          max: 8000
+          default: 1
+     vampire_age_exp:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000000000
+          default: 0
+     vampire_age_exp_max:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000000000
+          default: 10
+#~#
+vampire_age:
+    spell-class: ".PassiveSpell"
+    always-granted: true
+    triggers:
+        - join
+        - respawn
+        - magicspellsloaded
+    cast-without-target: true
+    helper-spell: true
+    chance: 100
+    cooldown: 0
+    modifiers:
+        - variable race:2 required
+    spells:
+        - vampire_ageup
+#~#
+vampire_ageup:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - vampire_ageuppt
+        - DELAY 03
+        - vampire_ageup
+#~~~~~~~~~~~~~~~~~~~~#
+vampire_ageuppt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable vampire_age_exp:vampire_age_exp_max castinstead vampire_ageuppt_up
+        - variable vampire_age_exp>vampire_age_exp_max castinstead vampire_ageuppt_up
+vampire_ageuppt_up:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - vampire_age_exp =0
+        - vampire_age_exp_max *2
+        - vampire_age +1
+        - healthvar_max +healthvar_upvalue_vampage
+        - healthvar_upvalue_vampage +50
