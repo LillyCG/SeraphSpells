@@ -139,8 +139,32 @@ variables:
                     # F (БЕЗ ШИФТА ) - "ДАЙ МНЕ СИЛЫ, ДЕМОН"
                     # F (С ШИФТОМ ) - ДЕАКТИВАЦИЯ ПРОКЛЯТЬЯ
 #````````````````````````````````````#
-
-
+# ~~~ [ kijuu up dummys ] ~~~ #
+kijuu_demonlvlup:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - kijuu_demon_lvl +1
+    modifiers:
+        - chance 100 cast kijuu_demonlvlupmsp
+kijuu_demonlvlupmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - DELAY 02
+        - kijuu_demonlvlupmspptdummy
+kijuu_demonlvlupmspptdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon_lvl:10 cast kijuu_demonlvlupmspptdummypt
+        - variable kijuu_demon_lvl:20 cast kijuu_demonlvlupmspptdummypt
+kijuu_demonlvlupmspptdummypt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - kijuu_demon_rank +1
+#````````````````````````````````````#
 # ~~~ [ kijuu system ] ~~~ #
 
 
