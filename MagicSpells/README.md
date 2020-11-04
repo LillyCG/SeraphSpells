@@ -1,5 +1,5 @@
 # SeraphSpells
-###### Spells for Owari No Seraph-titled Server
+###### MagicSpells skills and systems for Owari No Seraph-titled Server
 ###### Spells configs authors: 
 		Discord: AM11nim#9420 | Github: LillyCG
 		Discord: Jezik#9984 | Github: ?
