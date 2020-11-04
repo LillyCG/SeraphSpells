@@ -9,3 +9,4 @@
 		MagicSpells | https://github.com/TheComputerGeek2/MagicSpells/releases/tag/e55ab88
 		EffectLib | https://dev.bukkit.org/projects/effectlib/files/2794064
 		MythicMobs | https://www.mythicmobs.net/index.php?pages/download/
+
