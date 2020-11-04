@@ -14,6 +14,11 @@ variables:
           min: 0
           max: 10
           default: 0
+     kijuu_demon_lvl:
+          type: player
+          min: 1
+          max: 20
+          default: 1
      kijuu_demon_type:
           type: player
           min: 0
