@@ -1,5 +1,5 @@
 # SeraphSpells
-###### MagicSpells and MythicMobs configs for Owari No Seraph-titled Server
+###### MagicSpells/MythicMobs configs for Owari No Seraph-titled Server
 ###### Configs authors:
 		Discord: AM11nim#9420 | Github: LillyCG
 		Discord: Jezik#9984 | Github: ?
