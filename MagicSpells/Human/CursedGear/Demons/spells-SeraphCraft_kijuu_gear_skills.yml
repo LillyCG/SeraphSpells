@@ -348,6 +348,7 @@ kijuu_demon_vfx:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     modifiers:
+        - variable kijuu_demon:9000000 castinstead kijuu_testdemon_ability0
         - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability0
         - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability0
         - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability0
