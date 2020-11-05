@@ -177,6 +177,7 @@ demon_menu_mspppp_mspcleanse:
     variable-mods-cast:
         - demon_uncontrol =0
         - demonmenu_demonobsess =0
+        - demonic_resistance +10
 demon_menu_mspppp_mspdummyclose:
     spell-class: ".targeted.CloseInventorySpell"
     target-self: true
