@@ -25,7 +25,7 @@ parry_sys_aoeptpt:
         - parry_sys_aoeptptaoe
         - parry_sys_aoeptptaoetossself
 parry_sys_aoeptptinvur:
-    spell-class: ".buff.InvulnerabilitySpell
+    spell-class: ".buff.InvulnerabilitySpell"
     helper-spell: true
     num-uses: 3
     modifiers:
