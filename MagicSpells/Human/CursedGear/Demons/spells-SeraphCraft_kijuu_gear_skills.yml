@@ -112,6 +112,7 @@ kijuu_demon_ability0:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     modifiers:
+        - variable kijuu_demon:9000000 castinstead kijuu_testdemon_ability0
         - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability0
         - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability0
         - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability0
@@ -167,6 +168,7 @@ kijuu_demon_ability1:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     modifiers:
+        - variable kijuu_demon:9000000 castinstead asuramaru_darkwhirlwind
         - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability1
         - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability1
         - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability1
@@ -233,6 +235,7 @@ kijuu_demon_ability2:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     modifiers:
+        - variable kijuu_demon:9000000 castinstead asuramaru_kannon
         - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability2
         - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability2
         - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability2
@@ -288,6 +291,7 @@ kijuu_demon_ability3:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     modifiers:
+        - variable kijuu_demon:9000000 castinstead asuramaru_kannon_ten_thousand_blade
         - variable kijuu_demon:1000000 castinstead kijuu_testdemon_ability3
         - variable kijuu_demon:1000001 castinstead kijuu_testdemon_ability3
         - variable kijuu_demon:1000002 castinstead kijuu_testdemon_ability3
