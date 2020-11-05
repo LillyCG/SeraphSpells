@@ -11,6 +11,7 @@ parry_sys_aoept:
     spell-on-tick: parry_sys_aoeptpt
     spell-on-hit-air: parry_sys_aoeptpt
     spell: parry_sys_aoeptpt
+#~ ~#
 parry_sys_aoeptpt:
     spell-class: ".TargetedMultiSpell"
     check-individual-cooldowns: false
@@ -34,9 +35,6 @@ parry_sys_aoeptptinvur:
         - CURSED_GEAR_ATTACKS
         - VAMPIRE_ATTACKS
         - CURSED_GEAR_ATTACKS
-    damage-causes:
-        - ENTITY_ATTACK
-        - projectile
     duration: 1
 parry_sys_aoeptptaoe:
     spell-class: ".targeted.AreaEffectSpell"
