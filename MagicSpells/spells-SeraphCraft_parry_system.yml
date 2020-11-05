@@ -1,0 +1,124 @@
+parry_sys_aoept:
+    spell-class: ".targeted.ProjectileModifySpell"
+    helper-spell: true
+    horizontal-radius: 3.5
+    vertical-radius: 3.5
+    point-blank: false
+    spell-on-entity-location: parry_sys_aoeptpt
+    spell-on-duration-end: parry_sys_aoeptpt
+    spell-on-hit-entity: parry_sys_aoeptpt
+    spell-on-hit-ground: parry_sys_aoeptpt
+    spell-on-tick: parry_sys_aoeptpt
+    spell-on-hit-air: parry_sys_aoeptpt
+    spell: parry_sys_aoeptpt
+parry_sys_aoeptpt:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    helper-spell: true
+    can-target: self,players,nonplayers
+    modifiers:
+        - chance 100 cast parry_sys_aoeptptinvur
+    spells:
+        - parry_sys_aoeptptptdummy
+        - parry_sys_aoeptptaoe
+        - parry_sys_aoeptptaoetossself
+parry_sys_aoeptptinvur:
+    spell-class: ".buff.InvulnerabilitySpell
+    helper-spell: true
+    num-uses: 3
+    modifiers:
+        - buffactive parry_sys_aoeptptinvur denied
+    spell-damage-types:
+        - ENCHANTED_GEAR_ATTACKS
+        - CURSED_GEAR_ATTACKS
+        - VAMPIRE_ATTACKS
+        - CURSED_GEAR_ATTACKS
+    damage-causes:
+        - ENTITY_ATTACK
+        - projectile
+    duration: 1
+parry_sys_aoeptptaoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 1.5
+    vertical-radius: 1.5
+    helper-spell: true
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - parry_sys_aoeptptaoetoss
+parry_sys_aoeptptaoetoss:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 20
+    damage: 0
+    helper-spell: true
+    horizontal-force: 9.3
+    vertical-force: 1.5
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
+parry_sys_aoeptptaoetossself:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 20
+    damage: 0
+    helper-spell: true
+    horizontal-force: -9.3
+    vertical-force: 1.5
+    obey-los: true
+    target-self: true
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
+parry_sys_aoeptptptdummy:
+    spell-class: ".targeted.DummySpell"
+    helper-spell: true
+    effects:
+      4:
+        position: target
+        effect: particles
+        particle-name: flash
+        horiz-spread: 0.05
+        vert-spread: 0.05
+        speed: 0.5
+        count: 1
+        height-offset: 0.55
+      3:
+        position: target
+        effect: particles
+        particle-name: flame
+        horiz-spread: 0.15
+        vert-spread: 0.15
+        speed: 0.0
+        count: 15
+        height-offset: 0.55
+      2:
+        position: target
+        effect: particles
+        particle-name: explosion
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.15
+        count: 1
+        height-offset: 0.55
+      1:
+        position: target
+        effect: particles
+        particle-name: dust
+        horiz-spread: 0.35
+        vert-spread: 0.35
+        speed: 0.0
+        color: FF3C1E
+        count: 60
+        height-offset: 0.55
+      0:
+        position: target
+        effect: particles
+        particle-name: flame
+        horiz-spread: 0.35
+        vert-spread: 0.35
+        speed: 0.15
+        count: 10
+        height-offset: 0.55
