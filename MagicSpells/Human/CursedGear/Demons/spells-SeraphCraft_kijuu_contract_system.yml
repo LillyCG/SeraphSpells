@@ -1727,6 +1727,7 @@ demon_menu_truemspdummy2:
     helper-spell: true
     variable-mods-cast:
         - kijuu_contract =1
+        - demonic_resistance +150
 demon_menu_truemspdummy3:
     spell-class: ".instant.DummySpell"
     helper-spell: true
