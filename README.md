@@ -2,7 +2,7 @@
 ###### MagicSpells/MythicMobs configs for Owari No Seraph-titled Server
 ###### Configs authors:
 		Discord: AM11nim#9420 | Github: LillyCG
-		Discord: Jezik#9984 | Github: ?
+		Discord: Jezik#9984 | Github: Je2iK
 		Discord: Dvz#6969 | Github: Dvzzzz
 		Discord: Jar11k#4734 | Github: Jar11k
 ###### Links to used plugins:
