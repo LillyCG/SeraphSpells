@@ -30,6 +30,8 @@ human_rank_resist:
     cast-without-target: true
     helper-spell: true
     chance: 100
+    tags:
+        - allowed_at_silence
     cooldown: 0
     modifiers:
         - collection race_human required
@@ -43,6 +45,8 @@ human_vampirebite_resist:
     toggle: false
     str-cast-self: ""
     str-fade: ""
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_enhance:1 power 0.95
         - variable kijuu_active:1 power 0.65
@@ -67,6 +71,8 @@ humanranking:
     require-entity-target: false
     can-target: self
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - humanrankingpt
         - DELAY 03
@@ -75,12 +81,16 @@ humanranking:
 humanrankingpt:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable human_rank_exp:human_rank_exp_max castinstead humanrankingpt_up
         - variable human_rank_exp>human_rank_exp_max castinstead humanrankingpt_up
 humanrankingpt_up:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - chance 100 cast humanrankingpt_up_zvanie
     effects:
@@ -102,6 +112,8 @@ humanrankingpt_up_zvanie:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
     require-entity-target: false
+    tags:
+        - allowed_at_silence
     can-target: self
     helper-spell: true
     spells:
@@ -110,6 +122,8 @@ humanrankingpt_up_zvanie:
 humanrankingpt_up_zvaniept:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable human_rank:1 castinstead humanrankingpt_up_zvaniept_pt1
         - variable human_rank:2 castinstead humanrankingpt_up_zvaniept_pt2
