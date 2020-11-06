@@ -16,19 +16,43 @@ horsemen_war_skill3:
         - DELAY 02
         - horsemen_war_skill3dummymsp
         - DELAY 02
-        - horsemen_war_skill3dummymsp
-        - DELAY 02
-        - horsemen_war_skill3dummymsp
-        - DELAY 02
-        - horsemen_war_skill3dummymsp
-        - DELAY 02
-        - horsemen_war_skill3dummymsp
-        - DELAY 02
-        - horsemen_war_skill3dummymsp
-        - DELAY 02
-        - horsemen_war_skill3dummymsp
-        - DELAY 02
         - horsemen_war_skill3leap2
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3leap3
+        - horsemen_war_skill3dummymsp
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - horsemen_war_skill3dummymsp
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - horsemen_war_skill3dummymsp
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
+        - DELAY 01
+        - Horsemen_war_thrust_slash_1
 horsemen_war_skill4:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -39,8 +63,9 @@ horsemen_war_skill4:
         - horsemen_war_skill4leap1
         - DELAY 02
         - Horsemen_war_v_l_r_slash_d
-        - DELAY 16
+        - DELAY 10
         - horsemen_war_skill4leap2
+        - DELAY 02
         - Horsemen_war_t_slash_r_l
 horsemen_war_skill2:
     spell-class: ".MultiSpell"
@@ -199,6 +224,12 @@ horsemen_war_skill3leap2:
     forward-velocity: -3.5
     upward-velocity: 3.0
     cancel-damage: true
+horsemen_war_skill3leap3:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 43.5
+    upward-velocity: 1.0
+    cancel-damage: true
 horsemen_war_skill4leap1:
     spell-class: ".instant.LeapSpell"
     helper-spell: true
@@ -208,7 +239,7 @@ horsemen_war_skill4leap1:
 horsemen_war_skill4leap2:
     spell-class: ".instant.LeapSpell"
     helper-spell: true
-    forward-velocity: 13.5
+    forward-velocity: 23.5
     upward-velocity: -3.0
     cancel-damage: true
 horsemen_war_skill3dummymsp:
@@ -306,15 +337,35 @@ horsemen_war_skill3dummymspptaoestun:
         - horsemen_war_skill3dummymspptaoestunpt1
         - DELAY 05
         - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 08
+        - horsemen_war_skill3dummymspptaoestunpt2
+horsemen_war_skill3dummymspptaoestunpt2:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 12
+    horizontal-force: 15.5
+    tags:
+        - allowed_at_silence
+    vertical-force: 2.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: HORSEMENS_OF_JOHN
+    beneficial: false
 horsemen_war_skill3dummymspptaoestunpt1:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
     damage: 1
-    horizontal-force: 9.5
+    horizontal-force: 0.5
     tags:
         - allowed_at_silence
-    vertical-force: 3.1
+    vertical-force: -0.1
     obey-los: true
     can-target: players,nonplayers
     check-plugins: true
@@ -323,7 +374,7 @@ horsemen_war_skill3dummymspptaoestunpt1:
 horsemen_war_skill3dummymspptaoestunpt2:
     spell-class: ".targeted.StunSpell"
     helper-spell: true
-    duration: 40
+    duration: 60
     tags:
         - allowed_at_silence
     target-self: true
@@ -334,7 +385,7 @@ horsemen_war_skill3dummymspptaoestunpt3:
     prevent-chat: false
     helper-spell: true
     prevent-commands: true
-    duration: 40
+    duration: 60
     str-no-target: ""
     tags:
         - allowed_at_silence
