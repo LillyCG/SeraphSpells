@@ -1,5 +1,5 @@
 horsemen_war:
-  Type: wither_skeleton
+  Type: zombie
   Display: "&f&lHorsemen of John"
   Health: 2500
   Modules:
@@ -53,7 +53,7 @@ horsemen_war:
   - threat{a=100} @trigger ~onDamaged
   - skill{s=horsemen_threat_null} ~onTimer:50
 horsemen_conquest:
-  Type: wither_skeleton
+  Type: zombie
   Display: "&f&lHorsemen of John"
   Health: 2500
   Modules:
