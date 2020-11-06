@@ -67,6 +67,10 @@ horsemen_damage:
         - variable pills_amount>1 power 0.70
         - variable pills_amount>2 power 0.55
         - variable pills_amount>3 power 0.35
+        - variable pills_amount>4 power 0.25
+        - variable pills_amount>5 power 0.2
+        - variable pills_amount>6 power 0.15
+        - variable pills_amount>7 power 0.1
 demonic_curse:
     spell-class: ".buff.ResistSpell"
     duration: 0
