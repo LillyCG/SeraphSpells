@@ -86,6 +86,8 @@ namanari_rage_0:
     chance: 50
     cooldown: 0
     cancel-default-action: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable namanari_stage:1 required
         - variable kijuu_demon_type:1 required
@@ -103,6 +105,8 @@ namanari_rage_1:
     chance: 100
     cooldown: 0
     cancel-default-action: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable namanari_stage>1 required
         - variable kijuu_demon_type:1 required
@@ -120,6 +124,8 @@ namanari_rage_2:
     chance: 5
     cooldown: 0
     cancel-default-action: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable namanari_stage>2 required
         - variable kijuu_demon_type:1 required
@@ -136,6 +142,8 @@ namanari_rage_3:
     chance: 15
     cooldown: 0
     cancel-default-action: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable namanari_stage>3 required
         - variable kijuu_demon_type:1 required
@@ -145,12 +153,16 @@ namanari_rage_3:
 namanari_ragedummy2:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - namanari_obsession =0
         - namanari_timer =namanari_timer_max
 namanari_ragedummy:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - chance 50 cast namanari_ragedummytimerup
     variable-mods-cast:
@@ -158,11 +170,15 @@ namanari_ragedummy:
 namanari_ragedummytimerup:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - namanari_timer_max +2
 namanari_ragemsp2:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - namanari_rageinvul
         - namanari_ragemspdummy
@@ -178,6 +194,8 @@ namanari_ragemsp2:
 namanari_ragemsp3:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - namanari_rageinvul
         - namanari_ragemspdummy
@@ -193,6 +211,8 @@ namanari_ragemsp3:
 namanari_ragemsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - namanari_rageinvul
         - namanari_ragemspdummy
@@ -207,11 +227,15 @@ namanari_ragemsp:
 namanari_rage_fataldamage_1:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - namanari_fataldamage =1
 namanari_rage_fataldamage_0:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - namanari_fataldamage =0
 namanari_rageinvul:
@@ -219,11 +243,15 @@ namanari_rageinvul:
     num-uses: 1
     helper-spell: true
     duration: 0
+    tags:
+        - allowed_at_silence
     modifiers:
         - buffactive namanari_rageinvul denied
 namanari_ragemspdummy:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       1:
         position: caster
@@ -250,6 +278,8 @@ namanari_rageaoe:
     helper-spell: true
     horizontal-radius: 6.5
     vertical-radius: 4.5
+    tags:
+        - allowed_at_silence
     point-blank: true
     fail-if-no-targets: false
     can-target: players,monsters,animals,nonplayers
@@ -258,6 +288,8 @@ namanari_rageaoe:
         - namanari_rageaoepttoss
 namanari_rageaoepttoss:
     spell-class: ".targeted.ForcetossSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     range: 1
     damage: 55.5
@@ -271,6 +303,8 @@ namanari_rageaoepttoss:
 #~#
 namanari_obsess_timer:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 20
@@ -285,6 +319,8 @@ namanari_obsess_timer:
         - namanari_obsess_timerpt
 namanari_obsess_timerpt:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - variable namanari_timer:0 castinstead namanari_ragedummy2
@@ -293,6 +329,8 @@ namanari_obsess_timerpt:
 #~#
 namanari_obsess_attackpassive_meelee:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 20
@@ -308,6 +346,8 @@ namanari_obsess_attackpassive_meelee:
         - namanari_obsess_movepassivemspattacks_meelee
 namanari_obsess_attackpassive_bothtype:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 40
@@ -324,6 +364,8 @@ namanari_obsess_attackpassive_bothtype:
         - namanari_obsess_movepassivemspattacks_both
 namanari_obsess_attackpassive_possestype:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 40
@@ -340,6 +382,8 @@ namanari_obsess_attackpassive_possestype:
         - namanari_obsess_movepassivemspattacks_posses
 namanari_obsess_attackpassive_manifesttype:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 40
@@ -356,6 +400,8 @@ namanari_obsess_attackpassive_manifesttype:
         - namanari_obsess_movepassivemspattacks_manifest
 namanari_obsess_movepassive_walk:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 05
@@ -372,6 +418,8 @@ namanari_obsess_movepassive_walk:
         - namanari_obsess_movepassivemspwalk
 namanari_obsess_movepassive_dash:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 75
@@ -387,6 +435,8 @@ namanari_obsess_movepassive_dash:
         - namanari_obsess_movepassivemspdashes
 namanari_obsess_eyespassive:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 26
@@ -401,6 +451,8 @@ namanari_obsess_eyespassive:
         - namanari_obsess_eyespassiveeye
 namanari_obsess_takedamagepassive_pt1:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - takedamage entity_attack
@@ -414,6 +466,8 @@ namanari_obsess_takedamagepassive_pt1:
         - namanari_obsess_takedamagepassivemsp_pt1
 namanari_obsess_takedamagepassive_pt2:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - takedamage entity_attack
@@ -429,6 +483,8 @@ namanari_obsess_takedamagepassive_pt2:
 #~#
 namanari_obsess_kill:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - kill
@@ -443,6 +499,8 @@ namanari_obsess_kill:
         - namanari_obsess_killmsp
 namanari_obsess_killmsp:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - buffactive namanari_obsess_killmspbuffpt1 castinstead namanari_obsess_killmsppt
@@ -451,28 +509,38 @@ namanari_obsess_killmsp:
         - namanari_obsess_killmspbuffpt2
 namanari_obsess_killmsppt:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - chance 35 cast namanari_obsess_killmspptvar
 namanari_obsess_killmspptvar:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_power +1
 namanari_obsess_killmspbuffpt1:
     spell-class: ".buff.DummySpell"
+    tags:
+        - allowed_at_silence
     duration: 20
     cancel-on-death: true
     helper-spell: true
     cancel-on-logout: true
 namanari_obsess_killmspbuffpt2:
     spell-class: ".buff.DummySpell"
+    tags:
+        - allowed_at_silence
     duration: 0
     cancel-on-death: false
     helper-spell: true
     cancel-on-logout: false
 namanari_obsess_killmspbuffpt2pass:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 02
@@ -487,12 +555,16 @@ namanari_obsess_killmspbuffpt2pass:
         - namanari_obsess_killmspbuffpt2pt
 namanari_obsess_killmspbuffpt2pt:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_power =0
 #~#
 namanari_obsess_resist_1:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 05
@@ -508,6 +580,8 @@ namanari_obsess_resist_1:
         - namanari_obsess_resist_1pt
 namanari_obsess_resist_2:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 05
@@ -523,6 +597,8 @@ namanari_obsess_resist_2:
         - namanari_obsess_resist_2pt
 namanari_obsess_resist_3:
     spell-class: ".PassiveSpell"
+    tags:
+        - allowed_at_silence
     always-granted: true
     triggers:
         - ticks 05
@@ -539,6 +615,8 @@ namanari_obsess_resist_3:
 #~#
 namanari_obsess_resist_1pt:
     spell-class: ".buff.ResistSpell"
+    tags:
+        - allowed_at_silence
     duration: 0
     helper-spell: true
     toggle: false
@@ -564,6 +642,8 @@ namanari_obsess_resist_1pt:
     multiplier: 0.01
 namanari_obsess_resist_3pt:
     spell-class: ".buff.ResistSpell"
+    tags:
+        - allowed_at_silence
     duration: 0
     helper-spell: true
     toggle: false
@@ -586,6 +666,8 @@ namanari_obsess_resist_3pt:
     multiplier: 0.35
 namanari_obsess_resist_2pt:
     spell-class: ".buff.ResistSpell"
+    tags:
+        - allowed_at_silence
     duration: 0
     helper-spell: true
     toggle: false
@@ -610,6 +692,8 @@ namanari_obsess_resist_2pt:
 #~#
 namanari_obsess_eyespassiveeye:
     spell-class: ".targeted.AreaEffectSpell"
+    tags:
+        - allowed_at_silence
     horizontal-radius: 15.5
     vertical-radius: 3.5
     point-blank: true
@@ -620,6 +704,8 @@ namanari_obsess_eyespassiveeye:
         - namanari_obsess_eyespassiveeyeptmsp
 namanari_obsess_eyespassiveeyeptmsp:
     spell-class: ".TargetedMultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     spells:
         - namanari_obsess_eyespassiveeyeptmsppt
@@ -631,6 +717,8 @@ namanari_obsess_eyespassiveeyeptmsp:
         - namanari_obsess_eyespassiveeyeptmsppt
 namanari_obsess_eyespassiveeyeptmsppt:
     spell-class: ".targeted.RotateSpell"
+    tags:
+        - allowed_at_silence
     target-self: true
     helper-spell: true
     rotation-pitch: 0
@@ -639,11 +727,15 @@ namanari_obsess_eyespassiveeyeptmsppt:
     affect-pitch: true
 namanari_obsess_takedamagepassivemsp_pt2:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     spells:
         - namanari_obsess_takedamagepassivemspinvul
 namanari_obsess_takedamagepassivemspinvul:
     spell-class: ".buff.InvulnerabilitySpell"
+    tags:
+        - allowed_at_silence
     num-uses: 1
     helper-spell: true
     duration: 0
@@ -651,6 +743,8 @@ namanari_obsess_takedamagepassivemspinvul:
         - buffactive namanari_obsess_takedamagepassivemspinvul denied
 namanari_obsess_takedamagepassivemsp_pt1:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_damaged =1
@@ -661,6 +755,8 @@ namanari_obsess_takedamagepassivemsp_pt1:
         - namanari_obsess_takedamagepassivemspdummy
 namanari_obsess_takedamagepassivemspdummy:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_damaged =0
@@ -668,12 +764,16 @@ namanari_obsess_takedamagepassivemspleaps:
     spell-class: ".MultiSpell"
     helper-spell: true
     cast-random-spell-instead: true
+    tags:
+        - allowed_at_silence
     spells:
         - namanari_obsess_takedamagepassivemspleapsleap1
         - namanari_obsess_takedamagepassivemspleapsleap2
         - namanari_obsess_takedamagepassivemspleapsleap3
 namanari_obsess_takedamagepassivemspleapsleap3:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 10.5
     upward-velocity: 3.5
@@ -681,12 +781,16 @@ namanari_obsess_takedamagepassivemspleapsleap3:
     rotation: -85
 namanari_obsess_takedamagepassivemspleapsleap1:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: -5.5
     upward-velocity: 7.5
     cancel-damage: true
 namanari_obsess_takedamagepassivemspleapsleap2:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 10.5
     upward-velocity: 3.5
@@ -695,6 +799,8 @@ namanari_obsess_takedamagepassivemspleapsleap2:
 #~#
 namanari_obsess_movepassivemspwalk:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     cast-random-spell-instead: true
     spells:
@@ -708,12 +814,16 @@ namanari_obsess_movepassivemspwalk:
         - namanari_obsess_movepassivemspleaps_walk4
 namanari_obsess_movepassivemspleaps_walk1:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 7.5
     upward-velocity: 0
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_walk2:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 18.5
     upward-velocity: 0
@@ -721,6 +831,8 @@ namanari_obsess_movepassivemspleaps_walk2:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_walk3:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 18.5
     upward-velocity: 0
@@ -728,12 +840,16 @@ namanari_obsess_movepassivemspleaps_walk3:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_walk4:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: -3.5
     upward-velocity: 0
     cancel-damage: true
 namanari_obsess_movepassivemspdashes:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_leaped =1
@@ -747,6 +863,8 @@ namanari_obsess_movepassivemspdashes:
         - namanari_obsess_movepassivemspleaps_move6
 namanari_obsess_movepassivemspleaps_move3:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 28.5
     upward-velocity: 7.5
@@ -755,6 +873,8 @@ namanari_obsess_movepassivemspleaps_move3:
         - chance 100 cast namanari_obsess_movepassivemspleaps_leappmsp
 namanari_obsess_movepassivemspleaps_move4:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 24.5
     upward-velocity: 1.5
@@ -763,6 +883,8 @@ namanari_obsess_movepassivemspleaps_move4:
         - chance 100 cast namanari_obsess_movepassivemspleaps_leappmsp
 namanari_obsess_movepassivemspleaps_move5:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 14.5
     upward-velocity: 1.5
@@ -772,6 +894,8 @@ namanari_obsess_movepassivemspleaps_move5:
         - chance 100 cast namanari_obsess_movepassivemspleaps_leappmsp
 namanari_obsess_movepassivemspleaps_move6:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 14.5
     upward-velocity: 1.5
@@ -781,6 +905,8 @@ namanari_obsess_movepassivemspleaps_move6:
         - chance 100 cast namanari_obsess_movepassivemspleaps_leappmsp
 namanari_obsess_movepassivemspleaps_move1:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     spells:
         - namanari_obsess_movepassivemspleaps_move1pt1
@@ -793,6 +919,8 @@ namanari_obsess_movepassivemspleaps_move1:
         - namanari_obsess_movepassivemspleaps_moveforward
 namanari_obsess_movepassivemspleaps_move2:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     spells:
         - namanari_obsess_movepassivemspleaps_move2pt1
@@ -805,23 +933,31 @@ namanari_obsess_movepassivemspleaps_move2:
         - namanari_obsess_movepassivemspleaps_moveforward
 namanari_obsess_movepassivemspleaps_leappmsp:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     spells:
         - DELAY 25
         - namanari_obsess_movepassivemspleaps_leappmspdummy2
 namanari_obsess_movepassivemspleaps_leappmspdummy2:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_leaped =0
 namanari_obsess_movepassivemspleaps_moveforward:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 28.5
     upward-velocity: 0.5
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_move1pt1:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 13.5
     upward-velocity: 0.5
@@ -829,6 +965,8 @@ namanari_obsess_movepassivemspleaps_move1pt1:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_move1pt2:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 18.5
     upward-velocity: 0.5
@@ -836,6 +974,8 @@ namanari_obsess_movepassivemspleaps_move1pt2:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_move1pt3:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 8.5
     upward-velocity: 0.5
@@ -843,6 +983,8 @@ namanari_obsess_movepassivemspleaps_move1pt3:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_move2pt1:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 13.5
     upward-velocity: 0.5
@@ -850,6 +992,8 @@ namanari_obsess_movepassivemspleaps_move2pt1:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_move2pt2:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 18.5
     upward-velocity: 0.5
@@ -857,6 +1001,8 @@ namanari_obsess_movepassivemspleaps_move2pt2:
     cancel-damage: true
 namanari_obsess_movepassivemspleaps_move2pt3:
     spell-class: ".instant.LeapSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     forward-velocity: 8.5
     upward-velocity: 0.5
@@ -865,6 +1011,8 @@ namanari_obsess_movepassivemspleaps_move2pt3:
 #~~~~~~~#
 namanari_obsess_movepassivemspattacks_meelee:
     spell-class: ".targeted.AreaEffectSpell"
+    tags:
+        - allowed_at_silence
     horizontal-radius: 5.5
     vertical-radius: 3.5
     point-blank: true
@@ -875,6 +1023,8 @@ namanari_obsess_movepassivemspattacks_meelee:
         - namanari_obsess_movepassivemspattacks_meeleemsp
 namanari_obsess_movepassivemspattacks_both:
     spell-class: ".targeted.AreaEffectSpell"
+    tags:
+        - allowed_at_silence
     horizontal-radius: 25.5
     vertical-radius: 3.5
     point-blank: true
@@ -885,6 +1035,8 @@ namanari_obsess_movepassivemspattacks_both:
         - namanari_obsess_movepassivemspattacks_bothmsp
 namanari_obsess_movepassivemspattacks_posses:
     spell-class: ".targeted.AreaEffectSpell"
+    tags:
+        - allowed_at_silence
     horizontal-radius: 5.5
     vertical-radius: 3.5
     point-blank: true
@@ -895,6 +1047,8 @@ namanari_obsess_movepassivemspattacks_posses:
         - namanari_obsess_movepassivemspattacks_possesmsp
 namanari_obsess_movepassivemspattacks_manifest:
     spell-class: ".targeted.AreaEffectSpell"
+    tags:
+        - allowed_at_silence
     horizontal-radius: 35.5
     vertical-radius: 3.5
     point-blank: true
@@ -906,6 +1060,8 @@ namanari_obsess_movepassivemspattacks_manifest:
 #~~~~~~~#
 namanari_obsess_movepassivemspattacks_manifestmsp:
     spell-class: ".TargetedMultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - chance 100 cast namanari_obsess_movepassivemspattacks_manifestmspmsp
@@ -913,6 +1069,8 @@ namanari_obsess_movepassivemspattacks_manifestmsp:
         - DELAY 01
 namanari_obsess_movepassivemspattacks_possesmsp:
     spell-class: ".TargetedMultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - chance 100 cast namanari_obsess_movepassivemspattacks_possesmspmsp
@@ -920,6 +1078,8 @@ namanari_obsess_movepassivemspattacks_possesmsp:
         - DELAY 01
 namanari_obsess_movepassivemspattacks_bothmsp:
     spell-class: ".TargetedMultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - chance 100 cast namanari_obsess_movepassivemspattacks_bothmspmsp
@@ -927,6 +1087,8 @@ namanari_obsess_movepassivemspattacks_bothmsp:
         - DELAY 01
 namanari_obsess_movepassivemspattacks_meeleemsp:
     spell-class: ".TargetedMultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     modifiers:
         - chance 100 cast namanari_obsess_movepassivemspattacks_meeleemspmsp
@@ -936,6 +1098,8 @@ namanari_obsess_movepassivemspattacks_meeleemsp:
 namanari_obsess_movepassivemspattacks_meeleemspmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - namanari_obsess_movepassivemspattacks_meeleemspmspdummy1
         - DELAY 02
@@ -944,22 +1108,30 @@ namanari_obsess_movepassivemspattacks_meeleemspmsp:
         - namanari_obsess_movepassivemspattacks_meeleemspmspdummy2
 namanari_obsess_movepassivemspattacks_meeleemspmspdummy1:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_melee =1
 namanari_obsess_movepassivemspattacks_meeleemspmspdummy2:
     spell-class: ".instant.DummySpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     variable-mods-cast:
         - namanari_melee =0
 namanari_obsess_movepassivemspattacks_meeleemspmspmsp:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     cast-random-spell-instead: true
     spells:
         - kijuu_demon_ability0
 namanari_obsess_movepassivemspattacks_bothmspmsp:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     cast-random-spell-instead: true
     spells:
@@ -969,6 +1141,8 @@ namanari_obsess_movepassivemspattacks_bothmspmsp:
         - kijuu_demon_ability3
 namanari_obsess_movepassivemspattacks_manifestmspmsp:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     cast-random-spell-instead: true
     spells:
@@ -978,6 +1152,8 @@ namanari_obsess_movepassivemspattacks_manifestmspmsp:
         - kijuu_demon_ability3
 namanari_obsess_movepassivemspattacks_possesmspmsp:
     spell-class: ".MultiSpell"
+    tags:
+        - allowed_at_silence
     helper-spell: true
     cast-random-spell-instead: true
     spells:
