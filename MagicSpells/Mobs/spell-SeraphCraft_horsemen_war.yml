@@ -39,10 +39,10 @@ horsemen_war_skill4:
         - horsemen_war_skill4leap1
         - DELAY 02
         - Horsemen_war_v_l_r_slash_d
-        - DELAY 02
+        - DELAY 10
         - horsemen_war_skill4leap2
         - DELAY 01
-        - Horsemen_war_d_slash_r_l
+        - Horsemen_war_t_slash_r_l
 horsemen_war_skill2:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
