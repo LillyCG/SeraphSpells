@@ -22,6 +22,8 @@ basicsystem_health:
     helper-spell: true
     chance: 100
     cooldown: 0
+    tags:
+        - allowed_at_silence
     spells:
         - healthsystem_msp1
         - healthsystem_msp2
@@ -36,6 +38,8 @@ angels_damage:
     duration: 0
     helper-spell: true
     toggle: false
+    tags:
+        - allowed_at_silence
     str-cast-self: ""
     str-fade: ""
     spell-damage-types:
@@ -48,6 +52,8 @@ horsemen_damage:
     toggle: false
     str-cast-self: ""
     str-fade: ""
+    tags:
+        - allowed_at_silence
     spell-damage-types:
         - HORSEMENS_OF_JOHN
     multiplier: 55.85
@@ -67,6 +73,8 @@ demonic_curse:
     helper-spell: true
     toggle: false
     str-cast-self: ""
+    tags:
+        - allowed_at_silence
     str-fade: ""
     spell-damage-types:
         - DEMONIC_CURSE
@@ -74,6 +82,8 @@ demonic_curse:
 healthsystem_msp1:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - healthsystem_dummy2
         - DELAY 02
@@ -81,6 +91,8 @@ healthsystem_msp1:
 healthsystem_msp2:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - DELAY 01
         - healthsystem_msp2
@@ -89,17 +101,23 @@ healthsystem_msp2:
 healthsystem_dummy2:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - meta_health_scale =40
 healthsystem_dummy:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - DELAY 02
         - healthsystem_dummy1
 healthsystem_dummy1:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - collection health required
     variable-mods-cast:
