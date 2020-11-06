@@ -7,6 +7,8 @@ vampire_deatheff:
     helper-spell: true
     chance: 100
     cooldown: 0
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable race:2 required
     spells:
@@ -42,6 +44,8 @@ vampire_deatheffmspsummon:
 vampire_deatheffmspeff:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_deatheffmspdummy1
         - DELAY 01
@@ -72,6 +76,8 @@ vampire_deatheffmspeffleap:
     helper-spell: true
     forward-velocity: -1.5
     upward-velocity: 0.5
+    tags:
+        - allowed_at_silence
     cancel-damage: true
 vampire_deatheffmspbuff:
     spell-class: ".targeted.PotionEffectSpell"
@@ -80,11 +86,15 @@ vampire_deatheffmspbuff:
     duration: 25
     strength: 1
     targeted: false
+    tags:
+        - allowed_at_silence
     ambient: false
     hidden: true
 vampire_deatheffmspdummy1:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       3:
         position: caster
@@ -129,6 +139,8 @@ vampire_deatheffmspdummy1:
 vampire_deatheffmspdummy2:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       0:
         position: caster
@@ -163,6 +175,8 @@ vampire_deatheffmspdummy2:
 vampire_deatheffmspdummy3:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       3:
         position: caster
@@ -207,6 +221,8 @@ vampire_deatheffmspdummy3:
 vampire_deatheffmspdummy4:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       3:
         position: caster
@@ -251,6 +267,8 @@ vampire_deatheffmspdummy4:
 vampire_deatheffmspdummy5:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       1:
         position: caster
