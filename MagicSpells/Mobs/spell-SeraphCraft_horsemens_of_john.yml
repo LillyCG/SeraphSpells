@@ -1,0 +1,1741 @@
+horsemen_speed:
+    spell-class: ".targeted.PotionEffectSpell"
+    helper-spell: true
+    type: speed
+    duration: 80
+    strength: 12.5
+    targeted: false
+    ambient: false
+    hidden: true
+#~#
+horsemens_of_john_resist:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemens_of_john_resistpt1
+        - horsemens_of_john_resistpt2
+        - horsemens_of_john_resistpt3
+        - horsemens_of_john_resistpt4
+        - horsemens_of_john_resistpt5
+horsemens_of_john_resistpt1:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    spell-damage-types:
+        - HORSEMENS_OF_JOHN
+    multiplier: 0.0
+    modifiers:
+        - buffactive horsemens_of_john_resistpt1 denied
+horsemens_of_john_resistpt2:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    modifiers:
+        - buffactive horsemens_of_john_resistpt2 denied
+    spell-damage-types:
+        - VAMPIRE_ATTACKS
+    multiplier: 5.5
+horsemens_of_john_resistpt3:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    modifiers:
+        - buffactive horsemens_of_john_resistpt3 denied
+    spell-damage-types:
+        - DEMON_ATTACKS
+        - VAMPIRE_BITE
+    multiplier: 15.75
+horsemens_of_john_resistpt4:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    modifiers:
+        - buffactive horsemens_of_john_resistpt4 denied
+    spell-damage-types:
+        - ANGELIC_DAMAGE
+    multiplier: 55.75
+horsemens_of_john_resistpt5:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    modifiers:
+        - buffactive horsemens_of_john_resistpt5 denied
+    spell-damage-types:
+        - CURSED_GEAR_ATTACKS
+    multiplier: 2.5
+horsemens_of_john_resistpt6:
+    spell-class: ".buff.ResistSpell"
+    duration: 0
+    helper-spell: true
+    toggle: false
+    str-cast-self: ""
+    str-fade: ""
+    modifiers:
+        - buffactive horsemens_of_john_resistpt6 denied
+    spell-damage-types:
+        - ENCHANTED_GEAR_ATTACKS
+    multiplier: 0.5
+#~~~~~~~#
+horsemen_leapspt:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: -6.2
+    upward-velocity: 0.0
+    cancel-damage: true
+#~~~~~#
+horsemen_dash:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_dashleap
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+horsemen_dash_long:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_dashleap_long
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap_long
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap_long
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap_long
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+        - horsemen_dashleap
+        - horsemen_dashleappt
+        - horsemen_dashdummy
+        - DELAY 01
+horsemen_dashleappt:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 0,1,0
+    projectile-velocity: 40
+    helper-spell: true
+    projectile-horiz-offset: 0
+    projectile-vert-offset: 0
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 0.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: false
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: horsemen_dashleapptpt
+horsemen_dashleapptpt:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 5.5
+    vertical-radius: 3.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - horsemen_dashleapptptpain
+horsemen_dashleapptptpain:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 35
+    horizontal-force: 9.5
+    vertical-force: 3.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: HORSEMENS_OF_JOHN
+    beneficial: false
+horsemen_dashdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      2:
+        position: caster
+        effect: particles
+        particle-name: sweep_attack
+        horiz-spread: 1.5
+        vert-spread: 0.5
+        speed: 0.3
+        count: 10
+        height-offset: 0.3
+        forward-offset: 0.0
+      0:
+        position: caster
+        effect: particles
+        particle-name: explosion
+        horiz-spread: 1.3
+        vert-spread: 0.3
+        speed: 0.3
+        count: 1
+        height-offset: 0.3
+        forward-offset: 0.0
+      1:
+        position: caster
+        effect: particles
+        particle-name: poof
+        horiz-spread: 1.3
+        vert-spread: 0.3
+        speed: 0.3
+        count: 5
+        height-offset: 0.3
+        forward-offset: 0.0
+horsemen_dashleap_long:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 31.2
+    upward-velocity: 0.0
+    cancel-damage: true
+horsemen_dashleap:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 19.2
+    upward-velocity: 0.0
+    cancel-damage: true
+#~~~~~#
+horsemen_regen:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regenpt
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regenpt
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regenpt
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regenpt
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regenpt
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regenpt
+        - horsemen_regendummy
+        - DELAY 01
+        - horsemen_regendummy
+horsemen_regendummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      3:
+        position: caster
+        effect: particles
+        particle-name: effect
+        horiz-spread: 0.8
+        vert-spread: 0.8
+        speed: 0.0
+        count: 1
+        height-offset: 1.5
+        forward-offset: 0.0
+      0:
+        position: caster
+        effect: particles
+        particle-name: crit
+        horiz-spread: 0.8
+        vert-spread: 0.8
+        speed: 0.2
+        count: 1
+        height-offset: 1.5
+        forward-offset: 0.0
+      1:
+        position: caster
+        effect: particles
+        particle-name: white_ash
+        horiz-spread: 0.8
+        vert-spread: 0.8
+        speed: 0.3
+        count: 15
+        height-offset: 1.5
+        forward-offset: 0.0
+horsemen_regenpt:
+    spell-class: ".targeted.HealSpell"
+    helper-spell: true
+    heal-amount: 5.5
+    cancel-if-full: false
+    target-self: true
+    str-cast-self: ""
+    str-cast-target: ""
+    str-no-target: ""
+    str-max-health: ""
+
+#~~~~~#
+horsemen_jump_long:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_jumpleap0
+        - DELAY 15
+        - horsemen_jumpleap1_long
+horsemen_jump:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_jumpleap0
+        - DELAY 15
+        - horsemen_jumpleap1
+horsemen_jumpleap0:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: -5.5
+    upward-velocity: 12.2
+    cancel-damage: true
+horsemen_jumpleap1_long:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 165.5
+    upward-velocity: -25.2
+    land-spell: horsemen_jumpmsp
+    cancel-damage: true
+horsemen_jumpleap1:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 35.5
+    upward-velocity: -25.2
+    land-spell: horsemen_jumpmsp
+    cancel-damage: true
+horsemen_jumpmsp:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - horsemen_jumpproj0
+        - horsemen_jumpproj1_1
+        - horsemen_jumpproj1_2
+        - horsemen_jumpproj1_3
+        - horsemen_jumpproj1_4
+        - horsemen_jumpproj1_5
+        - horsemen_jumpproj1_6
+        - horsemen_jumpproj1_7
+        - horsemen_jumpproj1_8
+        - horsemen_jumpproj1_9
+        - horsemen_jumpproj1_10
+        - horsemen_jumpproj1_11
+        - horsemen_jumpproj1_12
+        - horsemen_jumpproj1_13
+        - horsemen_jumpproj1_14
+        - horsemen_jumpproj1_15
+        - horsemen_jumpproj1_16
+        - horsemen_jumpproj1_17
+        - horsemen_jumpproj18
+        - horsemen_jumpproj2_1
+        - horsemen_jumpproj2_2
+        - horsemen_jumpproj2_3
+        - horsemen_jumpproj2_4
+        - horsemen_jumpproj2_5
+        - horsemen_jumpproj2_6
+        - horsemen_jumpproj2_7
+        - horsemen_jumpproj2_8
+        - horsemen_jumpproj2_9
+        - horsemen_jumpproj2_10
+        - horsemen_jumpproj2_11
+        - horsemen_jumpproj2_12
+        - horsemen_jumpproj2_13
+        - horsemen_jumpproj2_14
+        - horsemen_jumpproj2_15
+        - horsemen_jumpproj2_16
+        - horsemen_jumpproj2_17
+        - DELAY 05
+        - horsemen_jumpleap2
+horsemen_jumpleap2:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: -5.5
+    upward-velocity: 5.2
+    cancel-damage: true
+horsemen_jumpproj2_1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -10
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -20
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -30
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_4:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -40
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_5:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -50
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_6:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -60
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_7:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -70
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_8:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -80
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_9:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -90
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_10:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -100
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_11:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -110
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_12:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -120
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_13:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -130
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_14:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -140
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_15:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -150
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_16:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -160
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj2_17:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: -170
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj0:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 0
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 10
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 20
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 30
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_4:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 40
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_5:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 50
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_6:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 60
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_7:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 70
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_8:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 80
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_9:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 90
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_10:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 100
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_11:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 110
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_12:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 120
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_13:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 130
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_14:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 140
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_15:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 150
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_16:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 160
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj1_17:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 170
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+horsemen_jumpproj18:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    helper-spell: true
+    change-pitch: false
+    projectile-horiz-offset: 180
+    projectile-vert-offset: 0.0
+    projectile-vert-gravity: 0.0
+    relative-offset: 0.0,0.1,0.0
+    projectile-gravity: 0
+    hug-surface: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-duration: 10
+    max-distance: 100
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    stop-on-hit-ground: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 0.8
+    vertical-hit-radius: 0.5
+    hit-air-at-end: true
+    spell: horsemen_jumpprojmsp
+
+horsemen_jumpprojmsp:
+    spell-class: ".TargetedMultiSpell"
+    helper-spell: true
+    spells:
+        - horsemen_jumpprojmspdummy
+        - DELAY 01
+        - horsemen_jumpprojmspaoe
+horsemen_jumpprojmspdummy:
+    spell-class: ".targeted.DummySpell"
+    helper-spell: true
+    effects:
+      3:
+        position: target
+        effect: particles
+        particle-name: sweep_attack
+        horiz-spread: 2.9
+        vert-spread: 0.5
+        speed: 0.15
+        count: 1
+        height-offset: 0.2
+      2:
+        position: target
+        effect: particles
+        particle-name: poof
+        horiz-spread: 2.5
+        vert-spread: 0.5
+        speed: 0.2
+        size: 3.5
+        count: 5
+        height-offset: 0.5
+      1:
+        delay: 05
+        position: target
+        effect: particles
+        particle-name: explosion
+        horiz-spread: 2.5
+        vert-spread: 0.5
+        speed: 0.15
+        count: 1
+        height-offset: 0.5
+horsemen_jumpprojmspaoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 2.5
+    vertical-radius: 1.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - horsemen_jumpprojmspaoetoss
+horsemen_jumpprojmspaoetoss:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 15
+    horizontal-force: 9.5
+    vertical-force: 2.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: HORSEMENS_OF_JOHN
+    beneficial: false
