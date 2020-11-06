@@ -1,0 +1,39 @@
+horsemen_threats:
+  Skills:
+  - threat{a=250} @EntitiesInRadius{r=30;sort=NEAREST;limit=5}
+horsemen_threat_null:
+  Conditions:
+  - targetwithin 45 cancel
+  - targetnotwithin 135 true
+  Skills:
+  - threat{a=-100} @target
+horsemen_leaps:
+  Conditions:
+  - incombat true
+  - targetwithin 1 true
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_leapspt";} @self
+  - DELAY 02
+  - runaigoalselector{goal=randomstroll}
+#~#
+horsemen_speedup:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_speed";} @self
+horsemen_jump_long:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_jump_long";} @self
+horsemen_jump:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_jump";} @self
+horsemen_dash_long:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_dash_long";} @self
+horsemen_dash:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_dash";} @self
+horsemen_resist:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemens_of_john_resist";} @self
+horsemen_skill_regen:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_regen";} @self
