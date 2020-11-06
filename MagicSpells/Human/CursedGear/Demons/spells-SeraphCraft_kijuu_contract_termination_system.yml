@@ -81,6 +81,7 @@ contract_decline_menuptmspdummy:
         - kijuu_demon_rank =0
         - kijuu_active =0
         - kijuu_cursedgear_ver =0
+        - kijuu_demon_lvlup =0
         - kijuu_demon_lvl =0
         - demonic_resistance -125
 contract_decline_menuptmsppt1:
