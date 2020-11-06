@@ -1,0 +1,108 @@
+horsemen_war:
+  Type: wither_skeleton
+  Display: "&f&lHorsemen of John"
+  Health: 2500
+  Modules:
+    ImmunityTable: true
+  Options:
+    NoDamageTicks: 05
+  Damage: 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 meleeattack
+  - 3 meleeattack
+  - 4 leapattarget
+  - 4 meleeattack
+  - 4 spiderattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 golems
+  - 3 monsters
+  - 4 attacker
+  Angry: false
+  Armor: 1
+  RemoveAI: false
+  Despawn: false
+  Modules:
+    ThreatTable: true
+  Drops:
+  - exp 0 0
+  Options:
+    AlwaysShowName: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    FollowRange: 40
+    MaxCombatDistance: 15
+    Interactable: false
+    Silent: true
+    PreventOtherDrops: true
+    MovementSpeed: 0.12
+    AttackSpeed: 0.0
+  Skills:
+  - threat{a=-1000} @trigger ~onKill
+  - threat{a=-1000} @trigger ~onKillPlayer
+  - threat{a=-1000} @trigger ~onPlayerDeath
+  - skill{s=horsemen_threats} ~onTimer:50
+  - skill{s=horsemen_resist} ~onTimer:01
+  - skill{s=horsemen_leaps} ~onTimer:01
+  - skill{s=horsemen_skill_regen} 0.1 ~onDamaged
+  - skill{s=horsemen_war_skills} ~onTimer:120
+  - skill{s=horsemen_speedup} 0.2 ~onTimer:90
+  - threat{a=100} @trigger ~onDamaged
+  - skill{s=horsemen_threat_null} ~onTimer:50
+horsemen_conquest:
+  Type: wither_skeleton
+  Display: "&f&lHorsemen of John"
+  Health: 2500
+  Modules:
+    ImmunityTable: true
+  Options:
+    NoDamageTicks: 05
+  Damage: 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 meleeattack
+  - 3 meleeattack
+  - 4 leapattarget
+  - 4 meleeattack
+  - 4 spiderattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 golems
+  - 3 monsters
+  - 4 attacker
+  Angry: false
+  Armor: 1
+  RemoveAI: false
+  Despawn: false
+  Modules:
+    ThreatTable: true
+  Drops:
+  - exp 0 0
+  Options:
+    AlwaysShowName: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    FollowRange: 40
+    MaxCombatDistance: 15
+    Interactable: false
+    Silent: true
+    PreventOtherDrops: true
+    MovementSpeed: 0.09
+    AttackSpeed: 0.0
+  Skills:
+  - threat{a=-1000} @trigger ~onKill
+  - threat{a=-1000} @trigger ~onKillPlayer
+  - threat{a=-1000} @trigger ~onPlayerDeath
+  - skill{s=horsemen_threats} ~onTimer:50
+  - skill{s=horsemen_leaps} ~onTimer:01
+  - skill{s=horsemen_resist} ~onTimer:01
+  - skill{s=horsemen_skill_regen} 0.1 ~onDamaged
+  - skill{s=horsemen_conquest_skills} ~onTimer:120
+  - skill{s=horsemen_speedup} 0.2 ~onTimer:90
+  - threat{a=100} @trigger ~onDamaged
+  - skill{s=horsemen_threat_null} ~onTimer:50
