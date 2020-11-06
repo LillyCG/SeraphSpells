@@ -294,6 +294,7 @@ horsemen_war_skill3dummymspptaoestun:
     helper-spell: true
     spells:
         - horsemen_war_skill3dummymspptaoestunpt2
+        - horsemen_war_skill3dummymspptaoestunpt3
         - horsemen_war_skill3dummymspptaoestunpt1
         - DELAY 05
         - horsemen_war_skill3dummymspptaoestunpt1
@@ -311,6 +312,8 @@ horsemen_war_skill3dummymspptaoestunpt1:
     range: 1
     damage: 1
     horizontal-force: 9.5
+    tags:
+        - allowed_at_silence
     vertical-force: 3.1
     obey-los: true
     can-target: players,nonplayers
@@ -321,7 +324,25 @@ horsemen_war_skill3dummymspptaoestunpt2:
     spell-class: ".targeted.StunSpell"
     helper-spell: true
     duration: 40
+    tags:
+        - allowed_at_silence
     target-self: true
+horsemen_war_skill3dummymspptaoestunpt3:
+    spell-class: ".targeted.SilenceSpell"
+    prevent-cast: true
+    target-self: false
+    prevent-chat: false
+    helper-spell: true
+    prevent-commands: true
+    duration: 40
+    str-no-target: ""
+    tags:
+        - allowed_at_silence
+    str-cast-self: ""
+    str-cast-target: ""
+    str-silenced: ""
+    allowed-spell-tags:
+        - allowed_at_silence
 #~~~~~~~~~~~~     Damage     ~~~~~~~~~~~~#
 Horsemen_war_slash_projaoe:
     spell-class: ".targeted.AreaEffectSpell"
