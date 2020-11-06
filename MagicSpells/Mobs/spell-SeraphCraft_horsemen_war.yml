@@ -29,6 +29,20 @@ horsemen_war_skill3:
         - horsemen_war_skill3dummymsp
         - DELAY 02
         - horsemen_war_skill3leap2
+horsemen_war_skill4:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_war_skill4leap1
+        - DELAY 02
+        - Horsemen_war_v_l_r_slash_d
+        - DELAY 02
+        - horsemen_war_skill4leap2
+        - DELAY 01
+        - Horsemen_war_d_slash_r_l
 horsemen_war_skill2:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -186,6 +200,18 @@ horsemen_war_skill3leap2:
     forward-velocity: -3.5
     upward-velocity: 3.0
     cancel-damage: true
+horsemen_war_skill4leap1:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: -1.5
+    upward-velocity: 5.0
+    cancel-damage: true
+horsemen_war_skill4leap2:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 13.5
+    upward-velocity: -3.0
+    cancel-damage: true
 horsemen_war_skill3dummymsp:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -319,6 +345,29 @@ Horsemen_war_slash_projaoe_pain:
     obey-los: true
     target-players: true
     check-plugins: true
+Horsemen_war_slash_projaoe2:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 2.5
+    vertical-radius: 2.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - Horsemen_war_slash_projaoe_pain2
+Horsemen_war_slash_projaoe_pain2:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 55
+    horizontal-force: 1.5
+    vertical-force: 9.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: HORSEMENS_OF_JOHN
+    beneficial: false
 #~~~~~~~~~        Color       ~~~~~~~~~~~#
 Horsemen_war_slash_colorthrust:
     spell-class: ".TargetedMultiSpell"
@@ -349,7 +398,7 @@ Horsemen_war_slash_color_v:
     spells:
         - Horsemen_war_slash_colorpt_v
         - DELAY 04
-        - Horsemen_war_slash_projaoe
+        - Horsemen_war_slash_projaoe2
 Horsemen_war_slash_colorptthrust:
     spell-class: ".targeted.DummySpell"
     helper-spell: true
