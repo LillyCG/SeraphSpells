@@ -26,6 +26,8 @@ vampire_stats:
     helper-spell: true
     chance: 100
     cooldown: 0
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable race:2 required
     spells:
@@ -42,12 +44,16 @@ vampire_statsfallresist:
     toggle: false
     str-cast-self: ""
     str-fade: ""
+    tags:
+        - allowed_at_silence
     normal-damage-types:
         - FALL
     multiplier: 0.15
 vampire_bloodmsp1:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_bloodmspdummy
         - DELAY 02
@@ -55,6 +61,8 @@ vampire_bloodmsp1:
 vampire_bloodmsp2:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_bloodmsp2dummy
         - DELAY 02
@@ -62,6 +70,8 @@ vampire_bloodmsp2:
 vampire_bloodmsp3:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_bloodmsp3dummy
         - DELAY 02
@@ -69,11 +79,15 @@ vampire_bloodmsp3:
 vampire_bloodmsp3dummy:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable vampire_blood:0 cast vampire_bloodmsp3dummypt
 vampire_bloodmsp3dummypt:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - chance 100 cast vampire_bloodsickdummy
         - variable vampire_bloodsick:1 cast vampire_demontransform
@@ -84,12 +98,16 @@ vampire_bloodsickdummy:
     duration: 10
     cancel-on-death: false
     helper-spell: true
+    tags:
+        - allowed_at_silence
     cancel-on-logout: false
     modifiers:
         - buffactive vampire_bloodsickdummy denied
 vampire_bloodmspdummy:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     effects:
       1:
         position: caster
@@ -99,18 +117,24 @@ vampire_bloodmspdummy:
 vampire_bloodmsp2dummy:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable vampire_blood>vampire_blood_max castinstead vampire_bloodmsp2dummypt
         - variable vampire_blood:vampire_blood_max castinstead vampire_bloodmsp2dummypt
 vampire_bloodmsp2dummypt:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - vampire_blood =vampire_blood_max
 #~#
 vampire_regenmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_regenmsppt
         - DELAY 20
@@ -122,12 +146,16 @@ vampire_regenmsppt:
     cancel-if-full: true
     target-self: true
     str-cast-self: ""
+    tags:
+        - allowed_at_silence
     str-cast-target: ""
     str-no-target: ""
     str-max-health: ""
 vampire_statsmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_statsmspresist1
         - vampire_statsmspresist2
@@ -140,6 +168,8 @@ vampire_statsmsp:
 vampire_statsmspbuffs:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_statsmspbuffsmsp
         - DELAY 05
@@ -149,6 +179,8 @@ vampire_statsmspresist6:
     duration: 0
     helper-spell: true
     toggle: false
+    tags:
+        - allowed_at_silence
     str-cast-self: ""
     str-fade: ""
     spell-damage-types:
@@ -160,6 +192,8 @@ vampire_statsmspresist5:
     spell-class: ".buff.ResistSpell"
     duration: 0
     helper-spell: true
+    tags:
+        - allowed_at_silence
     toggle: false
     str-cast-self: ""
     str-fade: ""
@@ -173,6 +207,8 @@ vampire_statsmspresist4:
     duration: 0
     helper-spell: true
     toggle: false
+    tags:
+        - allowed_at_silence
     str-cast-self: ""
     str-fade: ""
     spell-damage-types:
@@ -184,6 +220,8 @@ vampire_statsmspresist3:
     spell-class: ".buff.ResistSpell"
     duration: 0
     helper-spell: true
+    tags:
+        - allowed_at_silence
     toggle: false
     str-cast-self: ""
     str-fade: ""
@@ -196,6 +234,8 @@ vampire_statsmspresist1:
     spell-class: ".buff.ResistSpell"
     duration: 0
     helper-spell: true
+    tags:
+        - allowed_at_silence
     toggle: false
     str-cast-self: ""
     str-fade: ""
@@ -208,6 +248,8 @@ vampire_statsmspresist2:
     spell-class: ".buff.ResistSpell"
     duration: 0
     helper-spell: true
+    tags:
+        - allowed_at_silence
     toggle: false
     str-cast-self: ""
     str-fade: ""
@@ -219,6 +261,8 @@ vampire_statsmspresist2:
 vampire_statsmspbuffsmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - vampire_statsmspbuffsmspbuff1
         - vampire_statsmspbuffsmspbuff2
@@ -226,6 +270,8 @@ vampire_statsmspbuffsmspbuff1:
     spell-class: ".targeted.PotionEffectSpell"
     helper-spell: true
     type: strength
+    tags:
+        - allowed_at_silence
     duration: 20
     strength: 9
     targeted: false
@@ -237,6 +283,8 @@ vampire_statsmspbuffsmspbuff2:
     spell-class: ".targeted.PotionEffectSpell"
     helper-spell: true
     type: jump_boost
+    tags:
+        - allowed_at_silence
     duration: 20
     strength: 4
     targeted: false
