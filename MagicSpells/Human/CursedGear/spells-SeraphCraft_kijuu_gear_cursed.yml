@@ -368,7 +368,7 @@ cursedgear_curse_activationbuffsmsp_buff3:
     duration: 20
     tags:
         - allowed_at_silence
-    strength: 3
+    strength: 1.8
     targeted: false
     ambient: false
     modifiers:
@@ -395,25 +395,25 @@ cursedgear_curse_activationbuffsmsp_buff4:
     tags:
         - allowed_at_silence
     duration: 20
-    strength: 1.1
+    strength: 0.95
     targeted: false
     ambient: false
     modifiers:
-        - variable kijuu_demon_type:1 power 1.35
-        - variable kijuu_demon_type:2 power 1.15
-        - variable kijuu_demon_type:3 power 1.20
-        - variable kijuu_gimmepower_atm:1 power 1.35
-        - variable kijuu_gimmepower_stage:1 addpower 1.35
-        - variable kijuu_gimmepower_stage:2 addpower 1.95
-        - variable kijuu_gimmepower_stage:3 addpower 2.55
-        - variable pills_amount>0 power 1.5
-        - variable pills_amount>1 power 1.15
-        - variable pills_amount>2 power 1.25
-        - variable pills_amount>3 power 1.35
-        - variable pills_amount>4 power 1.25
-        - variable pills_amount>5 power 1.2
-        - variable pills_amount>6 power 1.15
-        - variable pills_amount>7 power 1.12
+        - variable kijuu_demon_type:1 power 1.115
+        - variable kijuu_demon_type:2 power 1.112
+        - variable kijuu_demon_type:3 power 1.117
+        - variable kijuu_gimmepower_atm:1 power 1.115
+        - variable kijuu_gimmepower_stage:1 addpower 0.005
+        - variable kijuu_gimmepower_stage:2 addpower 0.005
+        - variable kijuu_gimmepower_stage:3 addpower 0.005
+        - variable pills_amount>0 power 1.115
+        - variable pills_amount>1 power 1.113
+        - variable pills_amount>2 power 1.113
+        - variable pills_amount>3 power 1.1125
+        - variable pills_amount>4 power 1.1118
+        - variable pills_amount>5 power 1.1117
+        - variable pills_amount>6 power 1.1116
+        - variable pills_amount>7 power 1.1115
     hidden: true
 cursedgear_curse_activationbuffsmsp_buff5:
     spell-class: ".targeted.PotionEffectSpell"
