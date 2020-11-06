@@ -7,11 +7,10 @@ horsemen_conquest_skill3:
     helper-spell: true
     spells:
         - horsemen_conquest_skill3_1leap
-        - DELAY 01
         - Horsemen_conquest_d_slash_r_l
-        - DELAY 02
+        - DELAY 03
         - Horsemen_conquest_d_slash_l_r
-        - DELAY 02
+        - DELAY 03
         - Horsemen_conquest_d_slash_r_l
         - DELAY 04
         - Horsemen_conquest_v_r_l_slash_t
