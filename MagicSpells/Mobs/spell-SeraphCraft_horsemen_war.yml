@@ -7,15 +7,28 @@ horsemen_war_skill3:
     helper-spell: true
     spells:
         - horsemen_war_skill3leap1
-        - DELAY 07
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
+        - horsemen_war_skill3dummymsp
+        - DELAY 02
         - horsemen_war_skill3leap2
-        - Horsemen_war_thrust_slash_1
-        - DELAY 01
-        - Horsemen_war_thrust_slash_1
-        - DELAY 01
-        - Horsemen_war_thrust_slash_1
-        - DELAY 01
-        - Horsemen_war_thrust_slash_1
 horsemen_war_skill2:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -164,15 +177,126 @@ horsemen_war_skill2leap3:
 horsemen_war_skill3leap1:
     spell-class: ".instant.LeapSpell"
     helper-spell: true
-    forward-velocity: -10.5
+    forward-velocity: 5.5
     upward-velocity: 1.0
     cancel-damage: true
 horsemen_war_skill3leap2:
     spell-class: ".instant.LeapSpell"
     helper-spell: true
-    forward-velocity: 23.5
-    upward-velocity: -1.0
+    forward-velocity: -3.5
+    upward-velocity: 3.0
     cancel-damage: true
+horsemen_war_skill3dummymsp:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_war_skill3dummymspdummy
+        - DELAY 01
+        - horsemen_war_skill3dummymsppt
+horsemen_war_skill3dummymspdummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+      0:
+        position: caster
+        effect: particles
+        particle-name: explosion
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.3
+        count: 1
+        chance: 30
+        height-offset: 3.3
+        forward-offset: 1.0
+      1:
+        position: caster
+        effect: particles
+        particle-name: poof
+        horiz-spread: 0.3
+        vert-spread: 0.3
+        speed: 0.3
+        count: 5
+        chance: 30
+        height-offset: 3.3
+        forward-offset: 1.0
+horsemen_war_skill3dummymsppt:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 0,1,0
+    projectile-velocity: 40
+    helper-spell: true
+    projectile-horiz-offset: 0
+    projectile-vert-offset: 0
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 0.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: false
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: horsemen_war_skill3dummymspptaoe
+horsemen_war_skill3dummymspptaoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 15.5
+    vertical-radius: 9.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - horsemen_war_skill3dummymspptaoestun
+horsemen_war_skill3dummymspptaoestun:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_war_skill3dummymspptaoestunpt2
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+        - DELAY 05
+        - horsemen_war_skill3dummymspptaoestunpt1
+horsemen_war_skill3dummymspptaoestunpt1:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 1
+    horizontal-force: 9.5
+    vertical-force: 3.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: HORSEMENS_OF_JOHN
+    beneficial: false
+horsemen_war_skill3dummymspptaoestunpt2:
+    spell-class: ".targeted.StunSpell"
+    helper-spell: true
+    duration: 40
+    target-self: true
 #~~~~~~~~~~~~     Damage     ~~~~~~~~~~~~#
 Horsemen_war_slash_projaoe:
     spell-class: ".targeted.AreaEffectSpell"
