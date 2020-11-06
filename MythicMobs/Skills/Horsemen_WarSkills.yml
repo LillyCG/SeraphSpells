@@ -1,0 +1,41 @@
+horsemen_war_skills:
+  Conditions:
+  - incombat true
+  - targetwithin 20 true
+  Skills:
+  - skill{s=horsemen_war_skills_melee}
+  - skill{s=horsemen_war_skills_range}
+  - skill{s=horsemen_war_skills_veryrange}
+horsemen_war_skills_melee:
+  Conditions:
+  - incombat true
+  - targetwithin 9 true
+  Skills:
+  - randomskill{skills=horsemen_dash,horsemen_skill_1_war,horsemen_skill_2_war,horsemen_skill_3_war}
+horsemen_war_skills_range:
+  Conditions:
+  - incombat true
+  - targetwithin 22 true
+  - targetwithin 9 cancel
+  Skills:
+  - randomskill{skills=horsemen_jump,horsemen_dash_long,horsemen_skill_1_war}
+horsemen_war_skills_veryrange:
+  Conditions:
+  - incombat true
+  - targetwithin 32 true
+  - targetwithin 20 cancel
+  Skills:
+  - randomskill{skills=horsemen_dash_long,horsemen_jump_long}
+#~#
+horsemen_skill_1_war:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_war_skill1";} @self
+horsemen_skill_2_war:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_war_skill2";} @self
+horsemen_skill_3_war:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_war_skill3";} @self
+#horsemen_skill_4_war:
+#  Skills:
+#  - command{c="c forcecast <caster.uuid> horsemen_war_skill4";} @self
