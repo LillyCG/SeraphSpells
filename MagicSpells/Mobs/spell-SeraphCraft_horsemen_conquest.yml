@@ -75,8 +75,6 @@ horsemen_conquest_skill1:
         - Horsemen_conquest_v_l_r_slash_d
         - DELAY 01
         - horsemen_conquest_skill1_2leap
-        - DELAY 08
-        - Horsemen_conquest_d_slash_r_l
 horsemen_conquest_skill2:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
