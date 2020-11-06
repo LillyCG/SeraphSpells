@@ -56,10 +56,10 @@ horsemen_damage:
         - allowed_at_silence
     spell-damage-types:
         - HORSEMENS_OF_JOHN
-    multiplier: 55.85
+    multiplier: 4.85
     modifiers:
-        - variable kijuu_enhance:1 power 0.85
-        - variable kijuu_active:1 power 0.75
+        - variable kijuu_enhance:1 power 0.55
+        - variable kijuu_active:1 power 0.45
         - variable kijuu_gimmepower_stage:1 power 0.90
         - variable kijuu_gimmepower_stage:2 power 0.85
         - variable kijuu_gimmepower_stage:3 power 0.80
