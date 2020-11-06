@@ -13,6 +13,8 @@ enchantedgear_powerpass:
     helper-spell: true
     chance: 100
     cooldown: 0
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_enhance:1 required
     spells:
@@ -21,6 +23,8 @@ enchantedgear_power:
     spell-class: ".MultiSpell"
     helper-spell: true
     cooldown: 120
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - kijuu_enhance =1
     modifiers:
@@ -38,6 +42,8 @@ enchantedgear_power:
 enchantedgear_powerbuffs:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
         - enchantedgear_powerbuffsmsp
         - DELAY 05
@@ -49,6 +55,8 @@ enchantedgear_powerresist1:
     toggle: false
     str-cast-self: ""
     str-fade: ""
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_enhance:1 required
     spell-damage-types:
@@ -59,6 +67,8 @@ enchantedgear_powerresist1:
 enchantedgear_powerresist2:
     spell-class: ".buff.ResistSpell"
     duration: 0
+    tags:
+        - allowed_at_silence
     helper-spell: true
     toggle: false
     str-cast-self: ""
@@ -71,6 +81,8 @@ enchantedgear_powerresist2:
 enchantedgear_powerresist3:
     spell-class: ".buff.ResistSpell"
     duration: 0
+    tags:
+        - allowed_at_silence
     helper-spell: true
     toggle: false
     str-cast-self: ""
@@ -83,6 +95,8 @@ enchantedgear_powerresist3:
 enchantedgear_powerresist4:
     spell-class: ".buff.ResistSpell"
     duration: 0
+    tags:
+        - allowed_at_silence
     helper-spell: true
     toggle: false
     str-cast-self: ""
@@ -95,6 +109,8 @@ enchantedgear_powerresist4:
 enchantedgear_powerbuffsmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_enhance:1 required
     spells:
@@ -105,6 +121,8 @@ enchantedgear_powerbuffsmsp_buff1:
     helper-spell: true
     type: strength
     duration: 20
+    tags:
+        - allowed_at_silence
     strength: 1
     targeted: false
     ambient: false
@@ -114,6 +132,8 @@ enchantedgear_powerbuffsmsp_buff2:
     helper-spell: true
     type: regeneration
     duration: 20
+    tags:
+        - allowed_at_silence
     strength: 1
     targeted: false
     ambient: false
@@ -121,6 +141,8 @@ enchantedgear_powerbuffsmsp_buff2:
 enchantedgear_cleanse:
     spell-class: ".targeted.CleanseSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - kijuu_enhance =0
     remove:
