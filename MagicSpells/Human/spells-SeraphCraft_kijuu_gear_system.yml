@@ -19,6 +19,11 @@ variables:
           min: 1
           max: 20
           default: 1
+     kijuu_demon_lvlup:
+          type: player
+          min: 0
+          max: 2
+          default: 0
      kijuu_demon_type:
           type: player
           min: 0
@@ -147,6 +152,7 @@ kijuu_demonlvlup:
         - kijuu_demon_lvl +1
     modifiers:
         - chance 100 cast kijuu_demonlvlupmsp
+        - variable kijuu_demon_lvlup:2 denied
 kijuu_demonlvlupmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
@@ -158,12 +164,32 @@ kijuu_demonlvlupmspptdummy:
     helper-spell: true
     modifiers:
         - variable kijuu_demon_lvl:10 cast kijuu_demonlvlupmspptdummypt
-        - variable kijuu_demon_lvl:20 cast kijuu_demonlvlupmspptdummypt
 kijuu_demonlvlupmspptdummypt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon_lvlup:0 cast kijuu_demonlvlupmspptdummyptpt
+        - variable kijuu_demon_lvlup:1 cast kijuu_demonlvlupmspptdummyptpt
+        - variable kijuu_demon_lvlup:2 denied
+kijuu_demonlvlupmspptdummyptpt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - variable kijuu_demon_rank<9 cast kijuu_demonlvlupmspptdummyptptpt1
+        - variable kijuu_demon_rank:9 cast kijuu_demonlvlupmspptdummyptptpt2
+kijuu_demonlvlupmspptdummyptptpt2:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     variable-mods-cast:
         - kijuu_demon_rank +1
+        - kijuu_demon_lvlup +1
+kijuu_demonlvlupmspptdummyptptpt1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - kijuu_demon_rank +1
+        - kijuu_demon_lvl =0
+        - kijuu_demon_lvlup +1
 #````````````````````````````````````#
 # ~~~ [ kijuu system ] ~~~ #
 
