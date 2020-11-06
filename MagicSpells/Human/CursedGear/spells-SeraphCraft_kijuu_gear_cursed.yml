@@ -19,6 +19,8 @@ gimmepowerdemon_dummypass:
     helper-spell: true
     chance: 100
     cooldown: 0
+    tags:
+        - allowed_at_silence
     modifiers:
         - collection gimmepower required
     spells:
@@ -159,6 +161,8 @@ cursedgear_curse_deactivationpass:
     helper-spell: true
     chance: 100
     cooldown: 0
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_active:1 required
     spells:
@@ -166,6 +170,8 @@ cursedgear_curse_deactivationpass:
 cursedgear_curse_activation:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - kijuu_active =1
     modifiers:
@@ -182,6 +188,8 @@ cursedgear_curse_activation:
 cursedgear_curse_activationbuffs:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_active:1 required
     spells:
@@ -194,6 +202,8 @@ cursedgear_curse_activationresist1:
     helper-spell: true
     toggle: false
     str-cast-self: ""
+    tags:
+        - allowed_at_silence
     str-fade: ""
     modifiers:
         - variable kijuu_demon_type:1 power 0.75
@@ -218,6 +228,8 @@ cursedgear_curse_activationresist2:
     helper-spell: true
     toggle: false
     str-cast-self: ""
+    tags:
+        - allowed_at_silence
     str-fade: ""
     modifiers:
         - variable kijuu_demon_type:1 power 0.85
@@ -240,6 +252,8 @@ cursedgear_curse_activationresist3:
     spell-class: ".buff.ResistSpell"
     duration: 0
     helper-spell: true
+    tags:
+        - allowed_at_silence
     toggle: false
     str-cast-self: ""
     str-fade: ""
@@ -265,6 +279,8 @@ cursedgear_curse_activationresist4:
     spell-class: ".buff.ResistSpell"
     duration: 0
     helper-spell: true
+    tags:
+        - allowed_at_silence
     toggle: false
     str-cast-self: ""
     str-fade: ""
@@ -288,6 +304,8 @@ cursedgear_curse_activationresist4:
 cursedgear_curse_activationbuffsmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - variable kijuu_active:1 required
     spells:
@@ -301,6 +319,8 @@ cursedgear_curse_activationbuffsmsp_buff1:
     helper-spell: true
     type: strength
     duration: 20
+    tags:
+        - allowed_at_silence
     strength: 3
     targeted: false
     ambient: false
@@ -325,6 +345,8 @@ cursedgear_curse_activationbuffsmsp_buff2:
     spell-class: ".targeted.PotionEffectSpell"
     helper-spell: true
     type: slowness
+    tags:
+        - allowed_at_silence
     duration: 20
     strength: 0
     targeted: false
@@ -344,6 +366,8 @@ cursedgear_curse_activationbuffsmsp_buff3:
     helper-spell: true
     type: regeneration
     duration: 20
+    tags:
+        - allowed_at_silence
     strength: 3
     targeted: false
     ambient: false
@@ -368,6 +392,8 @@ cursedgear_curse_activationbuffsmsp_buff4:
     spell-class: ".targeted.PotionEffectSpell"
     helper-spell: true
     type: resistance
+    tags:
+        - allowed_at_silence
     duration: 20
     strength: 1.1
     targeted: false
@@ -394,6 +420,8 @@ cursedgear_curse_activationbuffsmsp_buff5:
     helper-spell: true
     type: jump_boost
     duration: 20
+    tags:
+        - allowed_at_silence
     strength: 2
     targeted: false
     ambient: false
@@ -418,6 +446,8 @@ cursedgear_curse_activationbuffsmsp_buff5:
 cursedgear_curse_deactivation:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - kijuu_active =0
     spells:
@@ -425,6 +455,8 @@ cursedgear_curse_deactivation:
 cursedgear_curse_deactivationcleanse:
     spell-class: ".targeted.CleanseSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     remove:
       - buff:cursedgear_curse_activationresist1
       - buff:cursedgear_curse_activationresist2
