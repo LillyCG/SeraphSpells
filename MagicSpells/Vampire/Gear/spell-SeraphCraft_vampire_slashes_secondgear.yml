@@ -161,7 +161,7 @@ vampire_secondgear_slash_projaoe_pain3pt:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 145
+    damage: 195
     horizontal-force: 29.5
     vertical-force: 6.1
     obey-los: true
@@ -182,7 +182,7 @@ vampire_secondgear_slash_projaoe:
         - vampire_secondgear_slash_projaoe_pain
 vampire_secondgear_slash_projaoe_pain:
     spell-class: ".targeted.PainSpell"
-    damage: 115
+    damage: 175
     spell-damage-type: VAMPIRE_ATTACKS
     helper-spell: true
     range: 1
