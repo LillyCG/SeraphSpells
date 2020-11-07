@@ -63,7 +63,7 @@ enchantedgear_powerresist1:
         - ENCHANTED_GEAR_ATTACKS
     normal-damage-types:
         - ENTITY_ATTACK
-    multiplier: 0.50
+    multiplier: 0.30
 enchantedgear_powerresist2:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -77,7 +77,7 @@ enchantedgear_powerresist2:
         - variable kijuu_enhance:1 required
     spell-damage-types:
         - VAMPIRE_ATTACKS
-    multiplier: 0.99
+    multiplier: 0.89
 enchantedgear_powerresist3:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -105,7 +105,7 @@ enchantedgear_powerresist4:
         - variable kijuu_enhance:1 required
     spell-damage-types:
         - CURSED_GEAR_ATTACKS
-    multiplier: 0.75
+    multiplier: 0.65
 enchantedgear_powerbuffsmsp:
     spell-class: ".MultiSpell"
     helper-spell: true
@@ -134,7 +134,7 @@ enchantedgear_powerbuffsmsp_buff2:
     duration: 20
     tags:
         - allowed_at_silence
-    strength: 1
+    strength: 2
     targeted: false
     ambient: false
     hidden: true
