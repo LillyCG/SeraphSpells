@@ -231,10 +231,10 @@ cursedgear_curse_activationresist0:
         - variable kijuu_gimmepower_stage:1 power 0.70
         - variable kijuu_gimmepower_stage:2 power 0.65
         - variable kijuu_gimmepower_stage:3 power 0.50
-        - variable namanari_mode:1 power 0.70
-        - variable namanari_mode:2 power 0.60
-        - variable namanari_mode:3 power 0.50
-        - variable namanari_mode:4 power 0.40
+        - variable namanari_stage:1 power 0.70
+        - variable namanari_stage:2 power 0.60
+        - variable namanari_stage:3 power 0.50
+        - variable namanari_stage:4 power 0.40
         - variable kijuu_active:1 required
         - variable pills_amount>0 power 0.9
         - variable pills_amount>1 power 0.85
@@ -264,11 +264,11 @@ cursedgear_curse_activationresist1:
         - variable kijuu_gimmepower_stage:1 power 0.70
         - variable kijuu_gimmepower_stage:2 power 0.65
         - variable kijuu_gimmepower_stage:3 power 0.50
-        - variable namanari_mode:1 power 0.70
-        - variable namanari_mode:2 power 0.60
-        - variable namanari_mode:3 power 0.50
-        - variable namanari_mode:4 power 0.40
-        - variable namanari_mode:5 power 0.30
+        - variable namanari_stage:1 power 0.70
+        - variable namanari_stage:2 power 0.60
+        - variable namanari_stage:3 power 0.50
+        - variable namanari_stage:4 power 0.40
+        - variable namanari_stage:5 power 0.30
         - variable kijuu_active:1 required
         - variable namanari_obsession:1 power 0.75
     spell-damage-types:
@@ -291,11 +291,11 @@ cursedgear_curse_activationresist2:
         - variable kijuu_gimmepower_stage:1 power 0.90
         - variable kijuu_gimmepower_stage:2 power 0.85
         - variable kijuu_gimmepower_stage:3 power 0.80
-        - variable namanari_mode:1 power 0.90
-        - variable namanari_mode:2 power 0.80
-        - variable namanari_mode:3 power 0.70
-        - variable namanari_mode:4 power 0.60
-        - variable namanari_mode:5 power 0.50
+        - variable namanari_stage:1 power 0.90
+        - variable namanari_stage:2 power 0.80
+        - variable namanari_stage:3 power 0.70
+        - variable namanari_stage:4 power 0.60
+        - variable namanari_stage:5 power 0.50
         - variable kijuu_active:1 required
         - variable namanari_obsession:1 power 0.85
     spell-damage-types:
@@ -318,11 +318,11 @@ cursedgear_curse_activationresist3:
         - variable kijuu_gimmepower_stage:1 power 0.90
         - variable kijuu_gimmepower_stage:2 power 0.85
         - variable kijuu_gimmepower_stage:3 power 0.80
-        - variable namanari_mode:1 power 0.90
-        - variable namanari_mode:2 power 0.80
-        - variable namanari_mode:3 power 0.70
-        - variable namanari_mode:4 power 0.60
-        - variable namanari_mode:5 power 0.50
+        - variable namanari_stage:1 power 0.90
+        - variable namanari_stage:2 power 0.80
+        - variable namanari_stage:3 power 0.70
+        - variable namanari_stage:4 power 0.60
+        - variable namanari_stage:5 power 0.50
         - variable kijuu_active:1 required
         - variable namanari_obsession:1 power 0.5
     normal-damage-types:
@@ -346,11 +346,11 @@ cursedgear_curse_activationresist4:
         - variable kijuu_gimmepower_stage:1 power 0.90
         - variable kijuu_gimmepower_stage:2 power 0.85
         - variable kijuu_gimmepower_stage:3 power 0.80
-        - variable namanari_mode:1 power 0.90
-        - variable namanari_mode:2 power 0.80
-        - variable namanari_mode:3 power 0.70
-        - variable namanari_mode:4 power 0.60
-        - variable namanari_mode:5 power 0.50
+        - variable namanari_stage:1 power 0.90
+        - variable namanari_stage:2 power 0.80
+        - variable namanari_stage:3 power 0.70
+        - variable namanari_stage:4 power 0.60
+        - variable namanari_stage:5 power 0.50
         - variable kijuu_active:1 required
         - variable namanari_obsession:1 power 0.5
     spell-damage-types:
