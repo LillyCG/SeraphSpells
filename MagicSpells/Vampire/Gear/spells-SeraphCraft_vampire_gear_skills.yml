@@ -29,3 +29,36 @@ secondclass_gear_leftmouseptpt:
         - secondclass_gear_combo =0
     modifiers:
         - variable secondclass_gear_combo:4 required
+#~#
+secondclass_gear_dash:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - secondclass_gear_dashleap1
+        - DELAY 01
+        - secondclass_gear_dashleap2
+        - DELAY 09
+        - vampire_secondgear_d_slash_r_l2
+        - DELAY 03
+        - secondclass_gear_dashleap3
+secondclass_gear_dashleap3:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: -11.5
+    upward-velocity: 5.1
+    cancel-damage: true
+secondclass_gear_dashleap2:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 44.5
+    upward-velocity: 1.5
+    cancel-damage: true
+secondclass_gear_dashleap1:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 4.5
+    upward-velocity: 3.1
+    cancel-damage: true
