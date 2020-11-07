@@ -406,7 +406,7 @@ cursedgear_curse_activationbuffsmsp_buff3:
     duration: 20
     tags:
         - allowed_at_silence
-    strength: 3.8
+    strength: 2.4
     targeted: false
     ambient: false
     modifiers:
