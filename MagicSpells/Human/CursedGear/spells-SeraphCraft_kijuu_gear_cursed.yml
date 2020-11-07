@@ -40,6 +40,15 @@ gimmepowerdemon_dummy:
 gimmepowerdemon_dummymsp_morepower:
     spell-class: ".MultiSpell"
     helper-spell: true
+    spells:
+        - DELAY 02
+        - gimmepowerdemon_dummymsp_morepowerkindadummy
+gimmepowerdemon_dummymsp_morepowerkindadummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - sneaking denied
+        - buffactive cursedgear_curse_activationbuffactive denied
     variable-mods-cast:
         - kijuu_gimmepower_stage +1
         - kijuu_gimmepower_count +1
@@ -116,6 +125,8 @@ gimmepowerdemon_dummymsp:
     spell-class: ".MultiSpell"
     helper-spell: true
     modifiers:
+        - sneaking denied
+        - buffactive cursedgear_curse_activationbuffactive denied
         - variable kijuu_gimmepower_atm:1 castinstead gimmepowerdemon_dummymsp_morepower
     variable-mods-cast:
         - kijuu_gimmepower_atm =1
@@ -178,6 +189,7 @@ cursedgear_curse_activation:
         - variable kijuu_active:0 required
         - sneaking denied
     spells:
+        - cursedgear_curse_activationbuffactive
         - cursedgear_curse_activationbuffs
         - kijuu_activation_vfx_cursed
         - DELAY 01
@@ -186,6 +198,12 @@ cursedgear_curse_activation:
         - cursedgear_curse_activationresist2
         - cursedgear_curse_activationresist3
         - cursedgear_curse_activationresist4
+cursedgear_curse_activationbuffactive:
+    spell-class: ".buff.DummySpell"
+    duration: 2
+    cancel-on-death: false
+    helper-spell: true
+    cancel-on-logout: false
 cursedgear_curse_activationbuffs:
     spell-class: ".MultiSpell"
     helper-spell: true
@@ -207,7 +225,7 @@ cursedgear_curse_activationresist0:
         - allowed_at_silence
     str-fade: ""
     modifiers:
-        - variable kijuu_demon_type:1 power 0.68
+        - variable kijuu_demon_type:1 power 0.75
         - variable kijuu_demon_type:2 power 0.8
         - variable kijuu_demon_type:3 power 0.75
         - variable kijuu_gimmepower_stage:1 power 0.70
@@ -217,7 +235,6 @@ cursedgear_curse_activationresist0:
         - variable namanari_mode:2 power 0.60
         - variable namanari_mode:3 power 0.50
         - variable namanari_mode:4 power 0.40
-        - variable namanari_mode:5 power 0.30
         - variable kijuu_active:1 required
         - variable pills_amount>0 power 0.9
         - variable pills_amount>1 power 0.85
@@ -230,7 +247,7 @@ cursedgear_curse_activationresist0:
         - variable namanari_obsession:1 power 0.5
     spell-damage-types:
         - VAMPIRE_ATTACKS
-    multiplier: 0.55
+    multiplier: 0.85
 cursedgear_curse_activationresist1:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -256,7 +273,7 @@ cursedgear_curse_activationresist1:
         - variable namanari_obsession:1 power 0.75
     spell-damage-types:
         - DEMON_ATTACKS
-    multiplier: 0.75
+    multiplier: 0.95
 cursedgear_curse_activationresist2:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -283,7 +300,7 @@ cursedgear_curse_activationresist2:
         - variable namanari_obsession:1 power 0.85
     spell-damage-types:
         - CURSED_GEAR_ATTACKS
-    multiplier: 0.35
+    multiplier: 0.55
 cursedgear_curse_activationresist3:
     spell-class: ".buff.ResistSpell"
     duration: 0
