@@ -1,5 +1,7 @@
 # SeraphSpells
 ###### MagicSpells/MythicMobs configs for Owari No Seraph-titled Server
+###### Server owner:
+		Discord: MaxCashe#0905 | Github: MaxCashe
 ###### Configs authors:
 		Discord: AM11nim#9420 | Github: LillyCG
 		Discord: Jezik#9984 | Github: Je2iK
