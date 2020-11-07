@@ -60,5 +60,5 @@ secondclass_gear_dashleap1:
     spell-class: ".instant.LeapSpell"
     helper-spell: true
     forward-velocity: 4.5
-    upward-velocity: 3.1
+    upward-velocity: 3.5
     cancel-damage: true
