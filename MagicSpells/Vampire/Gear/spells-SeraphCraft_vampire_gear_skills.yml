@@ -1,0 +1,31 @@
+variables:
+     secondclass_gear_combo:
+          type: player
+          min: 0
+          max: 4
+          default: 0
+#~ ~#
+secondclass_gear_slashes:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - secondclass_gear_combo +1
+    modifiers:
+        - variable secondclass_gear_combo:0 cast secondclassgear_1combo_slash1
+        - variable secondclass_gear_combo:1 cast secondclassgear_1combo_slash2
+        - variable secondclass_gear_combo:2 cast secondclassgear_1combo_slash4
+        - variable secondclass_gear_combo:3 cast secondclassgear_1combo_slash3
+        - chance 100 cast secondclass_gear_leftmousept
+secondclass_gear_leftmousept:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    spells:
+        - DELAY 02
+        - secondclass_gear_leftmouseptpt
+secondclass_gear_leftmouseptpt:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - secondclass_gear_combo =0
+    modifiers:
+        - variable secondclass_gear_combo:4 required
