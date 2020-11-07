@@ -137,6 +137,38 @@ secondclassgear_1combo_slash4leap1:
     upward-velocity: 0.1
     cancel-damage: true
 #~~~~~~~~~~~~     Damage     ~~~~~~~~~~~~#
+vampire_secondgear_slash_projaoe3:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 3.5
+    vertical-radius: 2.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - vampire_secondgear_slash_projaoe_pain3
+vampire_secondgear_slash_projaoe_pain3:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - DELAY 01
+        - vampire_secondgear_slash_projaoe_pain3pt
+vampire_secondgear_slash_projaoe_pain3pt:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    damage: 145
+    horizontal-force: 29.5
+    vertical-force: 6.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    spell-damage-type: VAMPIRE_ATTACKS
+    beneficial: false
 vampire_secondgear_slash_projaoe:
     spell-class: ".targeted.AreaEffectSpell"
     helper-spell: true
@@ -169,6 +201,16 @@ vampire_secondgear_slash_color2:
         - vampire_secondgear_slash_colorpt2
         - DELAY 04
         - vampire_secondgear_slash_projaoe
+vampire_secondgear_slash_color3:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - vampire_secondgear_slash_colorpt
+        - DELAY 04
+        - vampire_secondgear_slash_projaoe3
 vampire_secondgear_slash_color:
     spell-class: ".TargetedMultiSpell"
     check-individual-cooldowns: false
@@ -337,6 +379,30 @@ vampire_secondgear_slash_colorpt_v:
         forward-offset: 0.75
         height-offset: 0.4
 #~~~~~~~~~~~~~~~ Musps ~~~~~~~~~~~~~~~~~~#
+vampire_secondgear_d_slash_r_l2:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - vampire_secondgear_d_slash_r_l2_proj1
+        - vampire_secondgear_d_slash_r_l2_proj2
+        - DELAY 01
+        - vampire_secondgear_d_slash_r_l2_proj3
+        - vampire_secondgear_d_slash_r_l2_proj4
+        - DELAY 01
+        - vampire_secondgear_d_slash_r_l2_proj5
+        - vampire_secondgear_d_slash_r_l2_proj6
+        - vampire_secondgear_d_slash_r_l2_proj7
+        - vampire_secondgear_d_slash_r_l2_proj8
+        - vampire_secondgear_d_slash_r_l2_proj9
+        - DELAY 01
+        - vampire_secondgear_d_slash_r_l2_proj10
+        - vampire_secondgear_d_slash_r_l2_proj11
+        - vampire_secondgear_d_slash_r_l2_proj12
+        - DELAY 01
+        - vampire_secondgear_d_slash_r_l2_proj13
 vampire_secondgear_d_slash_r_l:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -3371,6 +3437,383 @@ vampire_secondgear_d_slash_r_l_proj13:
     hit-air-at-end: true
     spell-on-tick: vampire_secondgear_slash_color
     spell: vampire_secondgear_slash_projaoe
+vampire_secondgear_d_slash_r_l2_proj1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 40
+    projectile-horiz-offset: 90
+    projectile-vert-offset: -0.3
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 45
+    projectile-horiz-offset: 80
+    projectile-vert-offset: -0.3
+    helper-spell: true
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-vert-spread: 0.01
+    particle-horiz-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 45
+    projectile-horiz-offset: 60
+    projectile-vert-offset: -0.2
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    helper-spell: true
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-vert-spread: 0.01
+    particle-horiz-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj4:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 40
+    projectile-vert-offset: -0.2
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    helper-spell: true
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-vert-spread: 0.01
+    particle-horiz-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj5:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 20
+    projectile-vert-offset: -0.1
+    projectile-gravity: 0
+    change-pitch: false
+    helper-spell: true
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj6:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 40
+    helper-spell: true
+    projectile-horiz-offset: 0
+    projectile-vert-offset: -0.1
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj7:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 40
+    projectile-horiz-offset: -20
+    projectile-vert-offset: 0.0
+    helper-spell: true
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj8:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -40
+    projectile-vert-offset: 0.0
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj9:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -60
+    projectile-vert-offset: 0.1
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj10:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -80
+    projectile-vert-offset: 0.1
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj11:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -90
+    projectile-vert-offset: 0.2
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj12:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -100
+    projectile-vert-offset: 0.2
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
+vampire_secondgear_d_slash_r_l2_proj13:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -110
+    projectile-vert-offset: 0.3
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 #  diagonal slash. left to right. down to top.
 vampire_secondgear_d_slash_l_r_proj1:
     spell-class: ".instant.ParticleProjectileSpell"
@@ -3777,8 +4220,8 @@ vampire_secondgear_t_slash_r_l_proj1:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj2:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3806,8 +4249,8 @@ vampire_secondgear_t_slash_r_l_proj2:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj3:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3835,8 +4278,8 @@ vampire_secondgear_t_slash_r_l_proj3:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj4:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3864,8 +4307,8 @@ vampire_secondgear_t_slash_r_l_proj4:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj5:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3893,8 +4336,8 @@ vampire_secondgear_t_slash_r_l_proj5:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj6:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3922,8 +4365,8 @@ vampire_secondgear_t_slash_r_l_proj6:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj7:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3951,8 +4394,8 @@ vampire_secondgear_t_slash_r_l_proj7:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj8:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -3980,8 +4423,8 @@ vampire_secondgear_t_slash_r_l_proj8:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj9:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -4009,8 +4452,8 @@ vampire_secondgear_t_slash_r_l_proj9:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj10:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -4038,8 +4481,8 @@ vampire_secondgear_t_slash_r_l_proj10:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj11:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -4067,8 +4510,8 @@ vampire_secondgear_t_slash_r_l_proj11:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj12:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -4096,8 +4539,8 @@ vampire_secondgear_t_slash_r_l_proj12:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 vampire_secondgear_t_slash_r_l_proj13:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -4125,8 +4568,8 @@ vampire_secondgear_t_slash_r_l_proj13:
     hit-radius: 1
     vertical-hit-radius: 1
     hit-air-at-end: true
-    spell-on-tick: vampire_secondgear_slash_color
-    spell: vampire_secondgear_slash_projaoe
+    spell-on-tick: vampire_secondgear_slash_color3
+    spell: vampire_secondgear_slash_projaoe3
 #  diagonal slash. left to right. top to down.
 vampire_secondgear_t_slash_l_r_proj1:
     spell-class: ".instant.ParticleProjectileSpell"
