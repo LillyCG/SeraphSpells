@@ -60,6 +60,68 @@ horsemen_conquest_skill4:
         - horsemen_conquest_skill2_1leap
         - DELAY 01
         - Horsemen_conquest_thrust_slash_1
+horsemen_conquest_skill5:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj1
+        - DELAY 01
+        - horsemen_conquest_skill5proj2
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
+horsemen_conquest_skill6:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj3
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
+        - DELAY 02
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj4
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
+horsemen_conquest_skill7:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj1
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
+        - DELAY 02
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj2
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
+        - DELAY 02
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj3
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
+        - DELAY 02
+        - horsemen_conquest_skill5leap2
+        - DELAY 03
+        - horsemen_conquest_skill5proj4
+        - DELAY 03
+        - horsemen_conquest_skill5leap1
 horsemen_conquest_skill1:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -140,7 +202,408 @@ horsemen_conquest_skill3_4leap:
     forward-velocity: 45.5
     upward-velocity: 2.1
     cancel-damage: true
+horsemen_conquest_skill5leap1:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 6.5
+    upward-velocity: 2.1
+    cancel-damage: true
+horsemen_conquest_skill5leap2:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: -6.5
+    upward-velocity: 2.1
+    cancel-damage: true
+horsemen_conquest_skill5proj3_2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 35
+    projectile-horiz-offset: 92.9
+    projectile-horiz-gravity: 45.9
+    projectile-vert-offset: 0
+    relative-offset: 0,0,0
+    projectile-gravity: 1.7
+    helper-spell: true
+    controllable: false
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 45
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    hit-ground: true
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: Horsemen_conquest_slash_projaoe2
+    spell-on-tick: horsemen_conquest_skill5projeff2
+    effects:
+      1:
+        position: projectile
+        effect: armorstand
+        armorstand:
+            head: horsemen_conquest_hand
+            gravity: false
+            has-arms: true
+            small: false
+            marker: true
+            visible: false
+horsemen_conquest_skill5proj4_2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 35
+    projectile-horiz-offset: -92.9
+    projectile-horiz-gravity: -45.9
+    projectile-vert-offset: 0
+    relative-offset: 0,0,0
+    projectile-gravity: 1.7
+    helper-spell: true
+    controllable: false
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 45
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    hit-ground: true
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: Horsemen_conquest_slash_projaoe2
+    spell-on-tick: horsemen_conquest_skill5projeff2
+    effects:
+      1:
+        position: projectile
+        effect: armorstand
+        armorstand:
+            head: horsemen_conquest_hand
+            gravity: false
+            has-arms: true
+            small: false
+            marker: true
+            visible: false
+horsemen_conquest_skill5proj4:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 20
+    projectile-horiz-offset: 52.9
+    projectile-vert-offset: 0
+    relative-offset: 0.1,3,2.5
+    projectile-gravity: 8.7
+    helper-spell: true
+    controllable: false
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    hit-ground: true
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: horsemen_conquest_skill5proj4_2
+    spell-on-tick: horsemen_conquest_skill5projeff2
+    effects:
+      1:
+        position: projectile
+        effect: armorstand
+        armorstand:
+            head: horsemen_conquest_hand
+            gravity: false
+            has-arms: true
+            small: false
+            marker: true
+            visible: false
+horsemen_conquest_skill5proj3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 20
+    projectile-horiz-offset: -52.9
+    projectile-vert-offset: 0
+    relative-offset: 0.1,3,-2.5
+    projectile-gravity: 8.7
+    helper-spell: true
+    controllable: false
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 5
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    hit-ground: true
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: horsemen_conquest_skill5proj3_2
+    spell-on-tick: horsemen_conquest_skill5projeff2
+    effects:
+      1:
+        position: projectile
+        effect: armorstand
+        armorstand:
+            head: horsemen_conquest_hand
+            gravity: false
+            has-arms: true
+            small: false
+            marker: true
+            visible: false
+horsemen_conquest_skill5proj1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 25
+    projectile-horiz-offset: 5.9
+    projectile-vert-offset: 0
+    relative-offset: 0.1,3,-2.5
+    projectile-gravity: 4.7
+    helper-spell: true
+    controllable: false
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 40
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    hit-ground: true
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: Horsemen_conquest_slash_projaoe2
+    spell-on-tick: horsemen_conquest_skill5projeff
+    effects:
+      1:
+        position: projectile
+        effect: armorstand
+        armorstand:
+            head: horsemen_conquest_hand
+            gravity: false
+            has-arms: true
+            small: false
+            marker: true
+            visible: false
+horsemen_conquest_skill5projeff2:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - DELAY 01
+        - horsemen_conquest_skill5projeffpt
+        - Horsemen_conquest_slash_projaoe2pt
+        - DELAY 02
+        - horsemen_conquest_skill5projeffpt
+horsemen_conquest_skill5projeff:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - DELAY 01
+        - horsemen_conquest_skill5projeffpt
+        - DELAY 02
+        - horsemen_conquest_skill5projeffpt
+horsemen_conquest_skill5projeffpt:
+    spell-class: ".targeted.DummySpell"
+    helper-spell: true
+    effects:
+      2:
+        position: target
+        effect: particles
+        particle-name: redstone
+        horiz-spread: 0.2
+        vert-spread: 0.2
+        speed: 0.0
+        color: 27241E
+        size: 2.8
+        count: 3
+        height-offset: 1.8
+        forward-offset: -0.4
+magic-items:
+  horsemen_conquest_hand:
+    type: iron_block
+    name: "&0&l horsemennn "
+horsemen_conquest_skill5proj2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 25
+    projectile-horiz-offset: -5.9
+    projectile-vert-offset: 0
+    relative-offset: 0.1,3,2.5
+    projectile-gravity: 4.7
+    helper-spell: true
+    controllable: false
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 0
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 40
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    hit-ground: true
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell: Horsemen_conquest_slash_projaoe2
+    spell-on-tick: horsemen_conquest_skill5projeff
+    effects:
+      1:
+        position: projectile
+        effect: armorstand
+        armorstand:
+            head: horsemen_conquest_hand
+            gravity: false
+            has-arms: true
+            small: false
+            marker: true
+            visible: false
 #~~~~~~~~~~~~     Damage     ~~~~~~~~~~~~#
+Horsemen_conquest_slash_projaoe2:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - Horsemen_conquest_slash_projaoe2dummy
+        - DELAY 04
+        - Horsemen_conquest_slash_projaoe2pt2
+Horsemen_conquest_slash_projaoe2dummy:
+    spell-class: ".targeted.DummySpell"
+    helper-spell: true
+    effects:
+      0:
+        position: target
+        effect: particles
+        particle-name: poof
+        horiz-spread: 1.5
+        vert-spread: 0.5
+        speed: 0.25
+        count: 45
+        height-offset: 0.3
+      1:
+        position: target
+        effect: particles
+        particle-name: explosion
+        horiz-spread: 1.5
+        vert-spread: 0.5
+        speed: 0.25
+        count: 45
+        height-offset: 0.3
+Horsemen_conquest_slash_projaoe2pt2:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 6.5
+    vertical-radius: 4.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - Horsemen_conquest_slash_projaoe2pt2msp
+Horsemen_conquest_slash_projaoe2pt:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 2.5
+    vertical-radius: 4.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - Horsemen_conquest_slash_projaoe2ptmsp
+Horsemen_conquest_slash_projaoe2pt2msp:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - Horsemen_conquest_slash_projaoe_pain
+        - DELAY 03
+        - Horsemen_conquest_slash_projaoe2pt2msptoss
+Horsemen_conquest_slash_projaoe2ptmsp:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - Horsemen_conquest_slash_projaoe_pain
+        - DELAY 02
+        - Horsemen_conquest_slash_projaoe2ptmsptoss
+Horsemen_conquest_slash_projaoe2ptmsptoss:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    horizontal-force: 9.5
+    tags:
+        - allowed_at_silence
+    vertical-force: 8.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
+Horsemen_conquest_slash_projaoe2pt2msptoss:
+    spell-class: ".targeted.ForcetossSpell"
+    helper-spell: true
+    range: 1
+    horizontal-force: 18.5
+    tags:
+        - allowed_at_silence
+    vertical-force: 12.1
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
 Horsemen_conquest_slash_projaoe:
     spell-class: ".targeted.AreaEffectSpell"
     helper-spell: true
