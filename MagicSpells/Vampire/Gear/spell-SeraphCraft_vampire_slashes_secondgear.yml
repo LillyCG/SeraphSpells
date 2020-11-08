@@ -1,3 +1,27 @@
+secondclassgear_3skill:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - secondclassgear_3skillleap
+        - DELAY 01
+        - vampire_secondgear_slash_l_r3
+        - DELAY 05
+        - secondclassgear_3skillleap
+        - DELAY 01
+        - vampire_secondgear_slash_r_l
+        - DELAY 05
+        - secondclassgear_3skillleap
+        - DELAY 01
+        - vampire_secondgear_slash_l_r3
+secondclassgear_3skillleap:
+    spell-class: ".instant.LeapSpell"
+    helper-spell: true
+    forward-velocity: 3.5
+    upward-velocity: 1.5
+    cancel-damage: true
 secondclassgear_1combo_slash2:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -5,7 +29,7 @@ secondclassgear_1combo_slash2:
     can-target: self
     helper-spell: true
     spells:
-        - vampire_secondgear_slash_l_r
+        - vampire_secondgear_slash_l_r3_proj8
         - DELAY 02
         - secondclassgear_1combo_slash2leap
 secondclassgear_1combo_slash1:
@@ -161,7 +185,7 @@ vampire_secondgear_slash_projaoe_pain3pt:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 195
+    damage: 295
     horizontal-force: 29.5
     vertical-force: 6.1
     obey-los: true
@@ -169,6 +193,27 @@ vampire_secondgear_slash_projaoe_pain3pt:
     check-plugins: true
     spell-damage-type: VAMPIRE_ATTACKS
     beneficial: false
+vampire_secondgear_slash_projaoe4:
+    spell-class: ".targeted.AreaEffectSpell"
+    helper-spell: true
+    horizontal-radius: 1.5
+    vertical-radius: 1.5
+    point-blank: false
+    fail-if-no-targets: false
+    can-target: players,monsters,animals,nonplayers
+    spell-source-in-center: true
+    spells:
+        - vampire_secondgear_slash_projaoe_pain4
+vampire_secondgear_slash_projaoe_pain4:
+    spell-class: ".targeted.PainSpell"
+    damage: 355
+    spell-damage-type: VAMPIRE_ATTACKS
+    helper-spell: true
+    range: 1
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    check-plugins: true
 vampire_secondgear_slash_projaoe:
     spell-class: ".targeted.AreaEffectSpell"
     helper-spell: true
@@ -182,7 +227,7 @@ vampire_secondgear_slash_projaoe:
         - vampire_secondgear_slash_projaoe_pain
 vampire_secondgear_slash_projaoe_pain:
     spell-class: ".targeted.PainSpell"
-    damage: 175
+    damage: 215
     spell-damage-type: VAMPIRE_ATTACKS
     helper-spell: true
     range: 1
@@ -191,6 +236,16 @@ vampire_secondgear_slash_projaoe_pain:
     target-players: true
     check-plugins: true
 #~~~~~~~~~        Color       ~~~~~~~~~~~#
+vampire_secondgear_slash_color4:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - vampire_secondgear_slash_colorpt4
+        - DELAY 04
+        - vampire_secondgear_slash_projaoe4
 vampire_secondgear_slash_color2:
     spell-class: ".TargetedMultiSpell"
     check-individual-cooldowns: false
@@ -275,6 +330,55 @@ vampire_secondgear_slash_colorpt2:
         particle-name: ash
         horiz-spread: 0.2
         vert-spread: 0.2
+        color: 386646
+        speed: 0.0
+        count: 3.5
+        forward-offset: 0
+        height-offset: 0.4
+vampire_secondgear_slash_colorpt4:
+    spell-class: ".targeted.DummySpell"
+    helper-spell: true
+    effects:
+      0:
+        position: target
+        effect: particles
+        particle-name: redstone
+        horiz-spread: 0.8
+        vert-spread: 0.1
+        speed: 0.0
+        color: FB3D49
+        count: 12.5
+        forward-offset: 0
+        height-offset: 0.4
+      1:
+        position: target
+        effect: particles
+        particle-name: redstone
+        horiz-spread: 0.8
+        vert-spread: 0.1
+        speed: 0.0
+        color: FA545C
+        count: 12.5
+        forward-offset: 0
+        height-offset: 0.4
+      6:
+        position: target
+        effect: particles
+        particle-name: sweep_attack
+        horiz-spread: 0.8
+        vert-spread: 0.1
+        speed: 0.0
+        color: FA545C
+        count: 2
+        chance: 50
+        forward-offset: 0
+        height-offset: 0.4
+      2:
+        position: target
+        effect: particles
+        particle-name: ash
+        horiz-spread: 0.6
+        vert-spread: 0.1
         color: 386646
         speed: 0.0
         count: 3.5
@@ -724,7 +828,7 @@ vampire_secondgear_thrust_slash_2:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -753,7 +857,7 @@ vampire_secondgear_thrust_slash_1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -782,7 +886,7 @@ vampire_secondgear_thrust_slash:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -794,6 +898,407 @@ vampire_secondgear_thrust_slash:
     spell-on-tick: vampire_secondgear_slash_color2
     spell: vampire_secondgear_slash_projaoe2
 #  vertical slash. right to left. top to down.
+vampire_secondgear_slash_l_r3:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    spells:
+        - vampire_secondgear_slash_l_r3_proj1
+        - vampire_secondgear_slash_l_r3_proj2
+        - DELAY 01
+        - vampire_secondgear_slash_l_r3_proj3
+        - vampire_secondgear_slash_l_r3_proj4
+        - DELAY 01
+        - vampire_secondgear_slash_l_r3_proj5
+        - vampire_secondgear_slash_l_r3_proj6
+        - vampire_secondgear_slash_l_r3_proj7
+        - vampire_secondgear_slash_l_r3_proj8
+        - vampire_secondgear_slash_l_r3_proj9
+        - DELAY 01
+        - vampire_secondgear_slash_l_r3_proj10
+        - vampire_secondgear_slash_l_r3_proj11
+        - vampire_secondgear_slash_l_r3_proj12
+        - DELAY 01
+        - vampire_secondgear_slash_l_r3_proj13
+vampire_secondgear_slash_l_r3_proj1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 40
+    projectile-horiz-offset: -90
+    projectile-vert-offset: -0.2
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 45
+    projectile-horiz-offset: -80
+    projectile-vert-offset: -0.18
+    helper-spell: true
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-vert-spread: 0.01
+    particle-horiz-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 45
+    projectile-horiz-offset: -60
+    projectile-vert-offset: -0.15
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    helper-spell: true
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-vert-spread: 0.01
+    particle-horiz-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj4:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -40
+    projectile-vert-offset: -0.12
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    helper-spell: true
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-vert-spread: 0.01
+    particle-horiz-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj5:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: -20
+    projectile-vert-offset: -0.1
+    projectile-gravity: 0
+    change-pitch: false
+    helper-spell: true
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj6:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 40
+    helper-spell: true
+    projectile-horiz-offset: 0
+    projectile-vert-offset: -0.08
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj7:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 40
+    projectile-horiz-offset: 20
+    projectile-vert-offset: -0.05
+    helper-spell: true
+    projectile-gravity: 0
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj8:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 40
+    projectile-vert-offset: -0.02
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj9:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 60
+    projectile-vert-offset: 0.0
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj10:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 80
+    projectile-vert-offset: -0.0
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj11:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 90
+    projectile-vert-offset: 0.01
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj12:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 100
+    projectile-vert-offset: 0.02
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
+vampire_secondgear_slash_l_r3_proj13:
+    spell-class: ".instant.ParticleProjectileSpell"
+    relative-offset: 1,1,0
+    projectile-velocity: 35
+    projectile-horiz-offset: 110
+    projectile-vert-offset: 0.05
+    projectile-gravity: 0
+    helper-spell: true
+    change-pitch: false
+    power-affects-velocity: false
+    tick-interval: 1
+    special-effect-interval: 1
+    spell-interval: 1
+    particle-name: block
+    particle-count: 1
+    particle-horiz-spread: 0.01
+    particle-vert-spread: 0.01
+    projectile-speed: 0.0
+    max-distance: 7.5
+    hit-players: false
+    hit-non-players: false
+    stop-on-hit-entity: false
+    hit-ground: false
+    hit-air-during: true
+    hit-radius: 1
+    vertical-hit-radius: 1
+    hit-air-at-end: true
+    spell-on-tick: vampire_secondgear_slash_color4
+    spell: vampire_secondgear_slash_projaoe4
 vampire_secondgear_v_r_l_slash_t_proj1:
     spell-class: ".instant.ParticleProjectileSpell"
     relative-offset: 1,1,0
@@ -812,7 +1317,7 @@ vampire_secondgear_v_r_l_slash_t_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -841,7 +1346,7 @@ vampire_secondgear_v_r_l_slash_t_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -870,7 +1375,7 @@ vampire_secondgear_v_r_l_slash_t_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -899,7 +1404,7 @@ vampire_secondgear_v_r_l_slash_t_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -928,7 +1433,7 @@ vampire_secondgear_v_r_l_slash_t_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -957,7 +1462,7 @@ vampire_secondgear_v_r_l_slash_t_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -986,7 +1491,7 @@ vampire_secondgear_v_r_l_slash_t_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1015,7 +1520,7 @@ vampire_secondgear_v_r_l_slash_t_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1044,7 +1549,7 @@ vampire_secondgear_v_r_l_slash_t_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1073,7 +1578,7 @@ vampire_secondgear_v_r_l_slash_t_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1102,7 +1607,7 @@ vampire_secondgear_v_r_l_slash_t_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1131,7 +1636,7 @@ vampire_secondgear_v_r_l_slash_t_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1160,7 +1665,7 @@ vampire_secondgear_v_r_l_slash_t_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1189,7 +1694,7 @@ vampire_secondgear_slash_l_r_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1218,7 +1723,7 @@ vampire_secondgear_slash_l_r_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1247,7 +1752,7 @@ vampire_secondgear_slash_l_r_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1276,7 +1781,7 @@ vampire_secondgear_slash_l_r_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1305,7 +1810,7 @@ vampire_secondgear_slash_l_r_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1334,7 +1839,7 @@ vampire_secondgear_slash_l_r_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1363,7 +1868,7 @@ vampire_secondgear_slash_l_r_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1392,7 +1897,7 @@ vampire_secondgear_slash_l_r_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1421,7 +1926,7 @@ vampire_secondgear_slash_l_r_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1450,7 +1955,7 @@ vampire_secondgear_slash_l_r_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1479,7 +1984,7 @@ vampire_secondgear_slash_l_r_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1508,7 +2013,7 @@ vampire_secondgear_slash_l_r_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1537,7 +2042,7 @@ vampire_secondgear_slash_l_r_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1566,7 +2071,7 @@ vampire_secondgear_slash_l_r2_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1595,7 +2100,7 @@ vampire_secondgear_slash_l_r2_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1624,7 +2129,7 @@ vampire_secondgear_slash_l_r2_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1653,7 +2158,7 @@ vampire_secondgear_slash_l_r2_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1682,7 +2187,7 @@ vampire_secondgear_slash_l_r2_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1711,7 +2216,7 @@ vampire_secondgear_slash_l_r2_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1740,7 +2245,7 @@ vampire_secondgear_slash_l_r2_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1769,7 +2274,7 @@ vampire_secondgear_slash_l_r2_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1798,7 +2303,7 @@ vampire_secondgear_slash_l_r2_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1827,7 +2332,7 @@ vampire_secondgear_slash_l_r2_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1856,7 +2361,7 @@ vampire_secondgear_slash_l_r2_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1885,7 +2390,7 @@ vampire_secondgear_slash_l_r2_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1914,7 +2419,7 @@ vampire_secondgear_slash_l_r2_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1944,7 +2449,7 @@ vampire_secondgear_v_l_r_slash_t_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1973,7 +2478,7 @@ vampire_secondgear_v_l_r_slash_t_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2002,7 +2507,7 @@ vampire_secondgear_v_l_r_slash_t_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2031,7 +2536,7 @@ vampire_secondgear_v_l_r_slash_t_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2060,7 +2565,7 @@ vampire_secondgear_v_l_r_slash_t_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2089,7 +2594,7 @@ vampire_secondgear_v_l_r_slash_t_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2118,7 +2623,7 @@ vampire_secondgear_v_l_r_slash_t_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2147,7 +2652,7 @@ vampire_secondgear_v_l_r_slash_t_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2176,7 +2681,7 @@ vampire_secondgear_v_l_r_slash_t_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2205,7 +2710,7 @@ vampire_secondgear_v_l_r_slash_t_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2234,7 +2739,7 @@ vampire_secondgear_v_l_r_slash_t_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2263,7 +2768,7 @@ vampire_secondgear_v_l_r_slash_t_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2292,7 +2797,7 @@ vampire_secondgear_v_l_r_slash_t_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2322,7 +2827,7 @@ vampire_secondgear_v_r_l_slash_d_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2351,7 +2856,7 @@ vampire_secondgear_v_r_l_slash_d_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2380,7 +2885,7 @@ vampire_secondgear_v_r_l_slash_d_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2409,7 +2914,7 @@ vampire_secondgear_v_r_l_slash_d_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2438,7 +2943,7 @@ vampire_secondgear_v_r_l_slash_d_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2467,7 +2972,7 @@ vampire_secondgear_v_r_l_slash_d_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2496,7 +3001,7 @@ vampire_secondgear_v_r_l_slash_d_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2525,7 +3030,7 @@ vampire_secondgear_v_r_l_slash_d_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2554,7 +3059,7 @@ vampire_secondgear_v_r_l_slash_d_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2583,7 +3088,7 @@ vampire_secondgear_v_r_l_slash_d_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2612,7 +3117,7 @@ vampire_secondgear_v_r_l_slash_d_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2641,7 +3146,7 @@ vampire_secondgear_v_r_l_slash_d_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2670,7 +3175,7 @@ vampire_secondgear_v_r_l_slash_d_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2700,7 +3205,7 @@ vampire_secondgear_v_l_r_slash_d_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2729,7 +3234,7 @@ vampire_secondgear_v_l_r_slash_d_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2758,7 +3263,7 @@ vampire_secondgear_v_l_r_slash_d_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2787,7 +3292,7 @@ vampire_secondgear_v_l_r_slash_d_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2816,7 +3321,7 @@ vampire_secondgear_v_l_r_slash_d_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2845,7 +3350,7 @@ vampire_secondgear_v_l_r_slash_d_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2874,7 +3379,7 @@ vampire_secondgear_v_l_r_slash_d_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2903,7 +3408,7 @@ vampire_secondgear_v_l_r_slash_d_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2932,7 +3437,7 @@ vampire_secondgear_v_l_r_slash_d_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2961,7 +3466,7 @@ vampire_secondgear_v_l_r_slash_d_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -2990,7 +3495,7 @@ vampire_secondgear_v_l_r_slash_d_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3019,7 +3524,7 @@ vampire_secondgear_v_l_r_slash_d_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3048,7 +3553,7 @@ vampire_secondgear_v_l_r_slash_d_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3078,7 +3583,7 @@ vampire_secondgear_d_slash_r_l_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3107,7 +3612,7 @@ vampire_secondgear_d_slash_r_l_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3136,7 +3641,7 @@ vampire_secondgear_d_slash_r_l_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3165,7 +3670,7 @@ vampire_secondgear_d_slash_r_l_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3194,7 +3699,7 @@ vampire_secondgear_d_slash_r_l_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3223,7 +3728,7 @@ vampire_secondgear_d_slash_r_l_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3252,7 +3757,7 @@ vampire_secondgear_d_slash_r_l_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3281,7 +3786,7 @@ vampire_secondgear_d_slash_r_l_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3310,7 +3815,7 @@ vampire_secondgear_d_slash_r_l_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3339,7 +3844,7 @@ vampire_secondgear_d_slash_r_l_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3368,7 +3873,7 @@ vampire_secondgear_d_slash_r_l_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3397,7 +3902,7 @@ vampire_secondgear_d_slash_r_l_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3426,7 +3931,7 @@ vampire_secondgear_d_slash_r_l_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3455,7 +3960,7 @@ vampire_secondgear_d_slash_r_l2_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3484,7 +3989,7 @@ vampire_secondgear_d_slash_r_l2_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3513,7 +4018,7 @@ vampire_secondgear_d_slash_r_l2_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3542,7 +4047,7 @@ vampire_secondgear_d_slash_r_l2_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3571,7 +4076,7 @@ vampire_secondgear_d_slash_r_l2_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3600,7 +4105,7 @@ vampire_secondgear_d_slash_r_l2_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3629,7 +4134,7 @@ vampire_secondgear_d_slash_r_l2_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3658,7 +4163,7 @@ vampire_secondgear_d_slash_r_l2_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3687,7 +4192,7 @@ vampire_secondgear_d_slash_r_l2_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3716,7 +4221,7 @@ vampire_secondgear_d_slash_r_l2_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3745,7 +4250,7 @@ vampire_secondgear_d_slash_r_l2_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3774,7 +4279,7 @@ vampire_secondgear_d_slash_r_l2_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3803,7 +4308,7 @@ vampire_secondgear_d_slash_r_l2_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3833,7 +4338,7 @@ vampire_secondgear_d_slash_l_r_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3862,7 +4367,7 @@ vampire_secondgear_d_slash_l_r_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3891,7 +4396,7 @@ vampire_secondgear_d_slash_l_r_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3920,7 +4425,7 @@ vampire_secondgear_d_slash_l_r_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3949,7 +4454,7 @@ vampire_secondgear_d_slash_l_r_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -3978,7 +4483,7 @@ vampire_secondgear_d_slash_l_r_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4007,7 +4512,7 @@ vampire_secondgear_d_slash_l_r_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4036,7 +4541,7 @@ vampire_secondgear_d_slash_l_r_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4065,7 +4570,7 @@ vampire_secondgear_d_slash_l_r_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4094,7 +4599,7 @@ vampire_secondgear_d_slash_l_r_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4123,7 +4628,7 @@ vampire_secondgear_d_slash_l_r_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4152,7 +4657,7 @@ vampire_secondgear_d_slash_l_r_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4181,7 +4686,7 @@ vampire_secondgear_d_slash_l_r_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4211,7 +4716,7 @@ vampire_secondgear_t_slash_r_l_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4240,7 +4745,7 @@ vampire_secondgear_t_slash_r_l_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4269,7 +4774,7 @@ vampire_secondgear_t_slash_r_l_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4298,7 +4803,7 @@ vampire_secondgear_t_slash_r_l_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4327,7 +4832,7 @@ vampire_secondgear_t_slash_r_l_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4356,7 +4861,7 @@ vampire_secondgear_t_slash_r_l_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4385,7 +4890,7 @@ vampire_secondgear_t_slash_r_l_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4414,7 +4919,7 @@ vampire_secondgear_t_slash_r_l_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4443,7 +4948,7 @@ vampire_secondgear_t_slash_r_l_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4472,7 +4977,7 @@ vampire_secondgear_t_slash_r_l_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4501,7 +5006,7 @@ vampire_secondgear_t_slash_r_l_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4530,7 +5035,7 @@ vampire_secondgear_t_slash_r_l_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4559,7 +5064,7 @@ vampire_secondgear_t_slash_r_l_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4589,7 +5094,7 @@ vampire_secondgear_t_slash_l_r_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4618,7 +5123,7 @@ vampire_secondgear_t_slash_l_r_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4647,7 +5152,7 @@ vampire_secondgear_t_slash_l_r_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4676,7 +5181,7 @@ vampire_secondgear_t_slash_l_r_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4705,7 +5210,7 @@ vampire_secondgear_t_slash_l_r_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4734,7 +5239,7 @@ vampire_secondgear_t_slash_l_r_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4763,7 +5268,7 @@ vampire_secondgear_t_slash_l_r_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4792,7 +5297,7 @@ vampire_secondgear_t_slash_l_r_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4821,7 +5326,7 @@ vampire_secondgear_t_slash_l_r_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4850,7 +5355,7 @@ vampire_secondgear_t_slash_l_r_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4879,7 +5384,7 @@ vampire_secondgear_t_slash_l_r_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4908,7 +5413,7 @@ vampire_secondgear_t_slash_l_r_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4937,7 +5442,7 @@ vampire_secondgear_t_slash_l_r_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4966,7 +5471,7 @@ vampire_secondgear_slash_r_l_proj1:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -4995,7 +5500,7 @@ vampire_secondgear_slash_r_l_proj2:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5024,7 +5529,7 @@ vampire_secondgear_slash_r_l_proj3:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5053,7 +5558,7 @@ vampire_secondgear_slash_r_l_proj4:
     particle-vert-spread: 0.01
     particle-horiz-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5082,7 +5587,7 @@ vampire_secondgear_slash_r_l_proj5:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5111,7 +5616,7 @@ vampire_secondgear_slash_r_l_proj6:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5140,7 +5645,7 @@ vampire_secondgear_slash_r_l_proj7:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5169,7 +5674,7 @@ vampire_secondgear_slash_r_l_proj8:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5198,7 +5703,7 @@ vampire_secondgear_slash_r_l_proj9:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5227,7 +5732,7 @@ vampire_secondgear_slash_r_l_proj10:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5256,7 +5761,7 @@ vampire_secondgear_slash_r_l_proj11:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5285,7 +5790,7 @@ vampire_secondgear_slash_r_l_proj12:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -5314,7 +5819,7 @@ vampire_secondgear_slash_r_l_proj13:
     particle-horiz-spread: 0.01
     particle-vert-spread: 0.01
     projectile-speed: 0.0
-    max-distance: 5.5
+    max-distance: 4.5
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
