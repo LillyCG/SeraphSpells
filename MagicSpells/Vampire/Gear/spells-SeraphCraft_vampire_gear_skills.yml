@@ -30,6 +30,12 @@ secondclass_gear_leftmouseptpt:
     modifiers:
         - variable secondclass_gear_combo:4 required
 #~#
+secondclass_gear_rightmouse:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast secondclassgear_3skill
+#~#
 secondclass_gear_dash:
     spell-class: ".MultiSpell"
     check-individual-cooldowns: false
@@ -60,5 +66,5 @@ secondclass_gear_dashleap1:
     spell-class: ".instant.LeapSpell"
     helper-spell: true
     forward-velocity: 4.5
-    upward-velocity: 3.5
+    upward-velocity: 3.1
     cancel-damage: true
