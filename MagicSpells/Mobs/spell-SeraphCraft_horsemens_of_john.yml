@@ -80,7 +80,7 @@ horsemens_of_john_resistpt5:
         - buffactive horsemens_of_john_resistpt5 denied
     spell-damage-types:
         - CURSED_GEAR_ATTACKS
-    multiplier: 1.15
+    multiplier: 2.5
 horsemens_of_john_resistpt6:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -92,7 +92,7 @@ horsemens_of_john_resistpt6:
         - buffactive horsemens_of_john_resistpt6 denied
     spell-damage-types:
         - ENCHANTED_GEAR_ATTACKS
-    multiplier: 1.5
+    multiplier: 0.5
 #~~~~~~~#
 horsemen_leapspt:
     spell-class: ".instant.LeapSpell"
@@ -283,10 +283,27 @@ horsemen_dashleapptpt:
     spells:
         - horsemen_dashleapptptpain
 horsemen_dashleapptptpain:
+    spell-class: ".TargetedMultiSpell"
+    helper-spell: true
+    spells:
+        - horsemen_dashleapptptpainpt
+        - DELAY 02
+        - horsemen_dashleapptptpainpttoss
+horsemen_dashleapptptpainpt:
+    spell-class: ".targeted.PainSpell"
+    damage: 35
+    spell-damage-type: HORSEMENS_OF_JOHN
+    helper-spell: true
+    range: 1
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    check-plugins: true
+horsemen_dashleapptptpainpttoss:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 35
+    damage: 1
     horizontal-force: 9.5
     vertical-force: 3.1
     obey-los: true
@@ -544,7 +561,6 @@ horsemen_jumpproj2_1:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -576,7 +592,6 @@ horsemen_jumpproj2_2:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -608,7 +623,6 @@ horsemen_jumpproj2_3:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -640,7 +654,6 @@ horsemen_jumpproj2_4:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -672,7 +685,6 @@ horsemen_jumpproj2_5:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -704,7 +716,6 @@ horsemen_jumpproj2_6:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -736,7 +747,6 @@ horsemen_jumpproj2_7:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -768,7 +778,6 @@ horsemen_jumpproj2_8:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -800,7 +809,6 @@ horsemen_jumpproj2_9:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -832,7 +840,6 @@ horsemen_jumpproj2_10:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -864,7 +871,6 @@ horsemen_jumpproj2_11:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -896,7 +902,6 @@ horsemen_jumpproj2_12:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -928,7 +933,6 @@ horsemen_jumpproj2_13:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -960,7 +964,6 @@ horsemen_jumpproj2_14:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -992,7 +995,6 @@ horsemen_jumpproj2_15:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1024,7 +1026,6 @@ horsemen_jumpproj2_16:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1056,7 +1057,6 @@ horsemen_jumpproj2_17:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1088,7 +1088,6 @@ horsemen_jumpproj0:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1120,7 +1119,6 @@ horsemen_jumpproj1_1:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1152,7 +1150,6 @@ horsemen_jumpproj1_2:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1184,7 +1181,6 @@ horsemen_jumpproj1_3:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1216,7 +1212,6 @@ horsemen_jumpproj1_4:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1248,7 +1243,6 @@ horsemen_jumpproj1_5:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1280,7 +1274,6 @@ horsemen_jumpproj1_6:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1312,7 +1305,6 @@ horsemen_jumpproj1_7:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1344,7 +1336,6 @@ horsemen_jumpproj1_8:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1376,7 +1367,6 @@ horsemen_jumpproj1_9:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1408,7 +1398,6 @@ horsemen_jumpproj1_10:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1440,7 +1429,6 @@ horsemen_jumpproj1_11:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1472,7 +1460,6 @@ horsemen_jumpproj1_12:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1504,7 +1491,6 @@ horsemen_jumpproj1_13:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1536,7 +1522,6 @@ horsemen_jumpproj1_14:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1568,7 +1553,6 @@ horsemen_jumpproj1_15:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1600,7 +1584,6 @@ horsemen_jumpproj1_16:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1632,7 +1615,6 @@ horsemen_jumpproj1_17:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1664,7 +1646,6 @@ horsemen_jumpproj18:
     particle-vert-spread: 0.01
     projectile-speed: 0.0
     max-duration: 10
-    max-distance: 100
     hit-players: false
     hit-non-players: false
     stop-on-hit-entity: false
@@ -1691,20 +1672,22 @@ horsemen_jumpprojmspdummy:
         position: target
         effect: particles
         particle-name: sweep_attack
-        horiz-spread: 2.9
+        horiz-spread: 0.9
         vert-spread: 0.5
         speed: 0.15
         count: 1
+        chance: 50
         height-offset: 0.2
       2:
         position: target
         effect: particles
         particle-name: poof
-        horiz-spread: 2.5
+        horiz-spread: 0.5
         vert-spread: 0.5
         speed: 0.2
         size: 3.5
-        count: 5
+        count: 2
+        chance: 35
         height-offset: 0.5
       1:
         delay: 05
@@ -1728,10 +1711,27 @@ horsemen_jumpprojmspaoe:
     spells:
         - horsemen_jumpprojmspaoetoss
 horsemen_jumpprojmspaoetoss:
+    spell-class: ".TargetedMultiSpell"
+    helper-spell: true
+    spells:
+        - horsemen_jumpprojmspaoetosspain
+        - DELAY 02
+        - horsemen_jumpprojmspaoetosspt
+horsemen_jumpprojmspaoetosspain:
+    spell-class: ".targeted.PainSpell"
+    damage: 15
+    spell-damage-type: HORSEMENS_OF_JOHN
+    helper-spell: true
+    range: 1
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    check-plugins: true
+horsemen_jumpprojmspaoetosspt:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 15
+    damage: 1
     horizontal-force: 9.5
     vertical-force: 2.1
     obey-los: true
