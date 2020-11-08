@@ -11,14 +11,14 @@ horsemen_conquest_skills_melee:
   - incombat true
   - targetwithin 9 true
   Skills:
-  - randomskill{skills=horsemen_dash,horsemen_skill_1_conquest,horsemen_skill_2_conquest,horsemen_skill_4_conquest,horsemen_skill_3_conquest}
+  - randomskill{skills=horsemen_dash,horsemen_skill_1_conquest,horsemen_skill_5_conquest,horsemen_skill_6_conquest,horsemen_skill_7_conquest,horsemen_skill_2_conquest,horsemen_skill_4_conquest,horsemen_skill_3_conquest}
 horsemen_conquest_skills_range:
   Conditions:
   - incombat true
   - targetwithin 22 true
   - targetwithin 9 cancel
   Skills:
-  - randomskill{skills=horsemen_jump,horsemen_dash_long,horsemen_skill_3_conquest}
+  - randomskill{skills=horsemen_jump,horsemen_skill_5_conquest,horsemen_skill_6_conquest,horsemen_skill_7_conquest,horsemen_dash_long,horsemen_skill_3_conquest}
 horsemen_conquest_skills_veryrange:
   Conditions:
   - incombat true
@@ -39,3 +39,12 @@ horsemen_skill_3_conquest:
 horsemen_skill_4_conquest:
   Skills:
   - command{c="c forcecast <caster.uuid> horsemen_conquest_skill4";} @self
+horsemen_skill_5_conquest:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_conquest_skill5";} @self
+horsemen_skill_6_conquest:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_conquest_skill6";} @self
+horsemen_skill_7_conquest:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_conquest_skill7";} @self
