@@ -3,7 +3,7 @@ horsemen_speed:
     helper-spell: true
     type: speed
     duration: 80
-    strength: 12.5
+    strength: 17.5
     targeted: false
     ambient: false
     hidden: true
@@ -43,7 +43,7 @@ horsemens_of_john_resistpt2:
         - buffactive horsemens_of_john_resistpt2 denied
     spell-damage-types:
         - VAMPIRE_ATTACKS
-    multiplier: 5.5
+    multiplier: 0.95
 horsemens_of_john_resistpt3:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -80,7 +80,7 @@ horsemens_of_john_resistpt5:
         - buffactive horsemens_of_john_resistpt5 denied
     spell-damage-types:
         - CURSED_GEAR_ATTACKS
-    multiplier: 2.5
+    multiplier: 1.15
 horsemens_of_john_resistpt6:
     spell-class: ".buff.ResistSpell"
     duration: 0
@@ -92,7 +92,7 @@ horsemens_of_john_resistpt6:
         - buffactive horsemens_of_john_resistpt6 denied
     spell-damage-types:
         - ENCHANTED_GEAR_ATTACKS
-    multiplier: 0.5
+    multiplier: 1.5
 #~~~~~~~#
 horsemen_leapspt:
     spell-class: ".instant.LeapSpell"
@@ -426,7 +426,7 @@ horsemen_regendummy:
 horsemen_regenpt:
     spell-class: ".targeted.HealSpell"
     helper-spell: true
-    heal-amount: 5.5
+    heal-amount: 10.5
     cancel-if-full: false
     target-self: true
     str-cast-self: ""
