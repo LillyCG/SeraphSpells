@@ -1,12 +1,12 @@
 horsemen_threats:
   Skills:
-  - threat{a=250} @EntitiesInRadius{r=30;sort=NEAREST;limit=5}
+  - threat{a=1} @EntitiesInRadius{r=30;sort=NEAREST;limit=5}
 horsemen_threat_null:
   Conditions:
   - targetwithin 45 cancel
   - targetnotwithin 135 true
   Skills:
-  - threat{a=-100} @target
+  - threat{a=-1000} @target
 horsemen_leaps:
   Conditions:
   - incombat true
