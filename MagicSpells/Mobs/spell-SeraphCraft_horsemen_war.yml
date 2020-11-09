@@ -342,8 +342,8 @@ horsemen_war_skill3dummymspptaoestun:
         - DELAY 05
         - horsemen_war_skill3dummymspptaoestunpt1
         - DELAY 08
-        - horsemen_war_skill3dummymspptaoestunpt2
-horsemen_war_skill3dummymspptaoestunpt2:
+        - horsemen_war_skill3dummymspptaoestunpt4
+horsemen_war_skill3dummymspptaoestunpt4:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
