@@ -11,14 +11,14 @@ horsemen_famine_skills_melee:
   - incombat true
   - targetwithin 9 true
   Skills:
-  - randomskill{skills=horsemen_dash,horsemen_skill_1_famine,horsemen_skill_2_famine,horsemen_skill_4_famine,horsemen_skill_3_famine}
+  - randomskill{skills=horsemen_dash,horsemen_carthrow,horsemen_skill_1_famine,horsemen_skill_2_famine,horsemen_skill_4_famine,horsemen_skill_3_famine}
 horsemen_famine_skills_range:
   Conditions:
   - incombat true
   - targetwithin 22 true
   - targetwithin 9 cancel
   Skills:
-  - randomskill{skills=horsemen_jump,horsemen_dash_long,horsemen_skill_3_famine,horsemen_skill_4_famine}
+  - randomskill{skills=horsemen_jump,horsemen_dash_long,horsemen_skill_3_famine,horsemen_carthrow,horsemen_skill_4_famine}
 horsemen_famine_skills_veryrange:
   Conditions:
   - incombat true
