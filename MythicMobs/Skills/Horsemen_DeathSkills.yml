@@ -11,14 +11,14 @@ horsemen_death_skills_melee:
   - incombat true
   - targetwithin 9 true
   Skills:
-  - randomskill{skills=horsemen_dash,horsemen_skill_8_death,horsemen_skill_5_death,horsemen_skill_7_death,horsemen_skill_6_death,horsemen_skill_6_death,horsemen_skill_1_death,horsemen_skill_2_death,horsemen_skill_4_death,horsemen_skill_3_death}
+  - randomskill{skills=horsemen_dash,horsemen_carthrow,horsemen_skill_8_death,horsemen_skill_5_death,horsemen_skill_7_death,horsemen_skill_6_death,horsemen_skill_6_death,horsemen_skill_1_death,horsemen_skill_2_death,horsemen_skill_4_death,horsemen_skill_3_death}
 horsemen_death_skills_range:
   Conditions:
   - incombat true
   - targetwithin 22 true
   - targetwithin 9 cancel
   Skills:
-  - randomskill{skills=horsemen_jump,horsemen_dash_long,horsemen_skill_3_death}
+  - randomskill{skills=horsemen_jump,horsemen_dash_long,horsemen_carthrow,horsemen_skill_3_death}
 horsemen_death_skills_veryrange:
   Conditions:
   - incombat true
