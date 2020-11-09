@@ -377,7 +377,7 @@ horsemen_war_skill3dummymspptaoestunpt2:
     duration: 60
     tags:
         - allowed_at_silence
-    target-self: true
+    target-self: false
 horsemen_war_skill3dummymspptaoestunpt3:
     spell-class: ".targeted.SilenceSpell"
     prevent-cast: true
