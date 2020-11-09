@@ -1,6 +1,6 @@
 horsemen_famine:
   Type: zombie
-  Display: "&f&lHorsemen of John"
+  Display: "&fВсадник Апокалипсиса | &c <mob.level> Уровень"
   Health: 2500
   Modules:
     ImmunityTable: true
@@ -27,6 +27,9 @@ horsemen_famine:
   Despawn: false
   Modules:
     ThreatTable: true
+  LevelModifiers:
+    Health: 100
+    MovementSpeed: 0.003
   Drops:
   - exp 0 0
   Options:
@@ -41,9 +44,11 @@ horsemen_famine:
     MovementSpeed: 0.12
     AttackSpeed: 0.0
   Skills:
+  - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
   - threat{a=-1000} @trigger ~onKillPlayer
   - threat{a=-1000} @trigger ~onPlayerDeath
+  - setlevel{a=add;l=1} ~onKill 0.01
   - skill{s=horsemen_threats} ~onTimer:50
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_leaps} ~onTimer:01
@@ -54,7 +59,7 @@ horsemen_famine:
   - skill{s=horsemen_threat_null} ~onTimer:50
 horsemen_death:
   Type: zombie
-  Display: "&f&lHorsemen of John"
+  Display: "&fВсадник Апокалипсиса | &c <mob.level> Уровень"
   Health: 2500
   Modules:
     ImmunityTable: true
@@ -81,6 +86,9 @@ horsemen_death:
   Despawn: false
   Modules:
     ThreatTable: true
+  LevelModifiers:
+    Health: 100
+    MovementSpeed: 0.003
   Drops:
   - exp 0 0
   Options:
@@ -95,9 +103,11 @@ horsemen_death:
     MovementSpeed: 0.12
     AttackSpeed: 0.0
   Skills:
+  - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
   - threat{a=-1000} @trigger ~onKillPlayer
   - threat{a=-1000} @trigger ~onPlayerDeath
+  - setlevel{a=add;l=1} ~onKill 0.01
   - skill{s=horsemen_threats} ~onTimer:50
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_leaps} ~onTimer:01
@@ -108,7 +118,7 @@ horsemen_death:
   - skill{s=horsemen_threat_null} ~onTimer:50
 horsemen_war:
   Type: zombie
-  Display: "&f&lHorsemen of John"
+  Display: "&fВсадник Апокалипсиса | &c <mob.level> Уровень"
   Health: 2500
   Modules:
     ImmunityTable: true
@@ -135,6 +145,9 @@ horsemen_war:
   Despawn: false
   Modules:
     ThreatTable: true
+  LevelModifiers:
+    Health: 100
+    MovementSpeed: 0.003
   Drops:
   - exp 0 0
   Options:
@@ -149,9 +162,11 @@ horsemen_war:
     MovementSpeed: 0.12
     AttackSpeed: 0.0
   Skills:
+  - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
   - threat{a=-1000} @trigger ~onKillPlayer
   - threat{a=-1000} @trigger ~onPlayerDeath
+  - setlevel{a=add;l=1} ~onKill 0.01
   - skill{s=horsemen_threats} ~onTimer:50
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_leaps} ~onTimer:01
@@ -162,7 +177,7 @@ horsemen_war:
   - skill{s=horsemen_threat_null} ~onTimer:50
 horsemen_conquest:
   Type: zombie
-  Display: "&f&lHorsemen of John"
+  Display: "&fВсадник Апокалипсиса | &c <mob.level> Уровень"
   Health: 2500
   Modules:
     ImmunityTable: true
@@ -189,6 +204,9 @@ horsemen_conquest:
   Despawn: false
   Modules:
     ThreatTable: true
+  LevelModifiers:
+    Health: 100
+    MovementSpeed: 0.003
   Drops:
   - exp 0 0
   Options:
@@ -203,9 +221,11 @@ horsemen_conquest:
     MovementSpeed: 0.09
     AttackSpeed: 0.0
   Skills:
+  - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
   - threat{a=-1000} @trigger ~onKillPlayer
   - threat{a=-1000} @trigger ~onPlayerDeath
+  - setlevel{a=add;l=1} ~onKill 0.01
   - skill{s=horsemen_threats} ~onTimer:50
   - skill{s=horsemen_leaps} ~onTimer:01
   - skill{s=horsemen_resist} ~onTimer:01
