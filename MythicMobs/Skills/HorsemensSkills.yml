@@ -1,3 +1,71 @@
+horsemen_lvl:
+  Skills:
+  - randomskill{
+    skills=
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl0,
+    horsemen_lvl1,
+    horsemen_lvl1,
+    horsemen_lvl1,
+    horsemen_lvl1,
+    horsemen_lvl1,
+    horsemen_lvl1,
+    horsemen_lvl2,
+    horsemen_lvl2,
+    horsemen_lvl2,
+    horsemen_lvl2,
+    horsemen_lvl2,
+    horsemen_lvl3,
+    horsemen_lvl3,
+    horsemen_lvl4,
+    horsemen_lvl4,
+    horsemen_lvl5,
+    horsemen_lvl6,
+    horsemen_lvl7,
+    horsemen_lvl8,
+    horsemen_lvl9,
+    horsemen_lvl10
+    }
+horsemen_lvl1:
+  Skills:
+  - setlevel{a=add;l=10}
+horsemen_lvl2:
+  Skills:
+  - setlevel{a=add;l=20}
+horsemen_lvl3:
+  Skills:
+  - setlevel{a=add;l=30}
+horsemen_lvl4:
+  Skills:
+  - setlevel{a=add;l=40}
+horsemen_lvl5:
+  Skills:
+  - setlevel{a=add;l=50}
+horsemen_lvl6:
+  Skills:
+  - setlevel{a=add;l=60}
+horsemen_lvl7:
+  Skills:
+  - setlevel{a=add;l=70}
+horsemen_lvl8:
+  Skills:
+  - setlevel{a=add;l=80}
+horsemen_lvl9:
+  Skills:
+  - setlevel{a=add;l=90}
+horsemen_lvl10:
+  Skills:
+  - setlevel{a=add;l=100}
+horsemen_lvl0:
+  Skills:
+  - setlevel{a=add;l=1}
+#~#
 horsemen_threats:
   Skills:
   - threat{a=1} @EntitiesInRadius{r=30;sort=NEAREST;limit=5}
@@ -31,6 +99,9 @@ horsemen_dash_long:
 horsemen_dash:
   Skills:
   - command{c="c forcecast <caster.uuid> horsemen_dash";} @self
+horsemen_carthrow:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_carthrow";} @self
 horsemen_resist:
   Skills:
   - command{c="c forcecast <caster.uuid> horsemens_of_john_resist";} @self
