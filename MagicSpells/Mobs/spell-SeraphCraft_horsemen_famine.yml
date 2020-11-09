@@ -1433,8 +1433,8 @@ Horsemen_famine_slash_colorpt:
         horiz-spread: 0.8
         vert-spread: 0.1
         speed: 0.0
-        color: C6CDCD
-        count: 9.5
+        color: 000000
+        count: 8.5
         forward-offset: 0
         height-offset: 0.4
       1:
@@ -1445,7 +1445,8 @@ Horsemen_famine_slash_colorpt:
         vert-spread: 0.1
         speed: 0.0
         color: FFFFFF
-        count: 9.5
+        count: 12.5
+        size: 1.7
         forward-offset: 0
         height-offset: 0.4
       6:
@@ -1482,7 +1483,7 @@ Horsemen_famine_slash_colorpt_v:
         horiz-spread: 0.35
         vert-spread: 0.6
         speed: 0.0
-        color: C6CDCD
+        color: 000000
         count: 8.5
         forward-offset: 0.75
         height-offset: 0.4
@@ -1494,7 +1495,8 @@ Horsemen_famine_slash_colorpt_v:
         vert-spread: 0.6
         speed: 0.0
         color: FFFFFF
-        count: 8.5
+        count: 11.5
+        size: 1.7
         forward-offset: 0.75
         height-offset: 0.4
       6:
