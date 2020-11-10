@@ -102,6 +102,12 @@ horsemen_dash:
 horsemen_carthrow:
   Skills:
   - command{c="c forcecast <caster.uuid> horsemen_carthrow";} @self
+horsemen_rockthrow:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_rockthrow";} @self
+horsemen_bite:
+  Skills:
+  - command{c="c forcecast <caster.uuid> horsemen_bite";} @self
 horsemen_resist:
   Skills:
   - command{c="c forcecast <caster.uuid> horsemens_of_john_resist";} @self
