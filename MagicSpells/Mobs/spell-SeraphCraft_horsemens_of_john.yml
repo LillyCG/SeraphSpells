@@ -305,7 +305,7 @@ horsemen_rockthrow:
 horsemen_carthrowpt_explode:
     spell-class: ".targeted.ReplaceSpell"
     point-blank: false
-    duration: 200
+    duration: 60
     radius-up: 1
     radius-down: 1
     radius-horiz: 3
@@ -392,7 +392,7 @@ horsemen_carthrowpt_explode:
 horsemen_rockthrowpt_explode:
     spell-class: ".targeted.ReplaceSpell"
     point-blank: false
-    duration: 200
+    duration: 60
     radius-up: 1
     radius-down: 1
     radius-horiz: 2
