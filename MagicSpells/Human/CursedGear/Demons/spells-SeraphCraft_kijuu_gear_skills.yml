@@ -108,6 +108,7 @@ kijuu_demon_ability1pt:
     helper-spell: true
     modifiers:
         - variable kijuu_active:1 cast kijuu_demon_ability1
+        - variable kijuu_demon_abilities>0 required
 kijuu_demon_ability0:
     spell-class: ".instant.DummySpell"
     helper-spell: true
@@ -226,11 +227,13 @@ kijuu_demon_ability2pt:
     helper-spell: true
     modifiers:
         - variable kijuu_active:1 cast kijuu_demon_ability2
+        - variable kijuu_demon_abilities>1 required
 kijuu_demon_ability3pt:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     modifiers:
         - variable kijuu_active:1 cast kijuu_demon_ability3
+        - variable kijuu_demon_abilities>2 required
 kijuu_demon_ability2:
     spell-class: ".instant.DummySpell"
     helper-spell: true
