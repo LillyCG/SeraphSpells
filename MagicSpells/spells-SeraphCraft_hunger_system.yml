@@ -21,6 +21,8 @@ basicsystem_hunger:
     cast-without-target: true
     helper-spell: true
     chance: 100
+    tags:
+        - allowed_at_silence
     cooldown: 0
     spells:
         - hungersystem_msp
@@ -121,6 +123,8 @@ hungersystem_minus:
 hungersystem_msp:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
           - DELAY 01
           - hungersystem_msp
@@ -129,12 +133,16 @@ hungersystem_msp:
 hungersystem_dummy:
     spell-class: ".MultiSpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     spells:
           - DELAY 02
           - hungersystem_dummy1
 hungersystem_dummy1:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     modifiers:
         - collection hunger required
     variable-mods-cast:
