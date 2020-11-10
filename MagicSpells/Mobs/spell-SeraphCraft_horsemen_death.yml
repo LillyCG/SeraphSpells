@@ -372,7 +372,7 @@ horsemen_death_skill8dummymspptaoestunpt4:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 12
+    damage: 22
     horizontal-force: 15.5
     tags:
         - allowed_at_silence
@@ -386,7 +386,7 @@ horsemen_death_skill8dummymspptaoestunpt1:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 62
     horizontal-force: 0.5
     tags:
         - allowed_at_silence
@@ -503,7 +503,7 @@ horsemen_death_skill3mspptptmsptoss:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 21
     horizontal-force: 3.5
     vertical-force: 2.1
     obey-los: true
@@ -614,7 +614,7 @@ Horsemen_death_slash_projaoe_painpt3:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 65
     horizontal-force: -3.5
     vertical-force: 0.1
     obey-los: true
@@ -644,7 +644,7 @@ Horsemen_death_slash_projaoe_painpt2:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 60
     horizontal-force: 5.5
     vertical-force: 3.1
     obey-los: true
@@ -654,7 +654,7 @@ Horsemen_death_slash_projaoe_painpt2:
     beneficial: false
 Horsemen_death_slash_projaoe_painpt1:
     spell-class: ".targeted.PainSpell"
-    damage: 75
+    damage: 125
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1

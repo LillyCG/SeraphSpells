@@ -1300,7 +1300,7 @@ horsemen_famine_skill4msppprojmspaoetoss:
         - horsemen_famine_skill4msppprojmspaoetosspt
 horsemen_famine_skill4msppprojmspaoetosspain:
     spell-class: ".targeted.PainSpell"
-    damage: 35
+    damage: 195
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -1312,7 +1312,7 @@ horsemen_famine_skill4msppprojmspaoetosspt:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 35
     horizontal-force: 4.5
     vertical-force: 12.1
     obey-los: true
@@ -1343,7 +1343,7 @@ Horsemen_famine_slash_projaoe_painpt3:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 35
     horizontal-force: -3.5
     vertical-force: 0.1
     obey-los: true
@@ -1372,8 +1372,8 @@ Horsemen_famine_slash_projaoe_pain:
 Horsemen_famine_slash_projaoe_painpt2:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
-    range: 1
-    damage: 1
+    range: 10
+    damage: 35
     horizontal-force: 5.5
     vertical-force: 3.1
     obey-los: true
@@ -1383,7 +1383,7 @@ Horsemen_famine_slash_projaoe_painpt2:
     beneficial: false
 Horsemen_famine_slash_projaoe_painpt1:
     spell-class: ".targeted.PainSpell"
-    damage: 75
+    damage: 125
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1

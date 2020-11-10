@@ -361,7 +361,7 @@ horsemen_war_skill3dummymspptaoestunpt1:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 15
     horizontal-force: 0.5
     tags:
         - allowed_at_silence
@@ -442,7 +442,7 @@ Horsemen_war_slash_projaoe_pain3:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 35
+    damage: 45
     horizontal-force: 12.5
     vertical-force: 2.1
     obey-los: true

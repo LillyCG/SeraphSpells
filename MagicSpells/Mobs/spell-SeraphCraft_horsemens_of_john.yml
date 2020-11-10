@@ -119,7 +119,7 @@ horsemen_biteareatinvisecleanse:
       - buff:horsemen_biteareatinvise1
 horsemen_biteareatmsppain:
     spell-class: ".targeted.PainSpell"
-    damage: 35
+    damage: 325
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -582,7 +582,7 @@ horsemen_rockthrow_projeffaoept:
         - horsemen_rockthrow_projeffaoepttoss
 horsemen_rockthrow_projeffaoeptpain2:
     spell-class: ".targeted.PainSpell"
-    damage: 2
+    damage: 92
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -594,7 +594,7 @@ horsemen_rockthrow_projeffaoepttoss2:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 95
     horizontal-force: 5.5
     vertical-force: 2.1
     obey-los: true
@@ -604,7 +604,7 @@ horsemen_rockthrow_projeffaoepttoss2:
     beneficial: false
 horsemen_rockthrow_projeffaoeptpain:
     spell-class: ".targeted.PainSpell"
-    damage: 35
+    damage: 155
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -616,7 +616,7 @@ horsemen_rockthrow_projeffaoepttoss:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 115
     horizontal-force: 16.5
     vertical-force: 3.1
     obey-los: true
@@ -906,7 +906,7 @@ horsemen_carthrow_projeffaoept:
         - horsemen_carthrow_projeffaoepttoss
 horsemen_carthrow_projeffaoeptpain2:
     spell-class: ".targeted.PainSpell"
-    damage: 5
+    damage: 115
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -918,7 +918,7 @@ horsemen_carthrow_projeffaoepttoss2:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 111
     horizontal-force: 5.5
     vertical-force: 2.1
     obey-los: true
@@ -928,7 +928,7 @@ horsemen_carthrow_projeffaoepttoss2:
     beneficial: false
 horsemen_carthrow_projeffaoeptpain:
     spell-class: ".targeted.PainSpell"
-    damage: 55
+    damage: 215
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -940,7 +940,7 @@ horsemen_carthrow_projeffaoepttoss:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 215
     horizontal-force: 16.5
     vertical-force: 3.1
     obey-los: true
@@ -1310,7 +1310,7 @@ horsemen_dashleapptptpain:
         - horsemen_dashleapptptpainpttoss
 horsemen_dashleapptptpainpt:
     spell-class: ".targeted.PainSpell"
-    damage: 35
+    damage: 75
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -1322,7 +1322,7 @@ horsemen_dashleapptptpainpttoss:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 25
     horizontal-force: 9.5
     vertical-force: 3.1
     obey-los: true
@@ -2738,7 +2738,7 @@ horsemen_jumpprojmspaoetoss:
         - horsemen_jumpprojmspaoetosspt
 horsemen_jumpprojmspaoetosspain:
     spell-class: ".targeted.PainSpell"
-    damage: 15
+    damage: 95
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
@@ -2750,7 +2750,7 @@ horsemen_jumpprojmspaoetosspt:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 1
+    damage: 55
     horizontal-force: 9.5
     vertical-force: 2.1
     obey-los: true

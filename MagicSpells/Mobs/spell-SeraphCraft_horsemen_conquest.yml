@@ -617,7 +617,7 @@ Horsemen_conquest_slash_projaoe:
         - Horsemen_conquest_slash_projaoe_pain
 Horsemen_conquest_slash_projaoe_pain:
     spell-class: ".targeted.PainSpell"
-    damage: 65
+    damage: 125
     spell-damage-type: HORSEMENS_OF_JOHN
     helper-spell: true
     range: 1
