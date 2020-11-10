@@ -84,6 +84,11 @@ gimmepowerdemon_dummymsp_morepowermspdummyptmsppinsaneptpt:
     spells:
         - gimmepowerdemon_dummymsp_morepowermspdummyptmsppinsaneptptcleanse
         - namanari_ragedummy
+        - demon_menu_failbuff1
+        - demon_menu_failbuff2
+        - demon_menu_failbuffmspppt
+        - DELAY 01
+        - demon_menu_resistdummy
 gimmepowerdemon_dummymsp_morepowermspdummyptmsppinsaneptptcleansedummy:
     spell-class: ".instant.DummySpell"
     helper-spell: true
