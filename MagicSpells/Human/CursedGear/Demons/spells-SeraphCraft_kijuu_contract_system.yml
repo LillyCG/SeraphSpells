@@ -17,7 +17,7 @@ variables:
      demonic_resistance:
           type: player
           min: 5
-          max: 20500
+          max: 25500
           default: 5
 #~~~~~~#
 demon_menu_resistdummy:
