@@ -11,7 +11,7 @@ horsemen_conquest_skills_melee:
   - incombat true
   - targetwithin 9 true
   Skills:
-  - randomskill{skills=horsemen_dash,horsemen_skill_1_conquest,horsemen_skill_5_conquest,horsemen_skill_6_conquest,horsemen_skill_7_conquest,horsemen_skill_2_conquest,horsemen_skill_4_conquest,horsemen_skill_3_conquest}
+  - randomskill{skills=horsemen_bite,horsemen_dash,horsemen_skill_1_conquest,horsemen_skill_5_conquest,horsemen_skill_6_conquest,horsemen_skill_7_conquest,horsemen_skill_2_conquest,horsemen_skill_4_conquest,horsemen_skill_3_conquest}
 horsemen_conquest_skills_range:
   Conditions:
   - incombat true
