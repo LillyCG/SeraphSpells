@@ -83,6 +83,7 @@ contract_decline_menuptmspdummy:
         - kijuu_cursedgear_ver =0
         - kijuu_demon_lvlup =0
         - kijuu_demon_lvl =0
+        - kijuu_demon_abilities =1
         - demonic_resistance -125
 contract_decline_menuptmsppt1:
     spell-class: ".MenuSpell"
