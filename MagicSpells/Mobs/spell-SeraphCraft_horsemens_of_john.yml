@@ -47,7 +47,7 @@ horsemen_biteproj:
 horsemen_bitearea:
     spell-class: ".targeted.AreaEffectSpell"
     helper-spell: true
-    horizontal-radius: 5.5
+    horizontal-radius: 6.5
     vertical-radius: 3.5
     point-blank: false
     fail-if-no-targets: false
