@@ -318,6 +318,68 @@ horsemen_carthrowpt_explode:
         - fern
         - dead_bush
         - seagrass
+        - oak_leaves
+        - spruce_leaves
+        - birch_leaves
+        - jungle_leaves
+        - acacia_leaves
+        - dark_oak_leaves
+        - oak_log
+        - spruce_log
+        - birch_log
+        - jungle_log
+        - acacia_log
+        - dark_oak_log
+        - crimson_stem
+        - warped_stem
+        - stripped_oak_log
+        - stripped_spruce_log
+        - stripped_birch_log
+        - stripped_jungle_log
+        - stripped_acacia_log
+        - stripped_dark_oak_log
+        - stripped_crimson_stem
+        - stripped_warped_stem
+        - oak_wood
+        - spruce_wood
+        - birch_wood
+        - jungle_wood
+        - acacia_wood
+        - dark_oak_wood
+        - crimson_hyphae
+        - warped_hyphae
+        - stripped_oak_wood
+        - stripped_spruce_wood
+        - stripped_birch_wood
+        - stripped_jungle_wood
+        - stripped_acacia_wood
+        - stripped_dark_oak_wood
+        - stripped_crimson_hyphae
+        - stripped_warped_hyphae
+        - oak_slab
+        - spruce_slab
+        - birch_slab
+        - jungle_slab
+        - acacia_slab
+        - dark_oak_slab
+        - crimson_slab
+        - warped_slab
+        - oak_planks
+        - spruce_planks
+        - birch_planks
+        - jungle_planks
+        - acacia_planks
+        - dark_oak_planks
+        - crimson_planks
+        - warped_planks
+        - oak_stairs
+        - spruce_stairs
+        - birch_stairs
+        - jungle_stairs
+        - acacia_stairs
+        - dark_oak_stairs
+        - crimson_stairs
+        - warped_stairs
     replace-with:
         - barrier
         - stone
@@ -342,6 +404,68 @@ horsemen_rockthrowpt_explode:
         - fern
         - dead_bush
         - seagrass
+        - oak_leaves
+        - spruce_leaves
+        - birch_leaves
+        - jungle_leaves
+        - acacia_leaves
+        - dark_oak_leaves
+        - oak_log
+        - spruce_log
+        - birch_log
+        - jungle_log
+        - acacia_log
+        - dark_oak_log
+        - crimson_stem
+        - warped_stem
+        - stripped_oak_log
+        - stripped_spruce_log
+        - stripped_birch_log
+        - stripped_jungle_log
+        - stripped_acacia_log
+        - stripped_dark_oak_log
+        - stripped_crimson_stem
+        - stripped_warped_stem
+        - oak_wood
+        - spruce_wood
+        - birch_wood
+        - jungle_wood
+        - acacia_wood
+        - dark_oak_wood
+        - crimson_hyphae
+        - warped_hyphae
+        - stripped_oak_wood
+        - stripped_spruce_wood
+        - stripped_birch_wood
+        - stripped_jungle_wood
+        - stripped_acacia_wood
+        - stripped_dark_oak_wood
+        - stripped_crimson_hyphae
+        - stripped_warped_hyphae
+        - oak_slab
+        - spruce_slab
+        - birch_slab
+        - jungle_slab
+        - acacia_slab
+        - dark_oak_slab
+        - crimson_slab
+        - warped_slab
+        - oak_planks
+        - spruce_planks
+        - birch_planks
+        - jungle_planks
+        - acacia_planks
+        - dark_oak_planks
+        - crimson_planks
+        - warped_planks
+        - oak_stairs
+        - spruce_stairs
+        - birch_stairs
+        - jungle_stairs
+        - acacia_stairs
+        - dark_oak_stairs
+        - crimson_stairs
+        - warped_stairs
     replace-with:
         - barrier
         - stone
@@ -363,6 +487,68 @@ horsemen_rockthrowpt_self:
         - fern
         - dead_bush
         - seagrass
+        - oak_leaves
+        - spruce_leaves
+        - birch_leaves
+        - jungle_leaves
+        - acacia_leaves
+        - dark_oak_leaves
+        - oak_log
+        - spruce_log
+        - birch_log
+        - jungle_log
+        - acacia_log
+        - dark_oak_log
+        - crimson_stem
+        - warped_stem
+        - stripped_oak_log
+        - stripped_spruce_log
+        - stripped_birch_log
+        - stripped_jungle_log
+        - stripped_acacia_log
+        - stripped_dark_oak_log
+        - stripped_crimson_stem
+        - stripped_warped_stem
+        - oak_wood
+        - spruce_wood
+        - birch_wood
+        - jungle_wood
+        - acacia_wood
+        - dark_oak_wood
+        - crimson_hyphae
+        - warped_hyphae
+        - stripped_oak_wood
+        - stripped_spruce_wood
+        - stripped_birch_wood
+        - stripped_jungle_wood
+        - stripped_acacia_wood
+        - stripped_dark_oak_wood
+        - stripped_crimson_hyphae
+        - stripped_warped_hyphae
+        - oak_slab
+        - spruce_slab
+        - birch_slab
+        - jungle_slab
+        - acacia_slab
+        - dark_oak_slab
+        - crimson_slab
+        - warped_slab
+        - oak_planks
+        - spruce_planks
+        - birch_planks
+        - jungle_planks
+        - acacia_planks
+        - dark_oak_planks
+        - crimson_planks
+        - warped_planks
+        - oak_stairs
+        - spruce_stairs
+        - birch_stairs
+        - jungle_stairs
+        - acacia_stairs
+        - dark_oak_stairs
+        - crimson_stairs
+        - warped_stairs
     replace-with:
         - barrier
         - stone
