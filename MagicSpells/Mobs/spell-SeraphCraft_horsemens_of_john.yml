@@ -379,6 +379,7 @@ horsemen_carthrowpt_explode:
         - dark_oak_stairs
         - crimson_stairs
         - warped_stairs
+        - water
     replace-with:
         - barrier
         - stone
@@ -465,6 +466,7 @@ horsemen_rockthrowpt_explode:
         - dark_oak_stairs
         - crimson_stairs
         - warped_stairs
+        - water
     replace-with:
         - barrier
         - stone
