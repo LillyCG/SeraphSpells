@@ -3,7 +3,7 @@ variables:
           type: player
           min: 0
           max: 100000000000000000000000000000000000
-          default: 150
+          default: 100
      human_rank:
           type: player
           min: 0
@@ -127,7 +127,7 @@ humanrankingpt_up_rankpt:
         - human_rank +1
         - human_lvlrank =0
         - healthvar_max +healthvar_upvalue
-        - healthvar_upvalue +150
+        - healthvar_upvalue +50
 humanrankingpt_up:
     spell-class: ".instant.DummySpell"
     helper-spell: true
