@@ -14,6 +14,7 @@ gimmepowerdemon_dummypass:
     triggers:
         - join
         - respawn
+        - death
         - magicspellsloaded
     cast-without-target: true
     helper-spell: true
@@ -28,6 +29,8 @@ gimmepowerdemon_dummypass:
 gimmepowerdemon_dummypasspt:
     spell-class: ".instant.DummySpell"
     helper-spell: true
+    tags:
+        - allowed_at_silence
     variable-mods-cast:
         - kijuu_gimmepower_count =0
         - kijuu_gimmepower_atm =0
