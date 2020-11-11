@@ -43,6 +43,8 @@ horsemen_famine:
     PreventOtherDrops: true
     MovementSpeed: 0.12
     AttackSpeed: 0.0
+    PreventJockeyMounts: true
+    PreventTransformation: true
   Skills:
   - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
@@ -53,7 +55,7 @@ horsemen_famine:
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_leaps} ~onTimer:01
   - skill{s=horsemen_skill_regen} 0.1 ~onDamaged
-  - skill{s=horsemen_famine_skills} ~onTimer:120
+  - skill{s=horsemen_famine_skills} ~onTimer:75 0.5
   - skill{s=horsemen_speedup} 0.2 ~onTimer:90
   - threat{a=2} @trigger ~onDamaged
   - skill{s=horsemen_threat_null} ~onTimer:50
@@ -102,6 +104,8 @@ horsemen_death:
     PreventOtherDrops: true
     MovementSpeed: 0.12
     AttackSpeed: 0.0
+    PreventJockeyMounts: true
+    PreventTransformation: true
   Skills:
   - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
@@ -112,7 +116,7 @@ horsemen_death:
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_leaps} ~onTimer:01
   - skill{s=horsemen_skill_regen} 0.1 ~onDamaged
-  - skill{s=horsemen_death_skills} ~onTimer:120
+  - skill{s=horsemen_death_skills} ~onTimer:75 0.5
   - skill{s=horsemen_speedup} 0.2 ~onTimer:90
   - threat{a=2} @trigger ~onDamaged
   - skill{s=horsemen_threat_null} ~onTimer:50
@@ -161,6 +165,8 @@ horsemen_war:
     PreventOtherDrops: true
     MovementSpeed: 0.12
     AttackSpeed: 0.0
+    PreventJockeyMounts: true
+    PreventTransformation: true
   Skills:
   - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
@@ -171,7 +177,7 @@ horsemen_war:
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_leaps} ~onTimer:01
   - skill{s=horsemen_skill_regen} 0.1 ~onDamaged
-  - skill{s=horsemen_war_skills} ~onTimer:120
+  - skill{s=horsemen_war_skills} ~onTimer:75 0.5
   - skill{s=horsemen_speedup} 0.2 ~onTimer:90
   - threat{a=2} @trigger ~onDamaged
   - skill{s=horsemen_threat_null} ~onTimer:50
@@ -220,6 +226,8 @@ horsemen_conquest:
     PreventOtherDrops: true
     MovementSpeed: 0.09
     AttackSpeed: 0.0
+    PreventJockeyMounts: true
+    PreventTransformation: true
   Skills:
   - skill{s=horsemen_lvl} ~onSpawn
   - threat{a=-1000} @trigger ~onKill
@@ -230,7 +238,7 @@ horsemen_conquest:
   - skill{s=horsemen_leaps} ~onTimer:01
   - skill{s=horsemen_resist} ~onTimer:01
   - skill{s=horsemen_skill_regen} 0.1 ~onDamaged
-  - skill{s=horsemen_conquest_skills} ~onTimer:120
+  - skill{s=horsemen_conquest_skills} ~onTimer:75 0.5
   - skill{s=horsemen_speedup} 0.2 ~onTimer:90
   - threat{a=2} @trigger ~onDamaged
   - skill{s=horsemen_threat_null} ~onTimer:50
