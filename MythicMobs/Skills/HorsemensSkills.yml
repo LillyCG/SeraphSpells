@@ -1,4 +1,4 @@
-horsemen_lvl:
+horsemen_lvl_death:
   Skills:
   - skill{s=horsemen_lvl_1}
   - skill{s=horsemen_lvl_10}
