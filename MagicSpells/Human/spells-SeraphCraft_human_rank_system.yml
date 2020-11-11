@@ -9,12 +9,22 @@ variables:
           min: 0
           max: 100
           default: 0
-     human_rank_exp:
+     human_lvl:
+          type: player
+          min: 1
+          max: 100
+          default: 1
+     human_lvlrank:
+          type: player
+          min: 1
+          max: 10
+          default: 1
+     human_lvl_exp:
           type: player
           min: 0
           max: 100000000000000000000000000000000000000000
           default: 0
-     human_rank_exp_max:
+     human_lvl_exp_max:
           type: player
           min: 0
           max: 100000000000000000000000000000000000000000
@@ -84,9 +94,9 @@ humanrankingpt:
     tags:
         - allowed_at_silence
     modifiers:
-        - variable human_rank_exp:human_rank_exp_max castinstead humanrankingpt_up
-        - variable human_rank_exp>human_rank_exp_max castinstead humanrankingpt_up
-humanrankingpt_up:
+        - variable human_lvl_exp:human_lvl_exp_max castinstead humanrankingpt_up
+        - variable human_lvl_exp>human_lvl_exp_max castinstead humanrankingpt_up
+humanrankingpt_up_rank:
     spell-class: ".instant.DummySpell"
     helper-spell: true
     tags:
@@ -103,9 +113,32 @@ humanrankingpt_up:
           stay: 60
           fade-out: 85
     variable-mods-cast:
-        - human_rank_exp =0
-        - human_rank_exp_max *2
         - human_rank +1
+        - human_lvlrank =0
+        - healthvar_max +healthvar_upvalue
+        - healthvar_upvalue +150
+humanrankingpt_up:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    tags:
+        - allowed_at_silence
+    modifiers:
+        - chance 100 cast humanrankingpt_up_zvanie
+        - variable human_lvlrank:9 cast humanrankingpt_up_rank
+    effects:
+        1:
+          position: caster
+          effect: title
+          title: ""
+          subtitle: "&fВы повысили свой уровень "
+          fade-in: 25
+          stay: 60
+          fade-out: 85
+    variable-mods-cast:
+        - human_lvl_exp =0
+        - human_lvl_exp_max *2
+        - human_lvl +1
+        - human_lvlrank +1
         - healthvar_max +healthvar_upvalue
         - healthvar_upvalue +150
 humanrankingpt_up_zvanie:
