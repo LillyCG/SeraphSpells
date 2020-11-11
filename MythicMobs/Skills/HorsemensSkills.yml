@@ -1,3 +1,49 @@
+horsemen_signalskill:
+  Conditions:
+  - targetwithin 35 true
+  Skills:
+  - signal{s=horsemen_signal} @MobsInRadius{r=150;t=horsemen_famine}
+  - signal{s=horsemen_signal} @MobsInRadius{r=150;t=horsemen_death}
+  - signal{s=horsemen_signal} @MobsInRadius{r=150;t=horsemen_war}
+  - signal{s=horsemen_signal} @MobsInRadius{r=150;t=horsemen_conquest}
+horsemen_signalreact:
+  Skills:
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+  - delay 03
+  - leap{velocity=190;n=10} @trigger
+#~#
 horsemen_lvl:
   Skills:
   - randomskill{
