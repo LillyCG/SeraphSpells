@@ -1,3 +1,77 @@
+horsemen_lvl:
+  Skills:
+  - skill{s=horsemen_lvl_1}
+  - skill{s=horsemen_lvl_10}
+  - skill{s=horsemen_lvl_20}
+  - skill{s=horsemen_lvl_30}
+  - skill{s=horsemen_lvl_40}
+  - skill{s=horsemen_lvl_50}
+  - skill{s=horsemen_lvl_60}
+  - skill{s=horsemen_lvl_70}
+  - skill{s=horsemen_lvl_80}
+  - skill{s=horsemen_lvl_90}
+  - skill{s=horsemen_lvl_100}
+horsemen_lvl_1:
+  Conditions:
+  - level{l=>10} true
+  Skills:
+  - command{c="ms cast as <target.name> 1lvls_horsemen_exp";} @target
+horsemen_lvl_10:
+  Conditions:
+  - level{l=1to10} true
+  Skills:
+  - command{c="ms cast as <target.name> 10lvls_horsemen_exp";} @target
+horsemen_lvl_20:
+  Conditions:
+  - level{l=10to20} true
+  Skills:
+  - command{c="ms cast as <target.name> 20lvls_horsemen_exp";} @target
+horsemen_lvl_30:
+  Conditions:
+  - level{l=20to30} true
+  Skills:
+  - command{c="ms cast as <target.name> 30lvls_horsemen_exp";} @target
+horsemen_lvl_40:
+  Conditions:
+  - level{l=30to40} true
+  Skills:
+  - command{c="ms cast as <target.name> 40lvls_horsemen_exp";} @target
+horsemen_lvl_50:
+  Conditions:
+  - level{l=40to50} true
+  Skills:
+  - command{c="ms cast as <target.name> 50lvls_horsemen_exp";} @target
+horsemen_lvl_60:
+  Conditions:
+  - level{l=50to60} true
+  Skills:
+  - command{c="ms cast as <target.name> 60lvls_horsemen_exp";} @target
+horsemen_lvl_70:
+  Conditions:
+  - level{l=60to70} true
+  Skills:
+  - command{c="ms cast as <target.name> 70lvls_horsemen_exp";} @target
+horsemen_lvl_80:
+  Conditions:
+  - level{l=70to80} true
+  Skills:
+  - command{c="ms cast as <target.name> 80lvls_horsemen_exp";} @target
+horsemen_lvl_90:
+  Conditions:
+  - level{l=80to90} true
+  Skills:
+  - command{c="ms cast as <target.name> 90lvls_horsemen_exp";} @target
+horsemen_lvl_100:
+  Conditions:
+  - level{l=90to100} true
+  Skills:
+  - command{c="ms cast as <target.name> 100lvls_horsemen_exp";} @target
+horsemen_lvl_100more:
+  Conditions:
+  - level{l=>100} true
+  Skills:
+  - command{c="ms cast as <target.name> 100morelvls_horsemen_exp";} @target
+#~#
 horsemen_signalskill:
   Conditions:
   - targetwithin 35 true
