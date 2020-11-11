@@ -29,6 +29,11 @@ variables:
           min: 0
           max: 100000000000000000000000000000000000000000
           default: 10
+     human_lvl_exp_max_remove:
+          type: player
+          min: 0
+          max: 100000000000000000000000000000000000000000
+          default: 10
 #~#
 human_rank_resist:
     spell-class: ".PassiveSpell"
@@ -87,6 +92,33 @@ humanranking:
         - humanrankingpt
         - DELAY 03
         - humanranking
+humanranking_expremove:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    helper-spell: true
+    tags:
+        - allowed_at_silence
+    spells:
+        - DELAY 01
+        - humanranking_expremovept1
+        - DELAY 01
+        - humanranking_expremovept2
+humanranking_expremovept1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    tags:
+        - allowed_at_silence
+    variable-mods-cast:
+        - human_lvl_exp_max *2
+humanranking_expremovept2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    tags:
+        - allowed_at_silence
+    variable-mods-cast:
+        - human_lvl_exp_max_remove =human_lvl_exp_max
 #~~~~~~~~~~~~~~~~~~~~#
 humanrankingpt:
     spell-class: ".instant.DummySpell"
@@ -128,6 +160,7 @@ humanrankingpt_up_rankpt:
         - human_lvlrank =0
         - healthvar_max +healthvar_upvalue
         - healthvar_upvalue +50
+        - human_lvl_exp -human_lvl_exp_max_remove
 humanrankingpt_up:
     spell-class: ".instant.DummySpell"
     helper-spell: true
@@ -135,6 +168,7 @@ humanrankingpt_up:
         - allowed_at_silence
     modifiers:
         - variable human_lvlrank:9 cast humanrankingpt_up_rank
+        - chance 100 cast humanranking_expremove
     effects:
         1:
           position: caster
