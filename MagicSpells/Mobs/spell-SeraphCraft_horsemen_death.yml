@@ -372,7 +372,7 @@ horsemen_death_skill8dummymspptaoestunpt4:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 22
+    damage: 2
     horizontal-force: 15.5
     tags:
         - allowed_at_silence
@@ -386,7 +386,7 @@ horsemen_death_skill8dummymspptaoestunpt1:
     spell-class: ".targeted.ForcetossSpell"
     helper-spell: true
     range: 1
-    damage: 62
+    damage: 2
     horizontal-force: 0.5
     tags:
         - allowed_at_silence
