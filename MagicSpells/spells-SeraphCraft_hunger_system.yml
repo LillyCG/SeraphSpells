@@ -126,18 +126,18 @@ hungersystem_msp:
     tags:
         - allowed_at_silence
     spells:
-          - DELAY 01
-          - hungersystem_msp
-          - DELAY 02
-          - hungersystem_dummy
+        - DELAY 01
+        - hungersystem_msp
+        - DELAY 02
+        - hungersystem_dummy
 hungersystem_dummy:
     spell-class: ".MultiSpell"
     helper-spell: true
     tags:
         - allowed_at_silence
     spells:
-          - DELAY 02
-          - hungersystem_dummy1
+        - DELAY 02
+        - hungersystem_dummy1
 hungersystem_dummy1:
     spell-class: ".instant.DummySpell"
     helper-spell: true
