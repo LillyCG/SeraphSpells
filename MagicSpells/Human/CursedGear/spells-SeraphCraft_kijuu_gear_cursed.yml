@@ -7,7 +7,7 @@ modifiers:
             - variable kijuu_gimmepower_count>0 continue
             - variable kijuu_gimmepower_atm>0 continue
             - variable kijuu_gimmepower_stage>0 continue
-        pass-condition: XOR
+        pass-condition: ANY
 gimmepowerdemon_dummypass:
     spell-class: ".PassiveSpell"
     always-granted: true
