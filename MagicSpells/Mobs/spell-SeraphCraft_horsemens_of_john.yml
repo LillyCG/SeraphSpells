@@ -1,3 +1,110 @@
+1lvls_horsemen_exp:
+    spell-class: ".MultiSpell"
+    cast-random-spell-instead: true
+    helper-spell: true
+    spells:
+        - 1lvls_horsemen_exppt7
+        - 1lvls_horsemen_exppt7
+        - 1lvls_horsemen_exppt6
+        - 1lvls_horsemen_exppt6
+        - 1lvls_horsemen_exppt5
+        - 1lvls_horsemen_exppt4
+        - 1lvls_horsemen_exppt4
+        - 1lvls_horsemen_exppt3
+        - 1lvls_horsemen_exppt2
+        - 1lvls_horsemen_exppt2
+        - 1lvls_horsemen_exppt1
+1lvls_horsemen_exppt7:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +1
+1lvls_horsemen_exppt6:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +2
+1lvls_horsemen_exppt5:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +20
+1lvls_horsemen_exppt4:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +10
+1lvls_horsemen_exppt3:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +15
+1lvls_horsemen_exppt2:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +5
+1lvls_horsemen_exppt1:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +25
+10lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +10
+20lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +20
+30lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +30
+40lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +40
+50lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +50
+60lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +60
+70lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +70
+80lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +80
+90lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +90
+100lvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +100
+100morelvls_horsemen_exp:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    variable-mods-cast:
+        - human_lvl_exp +200
+#~#
 horsemen_speed:
     spell-class: ".targeted.PotionEffectSpell"
     helper-spell: true
