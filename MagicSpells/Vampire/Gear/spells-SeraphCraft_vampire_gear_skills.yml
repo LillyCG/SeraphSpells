@@ -30,6 +30,11 @@ secondclass_gear_leftmouseptpt:
     modifiers:
         - variable secondclass_gear_combo:4 required
 #~#
+secondclass_gear_special:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    modifiers:
+        - chance 100 cast secondclassgear_4skill
 secondclass_gear_rightmouse:
     spell-class: ".instant.DummySpell"
     helper-spell: true
