@@ -2,7 +2,9 @@
 ###### MagicSpells/MythicMobs configs for Owari No Seraph-titled Server
 ***WARNING:***
 
-*that repository and files in it **is not for commercial usage**. **you can't use them for your commissions, servers and etc.***
+*that repository and files in it **is not for commercial usage***. 
+
+***you can't use them for your commissions, servers and etc.***
 
 *but you can read configs to learn something new, or to look how does it work.*
 
