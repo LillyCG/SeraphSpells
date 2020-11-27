@@ -2,11 +2,11 @@
 ###### MagicSpells/MythicMobs configs for Owari No Seraph-titled Server
 ***WARNING:***
 
-*that repository and files in it **is not for commercial usage***. 
+*This repository and the files that are in it are **NOT** for commercial usage.*. 
 
-***you can't use them for your commissions, servers and etc.***
+*(This means that you can't use them for your servers, commissions, etc.)*
 
-*but you can read configs to learn something new, or to look how does it work.*
+*You are allowed to read the configs here to learn something new, or to figure out how something works*
 
 ###### Server owner:
 		Discord: MaxCashe#0905 | Github: MaxCashe
