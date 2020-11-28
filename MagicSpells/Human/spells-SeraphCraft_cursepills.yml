@@ -14,6 +14,7 @@ curse_pillspass:
     always-granted: true
     triggers:
         - respawn
+        - join
         - magicspellsloaded
     cast-without-target: true
     helper-spell: true
